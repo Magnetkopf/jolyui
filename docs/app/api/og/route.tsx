@@ -1,7 +1,7 @@
-import { ImageResponse } from "next/og";
 import { siteConfig } from "@/config/site";
-import { loadFonts } from "@/lib/fonts";
+import { ImageResponse } from "next/og";
 
+// Use serverless runtime instead of edge to avoid size limits
 export const runtime = "edge";
 
 export async function GET(request: Request) {
@@ -10,13 +10,10 @@ export async function GET(request: Request) {
 
     const title = searchParams.get("title") ?? siteConfig.name;
 
-    const fonts = await loadFonts();
-
     return new ImageResponse(
       <div
         tw="flex flex-col w-full h-full items-center justify-center"
         style={{
-          fontFamily: "Geist Sans",
           background: "linear-gradient(to bottom right, #111827, #000000)",
         }}
       >
@@ -42,7 +39,6 @@ export async function GET(request: Request) {
       {
         width: 1200,
         height: 630,
-        fonts,
       },
     );
   } catch (error) {
