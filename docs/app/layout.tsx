@@ -13,7 +13,7 @@ import type * as React from "react";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: siteConfig.name + " - Beautiful, accessible React components built on shadcn/ui. Free and open source component library.",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
