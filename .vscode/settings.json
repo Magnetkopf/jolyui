@@ -1,0 +1,46 @@
+{
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.turbo/**": true,
+    "**/dist/**": true,
+    "**/.source/**": true,
+    "**/pnpm-lock.yaml": true,
+    "**/.tsbuildinfo": true,
+    "**/public/r/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.turbo": true,
+    "**/dist": true,
+    "**/.source": true,
+    "**/pnpm-lock.yaml": true,
+    "**/public/r": true
+  },
+  "files.exclude": {
+    "**/.turbo": true,
+    "**/.tsbuildinfo": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
+  },
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "biomejs.biome",
+  "tailwindCSS.validate": false,
+  "tailwindCSS.lint.cssConflict": "ignore",
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsserver.maxTsServerMemory": 4096,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.surveys.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "git.autofetch": false,
+  "git.untrackedChanges": "hidden",
+  "explorer.fileNesting.enabled": true
+}
