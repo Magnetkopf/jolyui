@@ -6,8 +6,11 @@ import { siteConfig } from "@/config/site";
 import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import { Databuddy } from '@databuddy/sdk/react';
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+
 import type * as React from "react";
 
 export const metadata: Metadata = {
@@ -179,6 +182,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         >
           {children}
+          <Analytics />
+          <Databuddy
+        clientId="D0oKAXYLs73J3RyJh4Gt-"
+        enableBatching={true}
+      />
         </Providers>
       </body>
     </html>
