@@ -18,26 +18,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  keywords: [
-    "react components",
-    "ui library",
-    "react ui",
-    "shadcn ui",
-    "tailwind components",
-    "accessible components",
-    "react component library",
-    "typescript components",
-    "nextjs components",
-    "radix ui",
-    "headless ui",
-    "wai-aria",
-    "a11y",
-    "design system",
-    "component registry",
-    "copy paste components",
-    "free ui components",
-    "open source ui",
-  ],
+  keywords: siteConfig.keywords,
   authors: [
     {
       name: siteConfig.author.name,
@@ -56,11 +37,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     title: siteConfig.name,
-    description: siteConfig.description,
+    description: siteConfig.longDescription,
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: `${siteConfig.url}/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - ${siteConfig.description}`,
@@ -71,8 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    description: siteConfig.longDescription,
+    images: [`${siteConfig.url}/opengraph-image.png`],
     creator: siteConfig.author.twitter,
     site: siteConfig.author.twitter,
   },
@@ -103,9 +84,12 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 interface RootLayoutProps {
@@ -113,34 +97,55 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: siteConfig.name,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    author: {
-      "@type": "Person",
-      name: siteConfig.author.name,
-      url: siteConfig.author.url,
-    },
-    publisher: {
-      "@type": "Organization",
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
       name: siteConfig.name,
-      logo: {
-        "@type": "ImageObject",
-        url: `${siteConfig.url}/icon.png`,
+      description: siteConfig.longDescription,
+      url: siteConfig.url,
+      inLanguage: "en-US",
+      author: {
+        "@type": "Person",
+        name: siteConfig.author.name,
+        url: siteConfig.author.url,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: siteConfig.name,
+        logo: {
+          "@type": "ImageObject",
+          url: `${siteConfig.url}/icon.png`,
+        },
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${siteConfig.url}/docs?search={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
       },
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/docs?search={search_term_string}`,
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: siteConfig.name,
+      description: siteConfig.longDescription,
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Web",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
       },
-      "query-input": "required name=search_term_string",
+      author: {
+        "@type": "Person",
+        name: siteConfig.author.name,
+        url: siteConfig.author.url,
+      },
     },
-  };
+  ];
 
   return (
     <html lang="en" suppressHydrationWarning>
