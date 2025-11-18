@@ -1,8 +1,8 @@
-# `Joly UI`
+### Joly UI
 
 A custom registry of composable, accessible and extensible components designed for use with shadcn/ui. Free and open source, forever.
 
-![Joly UI](/jolyui_og.png)
+![Joly UI](docs/public/jolyui_og.png)
 
 ## Documentation
 
