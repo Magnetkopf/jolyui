@@ -2,7 +2,6 @@
   "name": "avatar-group-truncation-demo",
   "type": "registry:example",
   "registryDependencies": [
-    "avatar",
     "avatar-group"
   ],
   "files": [

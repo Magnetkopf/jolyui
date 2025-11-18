@@ -2,7 +2,6 @@
   "name": "avatar-group-rtl-demo",
   "type": "registry:example",
   "registryDependencies": [
-    "avatar",
     "avatar-group"
   ],
   "files": [

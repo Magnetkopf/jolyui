@@ -4,7 +4,7 @@ export const examples: Registry["items"] = [
   {
     name: "avatar-group-demo",
     type: "registry:example",
-    registryDependencies: ["avatar", "avatar-group"],
+    registryDependencies: ["avatar-group"],
     files: [
       {
         path: "examples/avatar-group-demo.tsx",
@@ -15,7 +15,7 @@ export const examples: Registry["items"] = [
   {
     name: "avatar-group-truncation-demo",
     type: "registry:example",
-    registryDependencies: ["avatar", "avatar-group"],
+    registryDependencies: ["avatar-group"],
     files: [
       {
         path: "examples/avatar-group-truncation-demo.tsx",
@@ -26,7 +26,7 @@ export const examples: Registry["items"] = [
   {
     name: "avatar-group-rtl-demo",
     type: "registry:example",
-    registryDependencies: ["avatar", "avatar-group"],
+    registryDependencies: ["avatar-group"],
     files: [
       {
         path: "examples/avatar-group-rtl-demo.tsx",

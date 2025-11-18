@@ -21,7 +21,6 @@ export const ui: Registry["items"] = [
       "lucide-react",
       "motion",
     ],
-    registryDependencies: ["card", "skeleton", "tooltip"],
     files: [
       {
         path: "ui/github-contributors.tsx",
