@@ -20,7 +20,7 @@ const buttonVariants = cva(
           "hover:bg-accent/80 hover:text-accent-foreground hover:scale-[1.02] active:scale-[0.98] backdrop-blur-sm",
         link: "text-primary underline-offset-4 hover:underline hover:text-primary/80 transition-colors",
         shimmer:
-          "relative bg-gradient-to-r from-primary via-primary/80 to-primary text-primary-foreground shadow-lg hover:shadow-xl overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
+          "relative bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] text-white shadow-2xl shadow-primary/30 hover:shadow-primary/50 animate-shimmer border border-slate-800/50 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:translate-x-[-200%] before:animate-shimmer-slide hover:scale-[1.02] active:scale-[0.98]",
         glow:
           "relative bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white shadow-lg shadow-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/60 animate-gradient-x before:absolute before:inset-[-2px] before:rounded-xl before:bg-gradient-to-r before:from-violet-600 before:via-purple-600 before:to-fuchsia-600 before:blur-md before:opacity-75 before:-z-10 hover:scale-[1.02] active:scale-[0.98]",
       },

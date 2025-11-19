@@ -27,9 +27,38 @@ npx shadcn@latest add "https://jolyui.dev/r/button"
      ```
   </Step>
   <Step>
-    Copy and paste the following code into your project.
+    Copy and paste the following code into your project. ```component/ui/button.tsx```
 
     <ComponentSource name="button" />
+  </Step>
+
+    <Step>
+    Copy and paste the following code into your project. ```globals.css```
+
+    ```css
+    @theme inline {
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-shimmer-slide: shimmer-slide 2s linear infinite;
+    
+    @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes shimmer-slide {
+    0% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+    }
+    ```
   </Step>
 </Steps>
 

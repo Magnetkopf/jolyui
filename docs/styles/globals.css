@@ -62,6 +62,8 @@
     var(--marquee-loop-count);
   --animate-marquee-down: marquee-down var(--marquee-duration) linear
     var(--marquee-loop-count);
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-shimmer-slide: shimmer-slide 2s linear infinite;
 
   @keyframes fade-up {
     0% {
@@ -160,6 +162,24 @@
     }
     100% {
       transform: translateX(0%);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes shimmer-slide {
+    0% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(200%);
     }
   }
 }
