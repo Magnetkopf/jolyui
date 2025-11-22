@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/tooltip";
 import { ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
-import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 interface Contributor {
@@ -162,7 +161,7 @@ export function GitHubContributors({
                           onClick={(e) => e.stopPropagation()}
                           aria-label={`${c.login} GitHub profile`}
                         >
-                          <Image
+                          <img
                             src={c.avatar_url}
                             alt={c.login}
                             width={40}
@@ -188,7 +187,7 @@ export function GitHubContributors({
                         >
                           <div className="flex items-center gap-3">
                             <div className="h-12 w-12 rounded-md overflow-hidden border flex-shrink-0">
-                              <Image
+                              <img
                                 src={c.avatar_url}
                                 alt={c.login}
                                 width={48}
