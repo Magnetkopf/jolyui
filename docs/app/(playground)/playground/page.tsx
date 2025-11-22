@@ -1,6 +1,6 @@
 "use client"
 
-import { LazyVideo } from "../../../../packages/phone-card/dist"
+import { PhoneCard } from "@/registry/default/ui/phone-card"
 
 export default function PlayGroundPage() {
   return  <div className="mt-10 grid w-full gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
@@ -14,50 +14,6 @@ export default function PlayGroundPage() {
               )
             })}
           </div>
-}
-
-function PhoneCard({
-  title = "8°",
-  sub = "Clear night. Great for render farm runs.",
-  tone = "calm",
-  gradient = "from-[#0f172a] via-[#14532d] to-[#052e16]",
-  videoSrc,
-}: {
-  title?: string
-  sub?: string
-  tone?: string
-  gradient?: string
-  videoSrc?: string
-}) {
-  return (
-    <div className="relative rounded-[28px] glass-border bg-neutral-900 p-2">
-      <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
-        <LazyVideo
-          src={
-            videoSrc ??
-            "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b0f3222371106db366a14ca1c29cef55-1b1EWVSa4w3FL2zslcaCGYTy9vcxjF.mp4"
-          }
-          className="absolute inset-0 h-full w-full object-cover"
-          autoplay={true}
-          loop={true}
-          muted={true}
-          playsInline={true}
-          aria-label={`${title} - ${sub}`}
-        />
-
-        <div className="relative z-10 p-3">
-          <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
-          <div className="space-y-1 px-1">
-            <div className="text-3xl font-bold leading-snug text-white/90">{title}</div>
-            <p className="text-xs text-white/70">{sub}</p>
-            <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-lime-300">
-              {tone === "calm" ? "skitbit app" : tone}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
 }
 
 const phoneData = [
