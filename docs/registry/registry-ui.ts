@@ -43,9 +43,20 @@ export const ui: Registry["items"] = [
     name: "phone-card",
     type: "registry:ui",
     dependencies: ["@jolyui/phone-card"],
+    registryDependencies: ["lazy-video"],
     files: [
       {
         path: "ui/phone-card.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "lazy-video",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/lazy-video.tsx",
         type: "registry:ui",
       },
     ],
