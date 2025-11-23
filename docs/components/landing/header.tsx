@@ -55,12 +55,7 @@ export function Header() {
                 {/* Logo Section with Navigation Links */}
                 <div className="flex items-center gap-6">
                   <Link href="/" className="flex items-center gap-2">
-                           <Logo/>
-                    
-
-                    <span className="hidden sm:block font-semibold">
-                      Joly UI
-                    </span>
+                    <Logo/>
                   </Link>
                   <span className="text-zinc-300 dark:text-zinc-700">|</span>
                   {/* Desktop Navigation Links */}
