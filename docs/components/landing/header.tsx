@@ -1,9 +1,8 @@
-"use client"
+import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/lib/theme-toggle";
 import { ArrowUpRight, PartyPopper } from "lucide-react";
 import { Link as ViewTransitionsLink } from "next-view-transitions";
 import Link from "next/link";
-import { Logo } from "../logo";
 
 export function Header() {
   return (
