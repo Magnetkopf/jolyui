@@ -1,0 +1,15 @@
+{
+  "name": "magnetic-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "magnetic"
+  ],
+  "files": [
+    {
+      "path": "examples/magnetic-demo.tsx",
+      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\n\nexport default function MagneticDemo() {\n  return (\n    <div className=\"flex min-h-[300px] items-center justify-center\">\n      <Magnetic>\n        <button className=\"rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-colors hover:bg-primary/90\">\n          Hover Me\n        </button>\n      </Magnetic>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
