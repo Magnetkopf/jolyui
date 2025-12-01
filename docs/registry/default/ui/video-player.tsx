@@ -1,27 +1,29 @@
 "use client"
 
 import {
-    ChevronLeft,
-    ChevronRight,
-    Loader2,
-    Maximize,
-    Maximize2,
-    MessageCircle,
-    Minimize,
-    MoreVertical,
-    Pause,
-    PictureInPicture2,
-    Play,
-    Repeat,
-    RotateCcw,
-    RotateCw,
-    Settings,
-    Volume2,
-    VolumeX
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+  Loader2,
+  Maximize,
+  Maximize2,
+  MessageCircle,
+  Minimize,
+  MoreVertical,
+  Pause,
+  PictureInPicture2,
+  Play,
+  Repeat,
+  RotateCcw,
+  RotateCw,
+  Settings,
+  Volume2,
+  VolumeX
 } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
 import type React from "react"
-import { useEffect, useRef, useState } from "react"
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react"
 
 interface QualitySource {
   quality: string
@@ -35,18 +37,31 @@ interface CaptionTrack {
   default?: boolean
 }
 
-interface VideoPlayerProps {
+interface Chapter {
+  title: string
+  startTime: number
+  endTime: number
+}
+
+export interface VideoPlayerProps {
   src: string | QualitySource[]
   tracks?: CaptionTrack[]
   poster?: string
   title?: string
   description?: string
   compact?: boolean
+  chapters?: Chapter[]
   onTimeUpdate?: (time: number) => void
   onNextVideo?: () => void
   onPrevVideo?: () => void
   currentVideoIndex?: number
   totalVideos?: number
+}
+
+export interface VideoPlayerRef {
+  seek: (time: number) => void
+  play: () => void
+  pause: () => void
 }
 
 const Tooltip = ({ children, label }: { children: React.ReactNode; label: string }) => {
@@ -71,19 +86,20 @@ const Tooltip = ({ children, label }: { children: React.ReactNode; label: string
   )
 }
 
-export function VideoPlayer({
+export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(({
   src,
   tracks = [],
   poster,
   title,
   description,
   compact = false,
+  chapters = [],
   onTimeUpdate,
   onNextVideo,
   onPrevVideo,
   currentVideoIndex = 0,
   totalVideos = 1,
-}: VideoPlayerProps) {
+}, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -108,7 +124,84 @@ export function VideoPlayer({
   const [duration, setDuration] = useState(0)
   const [buffered, setBuffered] = useState(0)
 
-  const controlsTimeoutRef = useRef<NodeJS.Timeout>()
+  // Hover state for timeline
+  const [hoverTime, setHoverTime] = useState<number | null>(null)
+  const [hoverPosition, setHoverPosition] = useState<number | null>(null)
+
+  // Double tap state
+  const [doubleTapAction, setDoubleTapAction] = useState<{
+    side: "left" | "right"
+    id: number
+  } | null>(null)
+  const lastTapRef = useRef<{ time: number; x: number } | null>(null)
+  const tapTimeoutRef = useRef<NodeJS.Timeout>(undefined)
+
+  const controlsTimeoutRef = useRef<NodeJS.Timeout>(undefined)
+
+  const handleTap = (e: React.MouseEvent<HTMLDivElement>) => {
+    const time = Date.now()
+    const clientX = e.clientX
+    const rect = containerRef.current?.getBoundingClientRect()
+    if (!rect) return
+
+    const x = clientX - rect.left
+    const width = rect.width
+    const isLeft = x < width * 0.3
+    const isRight = x > width * 0.7
+
+    if (!isLeft && !isRight) {
+      togglePlay()
+      return
+    }
+
+    if (lastTapRef.current && time - lastTapRef.current.time < 300) {
+      // Double tap detected
+      if (tapTimeoutRef.current) {
+        clearTimeout(tapTimeoutRef.current)
+      }
+
+      if (isLeft) {
+        handleSkip(-10)
+        setDoubleTapAction({ side: "left", id: time })
+      } else {
+        handleSkip(10)
+        setDoubleTapAction({ side: "right", id: time })
+      }
+      lastTapRef.current = null
+    } else {
+      // First tap
+      lastTapRef.current = { time, x }
+      tapTimeoutRef.current = setTimeout(() => {
+        togglePlay()
+        lastTapRef.current = null
+      }, 300)
+    }
+  }
+
+  // Clear double tap action after animation
+  useEffect(() => {
+    if (doubleTapAction) {
+      const timeout = setTimeout(() => {
+        setDoubleTapAction(null)
+      }, 1000)
+      return () => clearTimeout(timeout)
+    }
+  }, [doubleTapAction])
+
+  useImperativeHandle(ref, () => ({
+    seek: (time: number) => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = time
+        setCurrentTime(time)
+      }
+    },
+    play: () => {
+      videoRef.current?.play()
+    },
+    pause: () => {
+      videoRef.current?.pause()
+    }
+  }))
 
   // Initialize quality sources
   useEffect(() => {
@@ -178,7 +271,7 @@ export function VideoPlayer({
 
   // Handle volume change
   const handleVolumeChange = (value: number[]) => {
-    const newVolume = value[0]
+    const newVolume = value[0] ?? 1
     setVolume(newVolume)
     if (videoRef.current) {
       videoRef.current.volume = newVolume
@@ -211,6 +304,21 @@ export function VideoPlayer({
     const newTime = percent * duration
     videoRef.current.currentTime = newTime
     setCurrentTime(newTime)
+  }
+
+  // Handle progress bar hover
+  const handleProgressHover = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!duration) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    const percent = (e.clientX - rect.left) / rect.width
+    const time = Math.max(0, Math.min(percent * duration, duration))
+    setHoverTime(time)
+    setHoverPosition(percent * 100)
+  }
+
+  const handleProgressLeave = () => {
+    setHoverTime(null)
+    setHoverPosition(null)
   }
 
   // Toggle fullscreen
@@ -418,6 +526,44 @@ export function VideoPlayer({
           )}
         </AnimatePresence>
 
+        {/* Click Overlay */}
+        <div
+          className="absolute inset-0 z-10"
+          onClick={handleTap}
+        />
+
+        {/* Double Tap Animation */}
+        <AnimatePresence>
+          {doubleTapAction && (
+            <div
+              key={doubleTapAction.id}
+              className={`absolute inset-y-0 ${
+                doubleTapAction.side === "left" ? "left-0 justify-start pl-12" : "right-0 justify-end pr-12"
+              } w-1/2 flex items-center pointer-events-none z-20`}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.5 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col items-center justify-center rounded-full shadow-lg"
+              >
+                {doubleTapAction.side === "left" ? (
+                  <>
+                    <ChevronsLeft className="w-8 h-8 text-white" />
+                    <span className="text-white text-xs font-bold mt-1 shadow-lg select-none">10s</span>
+                  </>
+                ) : (
+                  <>
+                    <ChevronsRight className="w-8 h-8 text-white" />
+                    <span className="text-white text-xs font-bold mt-1 shadow-lg select-none">10s</span>
+                  </>
+                )}
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+
         {/* Center Play Button */}
         <AnimatePresence>
           {showControls && !isPlaying && (
@@ -425,13 +571,13 @@ export function VideoPlayer({
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              onClick={togglePlay}
-              className="absolute inset-0 flex items-center justify-center"
+              className="absolute inset-0 flex items-center justify-center pointer-events-none z-20"
             >
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-4 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+                className="p-4 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors pointer-events-auto"
+                onClick={togglePlay}
               >
                 <Play className="w-12 h-12 text-white fill-white" />
               </motion.div>
@@ -451,20 +597,64 @@ export function VideoPlayer({
               {/* Progress Bar */}
               <div
                 onClick={handleProgressClick}
+                onMouseMove={handleProgressHover}
+                onMouseLeave={handleProgressLeave}
                 className="group/progress relative w-full h-1.5 bg-white/20 rounded-full cursor-pointer hover:h-2 transition-all"
               >
                 {/* Buffered indicator */}
                 <div className="absolute inset-y-0 left-0 bg-white/40 rounded-full" style={{ width: `${buffered}%` }} />
+                
                 {/* Progress indicator */}
                 <div
                   className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all"
                   style={{ width: `${(currentTime / duration) * 100}%` }}
                 />
+
+                {/* Chapter markers */}
+                {chapters.length > 0 && duration > 0 && (
+                  <div className="absolute inset-0 w-full h-full pointer-events-none">
+                    {chapters.map((chapter, index) => {
+                      if (index === 0) return null
+                      const left = (chapter.startTime / duration) * 100
+                      return (
+                        <div
+                          key={index}
+                          className="absolute top-0 bottom-0 w-0.5 bg-black/50 z-10"
+                          style={{ left: `${left}%` }}
+                        />
+                      )
+                    })}
+                  </div>
+                )}
+
                 {/* Scrubber */}
                 <motion.div
-                  className="absolute top-1/2 w-4 h-4 bg-white rounded-full shadow-lg -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover/progress:opacity-100 transition-opacity"
+                  className="absolute top-1/2 w-4 h-4 bg-white rounded-full shadow-lg -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover/progress:opacity-100 transition-opacity z-20"
                   style={{ left: `${(currentTime / duration) * 100}%` }}
                 />
+                
+                {/* Hover Time Tooltip */}
+                <AnimatePresence>
+                  {hoverTime !== null && hoverPosition !== null && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.8 }}
+                      className="absolute bottom-full mb-4 -translate-x-1/2 bg-black/90 border border-white/10 rounded-lg px-2 py-1 text-xs text-white whitespace-nowrap z-50 pointer-events-none flex flex-col items-center gap-0.5"
+                      style={{ left: `${hoverPosition}%` }}
+                    >
+                      {chapters.length > 0 && (
+                        <span className="font-medium text-white/90">
+                          {chapters.find((c, i) => {
+                            const nextChapter = chapters[i + 1]
+                            return hoverTime >= c.startTime && (!nextChapter || hoverTime < nextChapter.startTime)
+                          })?.title}
+                        </span>
+                      )}
+                      <span className={chapters.length > 0 ? "text-white/70" : ""}>{formatTime(hoverTime)}</span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Time Display and Controls */}
@@ -798,7 +988,7 @@ export function VideoPlayer({
                   </div>
 
                   {/* Fullscreen */}
-                  <Tooltip label="Fullscreen (F)">
+                  <Tooltip label={isFullscreen ? "Exit Fullscreen (F)" : "Fullscreen (F)"}>
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
@@ -821,4 +1011,5 @@ export function VideoPlayer({
       </div>
     </div>
   )
-}
+})
+VideoPlayer.displayName = "VideoPlayer"

@@ -499,5 +499,19 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "video-player-timestamp-demo": {
+      name: "video-player-timestamp-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["video-player"],
+      files: [{
+        path: "registry/default/examples/video-player-timestamp-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/video-player-timestamp-demo.tsx")),
+      source: "",
+      chunks: []
+    },
   },
 }

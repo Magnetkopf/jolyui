@@ -267,4 +267,15 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "video-player-timestamp-demo",
+    type: "registry:example",
+    registryDependencies: ["video-player"],
+    files: [
+      {
+        path: "examples/video-player-timestamp-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];
