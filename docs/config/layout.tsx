@@ -33,15 +33,21 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       type: "main",
-      url: "https://sweep.jolyui.dev/ref=jolyui",
+      url: "/icona",
       text: (
         <span className="flex items-center gap-2">
-          Gradient Generator
+          Icona
           <span className="text-green-500 dark:text-green-400 border border-green-500 dark:border-green-400 rounded-lg px-1 py-0.5 text-[10px]">
             New
           </span>
         </span>
       ),
+      external: false, 
+    },
+    {
+      type: "main",
+      url: "https://sweep.jolyui.dev/ref=jolyui",
+      text: "Gradient Generator",
       external: true, 
     },
     {

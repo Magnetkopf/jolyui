@@ -341,7 +341,15 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(({
   }
 
   const toggleTheaterMode = () => {
-    setIsTheaterMode(!isTheaterMode)
+    const newTheaterMode = !isTheaterMode
+    setIsTheaterMode(newTheaterMode)
+    
+    // Lock/unlock body scroll
+    if (newTheaterMode) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
   }
 
   // Handle Picture-in-Picture
@@ -592,7 +600,7 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              className="absolute bottom-0 left-0 right-0 px-4 py-3 flex flex-col gap-3"
+              className="absolute bottom-0 left-0 right-0 px-4 py-3 flex flex-col gap-3 z-40"
             >
               {/* Progress Bar */}
               <div
