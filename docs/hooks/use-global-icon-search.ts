@@ -48,70 +48,78 @@ export function useGlobalIconSearch(
     setSearchedCategories(0);
 
     const searchCategories = async () => {
-      const allResults: IconResult[] = [];
       const normalizedQuery = query.toLowerCase();
       let categoriesSearched = 0;
+      let index = 0;
+      const concurrency = Math.min(8, categories.length);
 
-      // Search categories one by one and show results incrementally
-      for (let i = 0; i < categories.length; i++) {
-        if (controller.signal.aborted) break;
+      const processCategory = async () => {
+        while (true) {
+          if (controller.signal.aborted) return;
 
-        const category = categories[i];
-        
-        try {
-          const response = await fetch(`/api/icons/${category}`, {
-            signal: controller.signal,
-          });
-          
-          if (!response.ok) {
+          const currentIndex = index;
+          if (currentIndex >= categories.length) return;
+          index += 1;
+
+          const category = categories[currentIndex];
+
+          try {
+            const response = await fetch(`/api/icons/${category}`, {
+              signal: controller.signal,
+            });
+
+            if (!response.ok) {
+              categoriesSearched++;
+              flushSync(() => {
+                setSearchedCategories(categoriesSearched);
+              });
+              continue;
+            }
+
+            const data: CategoryResponse = await response.json();
+
+            // Get default dimensions from response
+            const defaultWidth = data.width ?? data.info?.displayHeight ?? data.info?.height ?? 16;
+            const defaultHeight = data.height ?? data.info?.displayHeight ?? data.info?.height ?? 16;
+
+            // Filter icons matching the search query
+            const matchingIcons = Object.entries(data.icons || {})
+              .filter(([name]) => name.toLowerCase().includes(normalizedQuery))
+              .map(([name, icon]) => ({
+                name,
+                svg: icon.body,
+                width: icon.width ?? defaultWidth,
+                height: icon.height ?? defaultHeight,
+                category,
+                categoryDisplay: category
+                  .split('-')
+                  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(' '),
+              }));
+
+            categoriesSearched++;
+
+            flushSync(() => {
+              setSearchedCategories(categoriesSearched);
+              if (matchingIcons.length > 0) {
+                setResults(prev => [...prev, ...matchingIcons]);
+              }
+            });
+          } catch (error) {
+            if (error instanceof Error && error.name === 'AbortError') {
+              return;
+            }
+
             categoriesSearched++;
             flushSync(() => {
               setSearchedCategories(categoriesSearched);
             });
-            continue;
           }
-
-          const data: CategoryResponse = await response.json();
-          
-          // Get default dimensions from response
-          const defaultWidth = data.width ?? data.info?.displayHeight ?? data.info?.height ?? 16;
-          const defaultHeight = data.height ?? data.info?.displayHeight ?? data.info?.height ?? 16;
-
-          // Filter icons matching the search query
-          const matchingIcons = Object.entries(data.icons || {})
-            .filter(([name]) => name.toLowerCase().includes(normalizedQuery))
-            .map(([name, icon]) => ({
-              name,
-              svg: icon.body,
-              width: icon.width ?? defaultWidth,
-              height: icon.height ?? defaultHeight,
-              category,
-              categoryDisplay: category
-                .split('-')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(' '),
-            }));
-
-          categoriesSearched++;
-          
-          // Force immediate render with flushSync - update results immediately
-          flushSync(() => {
-            setSearchedCategories(categoriesSearched);
-            if (matchingIcons.length > 0) {
-              setResults(prev => [...prev, ...matchingIcons]);
-            }
-          });
-        } catch (error) {
-          if (error instanceof Error && error.name === 'AbortError') {
-            break;
-          }
-          // Continue to next category on error
-          categoriesSearched++;
-          flushSync(() => {
-            setSearchedCategories(categoriesSearched);
-          });
         }
-      }
+      };
+
+      const workers = Array.from({ length: concurrency }, processCategory);
+      await Promise.all(workers);
 
       setLoading(false);
     };

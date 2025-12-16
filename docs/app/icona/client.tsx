@@ -569,7 +569,7 @@ export default function IconaClient() {
 
           {/* Icon Grid */}
           <div className="min-h-[400px]">
-            {(loading || isTyping) && (
+            {((loading && filteredIcons.length === 0) || isTyping) && (
               <div className="flex flex-col items-center justify-center py-32 space-y-6">
                 <div className="relative">
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 animate-pulse" />
@@ -664,20 +664,20 @@ export default function IconaClient() {
               </div>
             )}
 
-            {!loading && !isTyping && !error && filteredIcons.length > 0 && (
+            {!isTyping && !error && filteredIcons.length > 0 && (effectiveSearchMode === "global" || !loading) && (
               <>
                 <IconGrid
                   icons={paginatedIcons}
                   onIconClick={(icon: any) =>
                     setSelectedIcon({
                       ...icon,
-                      category: selectedCategory,
+                      category: icon.category ?? selectedCategory,
                     })
                   }
                 />
                 
                 {/* Pagination Controls */}
-                {totalPages > 1 && (
+                {totalPages > 1 && effectiveSearchMode !== "global" && (
                   <div className="mt-12 flex items-center justify-center gap-2">
                     <Button
                       variant="outline"
