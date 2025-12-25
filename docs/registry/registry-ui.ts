@@ -168,4 +168,15 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "highlight-text",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    files: [
+      {
+        path: "ui/highlight-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

@@ -233,6 +233,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "highlight-text": {
+      name: "highlight-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/highlight-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/highlight-text.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -1238,6 +1252,48 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/stat-counter-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "highlight-text-demo": {
+      name: "highlight-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["highlight-text"],
+      files: [{
+        path: "registry/default/examples/highlight-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/highlight-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "highlight-text-variants-demo": {
+      name: "highlight-text-variants-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["highlight-text"],
+      files: [{
+        path: "registry/default/examples/highlight-text-variants-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/highlight-text-variants-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "highlight-text-colors-demo": {
+      name: "highlight-text-colors-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["highlight-text"],
+      files: [{
+        path: "registry/default/examples/highlight-text-colors-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/highlight-text-colors-demo.tsx")),
       source: "",
       chunks: []
     },

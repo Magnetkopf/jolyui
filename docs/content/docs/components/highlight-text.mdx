@@ -1,0 +1,64 @@
+---
+title: Highlight Text
+description: A component to highlight text with animated SVG shapes like underlines, boxes, circles, and markers.
+preview: true
+links:
+ api: /docs/components/highlight-text#api-reference
+---
+
+<ComponentTabs name="highlight-text-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/highlight-text"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     class-variance-authority
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="highlight-text" />
+  </Step>
+</Steps>
+
+## Features
+
+- **Multiple Variants**: Choose from underline, box, circle, and marker styles.
+- **Animated**: Smooth SVG drawing animations when the component comes into view.
+- **Customizable**: Adjust colors, stroke width, animation duration, and delay.
+- **Responsive**: Automatically adjusts to the size of the text content.
+
+## Examples
+
+### Variants
+
+Different styles of highlighting.
+
+<ComponentTabs name="highlight-text-variants-demo" />
+
+### Colors
+
+Different color themes for the highlights.
+
+<ComponentTabs name="highlight-text-colors-demo" />
+
+## API Reference
+
+### HighlightText
+
+<AutoTypeTable
+  path="./types/docs/highlight-text.ts"
+  name="HighlightTextProps"
+/>

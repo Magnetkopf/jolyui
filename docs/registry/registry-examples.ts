@@ -774,4 +774,37 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "highlight-text-demo",
+    type: "registry:example",
+    registryDependencies: ["highlight-text"],
+    files: [
+      {
+        path: "examples/highlight-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "highlight-text-variants-demo",
+    type: "registry:example",
+    registryDependencies: ["highlight-text"],
+    files: [
+      {
+        path: "examples/highlight-text-variants-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "highlight-text-colors-demo",
+    type: "registry:example",
+    registryDependencies: ["highlight-text"],
+    files: [
+      {
+        path: "examples/highlight-text-colors-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

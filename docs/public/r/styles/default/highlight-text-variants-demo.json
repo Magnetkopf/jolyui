@@ -1,0 +1,15 @@
+{
+  "name": "highlight-text-variants-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "highlight-text"
+  ],
+  "files": [
+    {
+      "path": "examples/highlight-text-variants-demo.tsx",
+      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\n\nexport default function HighlightTextVariantsDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-12 py-10\">\n      <div className=\"text-2xl font-medium\">\n        This is an <HighlightText variant=\"underline\">underline</HighlightText> highlight.\n      </div>\n      <div className=\"text-2xl font-medium\">\n        This is a <HighlightText variant=\"box\">box</HighlightText> highlight.\n      </div>\n      <div className=\"text-2xl font-medium\">\n        This is a <HighlightText variant=\"circle\">circle</HighlightText> highlight.\n      </div>\n      <div className=\"text-2xl font-medium\">\n        This is a <HighlightText variant=\"marker\">marker</HighlightText> highlight.\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
