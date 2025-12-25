@@ -1,0 +1,99 @@
+---
+title: Morph Text
+description: A collection of text morphing animations including blur, character stagger, scramble, and velocity effects.
+preview: true
+links:
+ api: /docs/components/morph-text#api-reference
+---
+
+<ComponentTabs name="morph-text-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/morph-text"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="morph-text" />
+  </Step>
+</Steps>
+
+## Features
+
+- **Multiple Effects**: Includes Blur Morph, Character Stagger, Scramble, and Velocity Morph.
+- **Customizable**: Adjust durations, delays, intervals, and character sets.
+- **Accessible**: Uses standard HTML elements and respects reduced motion preferences (via Framer Motion).
+- **Responsive**: Works with any text size and font.
+
+## Examples
+
+### Character Morph
+
+Staggered character-by-character transition with 3D rotation and blur.
+
+<ComponentTabs name="morph-text-character-demo" />
+
+### Scramble Morph
+
+Decryption-style effect that cycles through random characters before revealing the text.
+
+<ComponentTabs name="morph-text-scramble-demo" />
+
+### Velocity Morph
+
+Fast, motion-blurred vertical transitions for high-energy text changes.
+
+<ComponentTabs name="morph-text-velocity-demo" />
+
+## API Reference
+
+### MorphText
+
+The default blur morph component.
+
+<AutoTypeTable
+  path="./types/docs/morph-text.ts"
+  name="MorphTextProps"
+/>
+
+### CharacterMorph
+
+Character-by-character staggered morph component.
+
+<AutoTypeTable
+  path="./types/docs/morph-text.ts"
+  name="CharacterMorphProps"
+/>
+
+### ScrambleMorph
+
+Random character scrambling effect component.
+
+<AutoTypeTable
+  path="./types/docs/morph-text.ts"
+  name="ScrambleMorphProps"
+/>
+
+### VelocityMorph
+
+High-speed vertical transition component.
+
+<AutoTypeTable
+  path="./types/docs/morph-text.ts"
+  name="VelocityMorphProps"
+/>

@@ -1,0 +1,99 @@
+---
+title: Number Counter
+description: A collection of animated number counters including rolling digits, circular progress, and statistical counters.
+preview: true
+links:
+ api: /docs/components/number-counter#api-reference
+---
+
+<ComponentTabs name="number-counter-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/number-counter"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="number-counter" />
+  </Step>
+</Steps>
+
+## Features
+
+- **Multiple Styles**: Includes standard counter, rolling digits, circular progress, and stat cards.
+- **Customizable**: Adjust duration, easing, formatting, prefixes, and suffixes.
+- **Performance**: Optimized animations using Framer Motion and requestAnimationFrame.
+- **Accessible**: Uses tabular-nums for consistent width and proper ARIA support.
+
+## Examples
+
+### Rolling Counter
+
+A classic odometer-style rolling counter effect.
+
+<ComponentTabs name="rolling-counter-demo" />
+
+### Circular Counter
+
+A circular progress indicator with an animated percentage counter.
+
+<ComponentTabs name="circular-counter-demo" />
+
+### Stat Counter
+
+A pre-styled component perfect for displaying statistics and metrics.
+
+<ComponentTabs name="stat-counter-demo" />
+
+## API Reference
+
+### NumberCounter
+
+The core counter component with easing support.
+
+<AutoTypeTable
+  path="./types/docs/number-counter.ts"
+  name="NumberCounterProps"
+/>
+
+### RollingCounter
+
+Odometer-style rolling digit counter.
+
+<AutoTypeTable
+  path="./types/docs/number-counter.ts"
+  name="RollingCounterProps"
+/>
+
+### CircularCounter
+
+Circular progress counter.
+
+<AutoTypeTable
+  path="./types/docs/number-counter.ts"
+  name="CircularCounterProps"
+/>
+
+### StatCounter
+
+Statistical display component.
+
+<AutoTypeTable
+  path="./types/docs/number-counter.ts"
+  name="StatCounterProps"
+/>

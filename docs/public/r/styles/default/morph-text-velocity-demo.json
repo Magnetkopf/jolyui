@@ -1,0 +1,15 @@
+{
+  "name": "morph-text-velocity-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "morph-text"
+  ],
+  "files": [
+    {
+      "path": "examples/morph-text-velocity-demo.tsx",
+      "content": "import { VelocityMorph } from \"@/registry/default/ui/morph-text\";\n\nconst texts = [\n  \"Fast\",\n  \"Fluid\",\n  \"Dynamic\",\n  \"Motion\",\n  \"Velocity\",\n];\n\nexport default function MorphTextVelocityDemo() {\n  return (\n    <div className=\"flex h-[200px] w-full items-center justify-center bg-black text-white\">\n      <VelocityMorph\n        texts={texts}\n        className=\"text-4xl font-black uppercase tracking-tighter sm:text-7xl italic\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

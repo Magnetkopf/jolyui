@@ -1,0 +1,15 @@
+{
+  "name": "scroll-text-fade-up-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "scroll-text"
+  ],
+  "files": [
+    {
+      "path": "examples/scroll-text-fade-up-demo.tsx",
+      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function ScrollTextFadeUpDemo() {\n  return (\n    <div className=\"flex items-center justify-center h-[400px] w-full\">\n      <ScrollText effect=\"fadeUp\" className=\"text-4xl font-bold\">\n        Fade Up Animation\n      </ScrollText>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

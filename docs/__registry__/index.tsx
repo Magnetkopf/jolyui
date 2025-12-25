@@ -191,6 +191,48 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "morph-text": {
+      name: "morph-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/morph-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/morph-text.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-text": {
+      name: "scroll-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/scroll-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/scroll-text.tsx")),
+      source: "",
+      chunks: []
+    },
+    "number-counter": {
+      name: "number-counter",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/number-counter.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/number-counter.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -944,6 +986,258 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/code-block-glass-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "morph-text-demo": {
+      name: "morph-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["morph-text"],
+      files: [{
+        path: "registry/default/examples/morph-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/morph-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "morph-text-character-demo": {
+      name: "morph-text-character-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["morph-text"],
+      files: [{
+        path: "registry/default/examples/morph-text-character-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/morph-text-character-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "morph-text-scramble-demo": {
+      name: "morph-text-scramble-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["morph-text"],
+      files: [{
+        path: "registry/default/examples/morph-text-scramble-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/morph-text-scramble-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "morph-text-velocity-demo": {
+      name: "morph-text-velocity-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["morph-text"],
+      files: [{
+        path: "registry/default/examples/morph-text-velocity-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/morph-text-velocity-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-text-demo": {
+      name: "scroll-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/scroll-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/scroll-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-reveal-demo": {
+      name: "scroll-reveal-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/scroll-reveal-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/scroll-reveal-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "horizontal-scroll-text-demo": {
+      name: "horizontal-scroll-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/horizontal-scroll-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/horizontal-scroll-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-progress-text-demo": {
+      name: "scroll-progress-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/scroll-progress-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/scroll-progress-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "sticky-scroll-text-demo": {
+      name: "sticky-scroll-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/sticky-scroll-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/sticky-scroll-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-text-fade-up-demo": {
+      name: "scroll-text-fade-up-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/scroll-text-fade-up-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/scroll-text-fade-up-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-text-blur-demo": {
+      name: "scroll-text-blur-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/scroll-text-blur-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/scroll-text-blur-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-text-scale-demo": {
+      name: "scroll-text-scale-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/scroll-text-scale-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/scroll-text-scale-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-text-rotate-demo": {
+      name: "scroll-text-rotate-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/scroll-text-rotate-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/scroll-text-rotate-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "scroll-text-slide-left-demo": {
+      name: "scroll-text-slide-left-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["scroll-text"],
+      files: [{
+        path: "registry/default/examples/scroll-text-slide-left-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/scroll-text-slide-left-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "number-counter-demo": {
+      name: "number-counter-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["number-counter"],
+      files: [{
+        path: "registry/default/examples/number-counter-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/number-counter-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "rolling-counter-demo": {
+      name: "rolling-counter-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["number-counter"],
+      files: [{
+        path: "registry/default/examples/rolling-counter-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/rolling-counter-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "circular-counter-demo": {
+      name: "circular-counter-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["number-counter"],
+      files: [{
+        path: "registry/default/examples/circular-counter-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/circular-counter-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "stat-counter-demo": {
+      name: "stat-counter-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["number-counter"],
+      files: [{
+        path: "registry/default/examples/stat-counter-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/stat-counter-demo.tsx")),
       source: "",
       chunks: []
     },

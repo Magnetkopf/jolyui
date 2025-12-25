@@ -576,4 +576,202 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "morph-text-demo",
+    type: "registry:example",
+    registryDependencies: ["morph-text"],
+    files: [
+      {
+        path: "examples/morph-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "morph-text-character-demo",
+    type: "registry:example",
+    registryDependencies: ["morph-text"],
+    files: [
+      {
+        path: "examples/morph-text-character-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "morph-text-scramble-demo",
+    type: "registry:example",
+    registryDependencies: ["morph-text"],
+    files: [
+      {
+        path: "examples/morph-text-scramble-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "morph-text-velocity-demo",
+    type: "registry:example",
+    registryDependencies: ["morph-text"],
+    files: [
+      {
+        path: "examples/morph-text-velocity-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-text-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/scroll-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-reveal-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/scroll-reveal-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "horizontal-scroll-text-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/horizontal-scroll-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-progress-text-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/scroll-progress-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "sticky-scroll-text-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/sticky-scroll-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-text-fade-up-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/scroll-text-fade-up-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-text-blur-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/scroll-text-blur-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-text-scale-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/scroll-text-scale-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-text-rotate-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/scroll-text-rotate-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-text-slide-left-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-text"],
+    files: [
+      {
+        path: "examples/scroll-text-slide-left-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "number-counter-demo",
+    type: "registry:example",
+    registryDependencies: ["number-counter"],
+    files: [
+      {
+        path: "examples/number-counter-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "rolling-counter-demo",
+    type: "registry:example",
+    registryDependencies: ["number-counter"],
+    files: [
+      {
+        path: "examples/rolling-counter-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "circular-counter-demo",
+    type: "registry:example",
+    registryDependencies: ["number-counter"],
+    files: [
+      {
+        path: "examples/circular-counter-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "stat-counter-demo",
+    type: "registry:example",
+    registryDependencies: ["number-counter"],
+    files: [
+      {
+        path: "examples/stat-counter-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

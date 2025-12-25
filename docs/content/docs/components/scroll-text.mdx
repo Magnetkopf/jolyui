@@ -1,0 +1,124 @@
+---
+title: Scroll Text
+description: A collection of scroll-triggered text animations including reveal, fade, scale, horizontal scroll, and sticky effects.
+preview: true
+links:
+ api: /docs/components/scroll-text#api-reference
+---
+
+### Fade Up
+
+<ComponentTabs name="scroll-text-fade-up-demo" />
+
+### Blur
+
+<ComponentTabs name="scroll-text-blur-demo" />
+
+### Scale
+
+<ComponentTabs name="scroll-text-scale-demo" />
+
+### Rotate
+
+<ComponentTabs name="scroll-text-rotate-demo" />
+
+### Slide Left
+
+<ComponentTabs name="scroll-text-slide-left-demo" />
+
+### Horizontal Scroll
+
+Create marquee-like horizontal scrolling text that moves with the page scroll.
+
+<ComponentTabs name="horizontal-scroll-text-demo" />
+
+### Scroll Reveal
+
+Reveal content as it enters the viewport with customizable direction and delay.
+
+<ComponentTabs name="scroll-reveal-demo" />
+
+### Scroll Progress
+
+Highlight text character-by-character based on scroll progress.
+
+<ComponentTabs name="scroll-progress-text-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/scroll-text"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="scroll-text" />
+  </Step>
+</Steps>
+
+## Features
+
+- **Multiple Effects**: Fade, Scale, Rotate, Blur, Slide, and more.
+- **Scroll Triggers**: Animations are driven by scroll position.
+- **Spring Physics**: Smooth, natural motion using spring animations.
+- **Specialized Components**: Includes `ScrollReveal`, `HorizontalScrollText`, `ScrollProgressText`, and `StickyScrollText`.
+
+## API Reference
+
+### ScrollText
+
+The main component for scroll-triggered animations.
+
+<AutoTypeTable
+  path="./types/docs/scroll-text.ts"
+  name="ScrollTextProps"
+/>
+
+### ScrollReveal
+
+A component for revealing content as it enters the viewport.
+
+<AutoTypeTable
+  path="./types/docs/scroll-text.ts"
+  name="ScrollRevealProps"
+/>
+
+### HorizontalScrollText
+
+A component for horizontally scrolling text.
+
+<AutoTypeTable
+  path="./types/docs/scroll-text.ts"
+  name="HorizontalScrollTextProps"
+/>
+
+### ScrollProgressText
+
+A component for highlighting text based on scroll progress.
+
+<AutoTypeTable
+  path="./types/docs/scroll-text.ts"
+  name="ScrollProgressTextProps"
+/>
+
+### StickyScrollText
+
+A component for sticky scroll effects.
+
+<AutoTypeTable
+  path="./types/docs/scroll-text.ts"
+  name="StickyScrollTextProps"
+/>

@@ -1,0 +1,15 @@
+{
+  "name": "morph-text-scramble-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "morph-text"
+  ],
+  "files": [
+    {
+      "path": "examples/morph-text-scramble-demo.tsx",
+      "content": "import { ScrambleMorph } from \"@/registry/default/ui/morph-text\";\n\nconst texts = [\n  \"System Encrypted\",\n  \"Access Denied\",\n  \"Decrypting...\",\n  \"Access Granted\",\n  \"Welcome User\",\n];\n\nexport default function MorphTextScrambleDemo() {\n  return (\n    <div className=\"flex h-[200px] w-full items-center justify-center bg-black text-green-500\">\n      <ScrambleMorph\n        texts={texts}\n        className=\"text-3xl font-bold tracking-wider sm:text-5xl font-mono\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

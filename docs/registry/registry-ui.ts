@@ -135,4 +135,37 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "morph-text",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/morph-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "scroll-text",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/scroll-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "number-counter",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/number-counter.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];
