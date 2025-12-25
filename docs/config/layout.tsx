@@ -46,7 +46,7 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       type: "main",
-      url: "https://sweep.jolyui.dev/ref=jolyui",
+      url: "https://sweep.jolyui.dev?ref=jolyui",
       text: "Gradient Generator",
       external: true, 
     },

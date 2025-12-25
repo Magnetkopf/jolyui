@@ -115,7 +115,7 @@ export default async function DocPage(props: DocPageParams) {
         <DocsDescription className="mb-2.5">
           {page.data.description}
         </DocsDescription>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 lg:flex-nowrap flex-wrap">
           {docLink ? <DynamicLink href={docLink}>Docs</DynamicLink> : null}
           {apiLink ? <DynamicLink href={apiLink}>API</DynamicLink> : null}
           {(docLink || apiLink) && (

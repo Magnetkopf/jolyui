@@ -84,7 +84,7 @@ export function Header() {
                     </Link> */}
 
                     <Link
-                      href="https://sweep.jolyui.dev/?ref=jolyui"
+                      href="https://sweep.jolyui.dev?ref=jolyui"
                       target="_blank"
                       className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors flex items-center gap-2"
                     >

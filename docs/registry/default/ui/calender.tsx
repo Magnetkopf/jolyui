@@ -87,13 +87,8 @@ export interface CalendarLocale {
   weekNumber: string;
 }
 
-export interface AnimatedCalendarProps {
-  // Core
-  mode?: CalendarMode;
-  value?: Date | DateRange | Date[];
-  defaultValue?: Date | DateRange | Date[];
-  onChange?: (value: Date | DateRange | Date[] | undefined) => void;
-  
+// Base props shared by all modes
+interface BaseCalendarProps {
   // Display
   placeholder?: string;
   disabled?: boolean;
@@ -158,6 +153,41 @@ export interface AnimatedCalendarProps {
   // Form integration
   onBlur?: () => void;
   onFocus?: () => void;
+}
+
+// Single date selection mode
+interface SingleModeProps extends BaseCalendarProps {
+  mode?: "single";
+  value?: Date;
+  defaultValue?: Date;
+  onChange?: (value: Date | undefined) => void;
+}
+
+// Range selection mode
+interface RangeModeProps extends BaseCalendarProps {
+  mode: "range";
+  value?: DateRange;
+  defaultValue?: DateRange;
+  onChange?: (value: DateRange | undefined) => void;
+}
+
+// Multiple dates selection mode
+interface MultipleModeProps extends BaseCalendarProps {
+  mode: "multiple";
+  value?: Date[];
+  defaultValue?: Date[];
+  onChange?: (value: Date[]) => void;
+}
+
+// Union type for all calendar props (external API)
+export type AnimatedCalendarProps = SingleModeProps | RangeModeProps | MultipleModeProps;
+
+// Internal unified type for component implementation
+interface InternalCalendarProps extends BaseCalendarProps {
+  mode?: CalendarMode;
+  value?: Date | DateRange | Date[];
+  defaultValue?: Date | DateRange | Date[];
+  onChange?: (value: Date | DateRange | Date[] | undefined) => void;
 }
 
 // ============================================================================
@@ -622,7 +652,7 @@ const CalendarContent = React.memo(({
   renderDay,
   onClose,
   id,
-}: AnimatedCalendarProps & { 
+}: InternalCalendarProps & { 
   onClose?: () => void;
   localeStrings: CalendarLocale;
 }) => {
@@ -1284,10 +1314,12 @@ export function AnimatedCalendar({
     ...customLocaleStrings
   }), [customLocaleStrings]);
 
-  const [value, setValue] = useControllableState(
-    controlledValue,
-    defaultValue ?? (mode === "multiple" ? [] : undefined),
-    onChange
+  // Internal state uses unified type for implementation
+  type InternalValue = Date | DateRange | Date[] | undefined;
+  const [value, setValue] = useControllableState<InternalValue>(
+    controlledValue as InternalValue,
+    (defaultValue ?? (mode === "multiple" ? [] : undefined)) as InternalValue,
+    onChange as ((value: InternalValue) => void) | undefined
   );
 
   const handleOpenChange = useCallback((open: boolean) => {
@@ -1318,7 +1350,8 @@ export function AnimatedCalendar({
     }
     if (mode === "multiple" && Array.isArray(value)) {
       if (value.length === 0) return placeholder;
-      if (value.length === 1) return format(value[0], "PPP", { locale });
+      const firstDate = value[0];
+      if (value.length === 1 && firstDate) return format(firstDate, "PPP", { locale });
       return `${value.length} dates selected`;
     }
     return placeholder;
@@ -1360,18 +1393,18 @@ export function AnimatedCalendar({
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0 border-0 bg-transparent shadow-none" align="start">
           <CalendarContent
+            {...(props as InternalCalendarProps)}
             mode={mode}
-            value={value}
-            onChange={setValue}
+            value={value as Date | DateRange | Date[] | undefined}
+            onChange={setValue as (value: Date | DateRange | Date[] | undefined) => void}
             disabled={disabled}
             readOnly={readOnly}
             showTime={showTime}
             use24Hour={use24Hour}
             size={size}
             locale={locale}
-            localeStrings={localeStrings}
+            localeStrings={localeStrings as CalendarLocale}
             onClose={() => handleOpenChange(false)}
-            {...props}
           />
         </PopoverContent>
       </Popover>
@@ -1409,5 +1442,5 @@ export function AnimatedCalendarStandalone({
     ...customLocaleStrings
   }), [customLocaleStrings]);
 
-  return <CalendarContent localeStrings={localeStrings} {...props} />;
+  return <CalendarContent {...(props as InternalCalendarProps)} localeStrings={localeStrings as CalendarLocale} />;
 }

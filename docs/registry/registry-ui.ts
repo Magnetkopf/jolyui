@@ -113,4 +113,15 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "calender",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "motion", "date-fns"],
+    files: [
+      {
+        path: "ui/calender.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

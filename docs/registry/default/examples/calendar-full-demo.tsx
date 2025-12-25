@@ -6,17 +6,6 @@ export default function CalendarFullDemo() {
   const [dateRange, setDateRange] = useState<{ from?: Date; to?: Date }>();
   const [dates, setDates] = useState<Date[]>([]);
 
-  const presets = [
-    {
-      label: "Today",
-      value: new Date(),
-    },
-    {
-      label: "Next Week",
-      value: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-    },
-  ];
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div className="flex flex-col gap-3">
@@ -25,7 +14,7 @@ export default function CalendarFullDemo() {
           mode="single"
           value={date}
           onChange={setDate}
-          presets={presets}
+          showPresets
           placeholder="Pick a date"
         />
         {date && (
@@ -39,7 +28,6 @@ export default function CalendarFullDemo() {
         <h3 className="font-medium text-sm">Date Range</h3>
         <AnimatedCalendar
           mode="range"
-          value={dateRange}
           onChange={setDateRange}
           placeholder="Select range"
         />
