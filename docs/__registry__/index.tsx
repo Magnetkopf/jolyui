@@ -177,6 +177,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "code-block": {
+      name: "code-block",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/code-block.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/code-block.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -832,6 +846,104 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/calendar-full-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "code-block-demo": {
+      name: "code-block-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["code-block"],
+      files: [{
+        path: "registry/default/examples/code-block-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/code-block-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "code-block-variants-demo": {
+      name: "code-block-variants-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["code-block"],
+      files: [{
+        path: "registry/default/examples/code-block-variants-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/code-block-variants-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "code-block-animations-demo": {
+      name: "code-block-animations-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["code-block"],
+      files: [{
+        path: "registry/default/examples/code-block-animations-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/code-block-animations-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "code-block-compare-demo": {
+      name: "code-block-compare-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["code-block"],
+      files: [{
+        path: "registry/default/examples/code-block-compare-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/code-block-compare-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "code-block-tabs-demo": {
+      name: "code-block-tabs-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["code-block"],
+      files: [{
+        path: "registry/default/examples/code-block-tabs-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/code-block-tabs-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "code-block-terminal-demo": {
+      name: "code-block-terminal-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["code-block"],
+      files: [{
+        path: "registry/default/examples/code-block-terminal-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/code-block-terminal-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "code-block-glass-demo": {
+      name: "code-block-glass-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["code-block"],
+      files: [{
+        path: "registry/default/examples/code-block-glass-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/code-block-glass-demo.tsx")),
       source: "",
       chunks: []
     },

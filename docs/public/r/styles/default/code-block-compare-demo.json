@@ -1,0 +1,15 @@
+{
+  "name": "code-block-compare-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "code-block"
+  ],
+  "files": [
+    {
+      "path": "examples/code-block-compare-demo.tsx",
+      "content": "import { CodeCompare } from \"@/registry/default/ui/code-block\";\n\nconst beforeCode = `function add(a, b) {\n  return a + b;\n}`;\n\nconst afterCode = `function add(a: number, b: number): number {\n  return a + b;\n}`;\n\nexport default function CodeBlockCompareDemo() {\n  return (\n    <div className=\"w-full max-w-4xl\">\n      <CodeCompare\n        before={beforeCode}\n        after={afterCode}\n        language=\"typescript\"\n        beforeTitle=\"JavaScript\"\n        afterTitle=\"TypeScript\"\n        showDiff={true}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

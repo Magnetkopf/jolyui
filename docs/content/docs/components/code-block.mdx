@@ -1,0 +1,107 @@
+---
+title: Code Block
+description: A powerful, animated code block component with syntax highlighting, copy/download functionality, and multiple variants.
+preview: true
+links:
+ api: /docs/components/code-block#api-reference
+---
+
+<ComponentTabs name="code-block-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/code-block"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     lucide-react motion prism-react-renderer
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="code-block" />
+  </Step>
+</Steps>
+
+## Features
+
+- **Syntax Highlighting**: Supports over 30 languages using `prism-react-renderer`.
+- **Multiple Variants**: Default, Terminal, Minimal, Gradient, and Glass styles.
+- **Animations**: Fade in, Slide in, Typewriter, and Highlight effects.
+- **Interactive**: Copy to clipboard, download code, collapse/expand.
+- **Line Handling**: Line numbers, line highlighting, added/removed lines (diff).
+- **Special Components**: Includes `CodeCompare`, `CodeTabs`, and `TerminalBlock`.
+
+## Examples
+
+### Terminal
+
+Terminal variant with fade in animation.
+
+<ComponentTabs name="code-block-terminal-demo" />
+
+### Glass + Dracula Theme
+
+Glass variant with dracula theme and highlight animation.
+
+<ComponentTabs name="code-block-glass-demo" />
+
+### Code Comparison
+
+Display side-by-side code comparisons with diff highlighting.
+
+<ComponentTabs name="code-block-compare-demo" />
+
+### Code Tabs
+
+Organize multiple code snippets into tabs.
+
+<ComponentTabs name="code-block-tabs-demo" />
+
+## API Reference
+
+### CodeBlock
+
+The main component for displaying code.
+
+<AutoTypeTable
+  path="./types/docs/code-block.ts"
+  name="CodeBlockProps"
+/>
+
+### CodeCompare
+
+A component for comparing two blocks of code.
+
+<AutoTypeTable
+  path="./types/docs/code-block.ts"
+  name="CodeCompareProps"
+/>
+
+### CodeTabs
+
+A component for displaying multiple code blocks in tabs.
+
+<AutoTypeTable
+  path="./types/docs/code-block.ts"
+  name="CodeTabsProps"
+/>
+
+### TerminalBlock
+
+A component for displaying terminal commands and outputs.
+
+<AutoTypeTable
+  path="./types/docs/code-block.ts"
+  name="TerminalBlockProps"
+/>

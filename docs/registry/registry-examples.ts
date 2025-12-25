@@ -499,4 +499,81 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "code-block-demo",
+    type: "registry:example",
+    registryDependencies: ["code-block"],
+    files: [
+      {
+        path: "examples/code-block-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "code-block-variants-demo",
+    type: "registry:example",
+    registryDependencies: ["code-block"],
+    files: [
+      {
+        path: "examples/code-block-variants-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "code-block-animations-demo",
+    type: "registry:example",
+    registryDependencies: ["code-block"],
+    files: [
+      {
+        path: "examples/code-block-animations-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "code-block-compare-demo",
+    type: "registry:example",
+    registryDependencies: ["code-block"],
+    files: [
+      {
+        path: "examples/code-block-compare-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "code-block-tabs-demo",
+    type: "registry:example",
+    registryDependencies: ["code-block"],
+    files: [
+      {
+        path: "examples/code-block-tabs-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "code-block-terminal-demo",
+    type: "registry:example",
+    registryDependencies: ["code-block"],
+    files: [
+      {
+        path: "examples/code-block-terminal-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+    {
+    name: "code-block-glass-demo",
+    type: "registry:example",
+    registryDependencies: ["code-block"],
+    files: [
+      {
+        path: "examples/code-block-glass-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

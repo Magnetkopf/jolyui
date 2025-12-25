@@ -84,16 +84,7 @@ export default function MyComponent() {
 
 ### AnimatedCalendar
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `mode` | `"single" \| "range" \| "multiple"` | `"single"` | The selection mode for the calendar |
-| `value` | `Date \| { from?: Date; to?: Date } \| Date[]` | - | The selected date(s) |
-| `onChange` | `(date: Date \| { from?: Date; to?: Date } \| Date[]) => void` | - | Callback when selection changes |
-| `placeholder` | `string` | - | Placeholder text for the input |
-| `showTime` | `boolean` | `false` | Whether to show time picker |
-| `presets` | `Array<{ label: string; value: Date }>` | - | Quick selection presets |
-| `disabled` | `(date: Date) => boolean` | - | Function to disable specific dates |
-| `minDate` | `Date` | - | Minimum selectable date |
-| `maxDate` | `Date` | - | Maximum selectable date |
-| `locale` | `Locale` | - | Date-fns locale for internationalization |
-| `className` | `string` | - | Additional CSS classes |
+<AutoTypeTable
+  path="./types/docs/calendar.ts"
+  name="AnimatedCalendarProps"
+/>

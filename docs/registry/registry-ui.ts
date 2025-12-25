@@ -124,4 +124,15 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "code-block",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "motion", "prism-react-renderer"],
+    files: [
+      {
+        path: "ui/code-block.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

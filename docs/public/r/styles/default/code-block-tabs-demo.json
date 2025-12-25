@@ -1,0 +1,15 @@
+{
+  "name": "code-block-tabs-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "code-block"
+  ],
+  "files": [
+    {
+      "path": "examples/code-block-tabs-demo.tsx",
+      "content": "import { CodeTabs } from \"@/registry/default/ui/code-block\";\nimport { FileJson, FileType } from \"lucide-react\";\n\nconst tsCode = `interface User {\n  id: number;\n  name: string;\n  email: string;\n}`;\n\nconst jsonCode = `{\n  \"id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\"\n}`;\n\nexport default function CodeBlockTabsDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <CodeTabs\n        tabs={[\n          {\n            label: \"types.ts\",\n            code: tsCode,\n            language: \"typescript\",\n            icon: <FileType className=\"h-4 w-4\" />,\n          },\n          {\n            label: \"data.json\",\n            code: jsonCode,\n            language: \"json\",\n            icon: <FileJson className=\"h-4 w-4\" />,\n          },\n        ]}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
