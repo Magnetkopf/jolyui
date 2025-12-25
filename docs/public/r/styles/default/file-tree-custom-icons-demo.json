@@ -1,0 +1,18 @@
+{
+  "name": "file-tree-custom-icons-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "file-tree"
+  ],
+  "files": [
+    {
+      "path": "examples/file-tree-custom-icons-demo.tsx",
+      "content": "import { FileTree } from \"@/registry/default/ui/file-tree\";\nimport { FileCode, FileJson, Image, Package, Settings } from \"lucide-react\";\n\nconst customIconsTreeData = [\n  {\n    id: \"src\",\n    name: \"src\",\n    type: \"folder\" as const,\n    children: [\n      {\n        id: \"components\",\n        name: \"components\",\n        type: \"folder\" as const,\n        children: [\n          { id: \"button\", name: \"Button.tsx\", type: \"file\" as const, icon: <FileCode className=\"h-4 w-4 text-blue-400\" /> },\n          { id: \"input\", name: \"Input.tsx\", type: \"file\" as const, icon: <FileCode className=\"h-4 w-4 text-blue-400\" /> },\n        ],\n      },\n      { id: \"utils\", name: \"utils.ts\", type: \"file\" as const, icon: <FileCode className=\"h-4 w-4 text-yellow-400\" /> },\n    ],\n  },\n  {\n    id: \"public\",\n    name: \"public\",\n    type: \"folder\" as const,\n    children: [\n      { id: \"logo\", name: \"logo.svg\", type: \"file\" as const, icon: <Image className=\"h-4 w-4 text-pink-400\" /> },\n      { id: \"favicon\", name: \"favicon.ico\", type: \"file\" as const, icon: <Image className=\"h-4 w-4 text-pink-400\" /> },\n    ],\n  },\n  { id: \"package\", name: \"package.json\", type: \"file\" as const, icon: <Package className=\"h-4 w-4 text-green-400\" /> },\n  { id: \"tsconfig\", name: \"tsconfig.json\", type: \"file\" as const, icon: <FileJson className=\"h-4 w-4 text-yellow-500\" /> },\n  { id: \"vite\", name: \"vite.config.ts\", type: \"file\" as const, icon: <Settings className=\"h-4 w-4 text-purple-400\" /> },\n];\n\nexport default function FileTreeCustomIconsDemo() {\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">File Tree with Custom Icons</h3>\n      <FileTree data={customIconsTreeData} />\n    </div>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

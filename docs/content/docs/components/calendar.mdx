@@ -1,0 +1,178 @@
+---
+title: Calendar
+description: An animated calendar component with single, range, and multiple date selection modes, time picker, presets, and constraints.
+preview: true
+links:
+ api: /docs/components/calendar#api-reference
+---
+
+## Basic Calendar
+
+<ComponentTabs name="calendar-basic-demo" />
+
+## Date Range Selection
+
+<ComponentTabs name="calendar-range-demo" />
+
+## Multiple Date Selection
+
+<ComponentTabs name="calendar-multiple-demo" />
+
+## Date & Time Selection
+
+<ComponentTabs name="calendar-time-demo" />
+
+## Calendar with Presets
+
+<ComponentTabs name="calendar-presets-demo" />
+
+## Calendar with Constraints
+
+<ComponentTabs name="calendar-constraints-demo" />
+
+## Full Featured Examples
+
+<ComponentTabs name="calendar-full-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/calender"
+
+```
+
+### Manual
+
+Copy and paste the following code into your project.
+
+```tsx
+import { AnimatedCalendar } from "@/components/ui/calender"
+```
+
+## Usage
+
+```tsx
+import { useState } from "react"
+import { AnimatedCalendar } from "@/components/ui/calender"
+
+export default function MyComponent() {
+  const [date, setDate] = useState<Date>()
+
+  return (
+    <AnimatedCalendar
+      mode="single"
+      value={date}
+      onChange={setDate}
+      placeholder="Select a date"
+    />
+  )
+}
+```
+
+## API Reference
+
+### AnimatedCalendar
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `mode` | `"single" \| "range" \| "multiple"` | `"single"` | The selection mode for the calendar |
+| `value` | `Date \| { from?: Date; to?: Date } \| Date[]` | - | The selected date(s) |
+| `onChange` | `(date: Date \| { from?: Date; to?: Date } \| Date[]) => void` | - | Callback when selection changes |
+| `placeholder` | `string` | - | Placeholder text for the input |
+| `showTime` | `boolean` | `false` | Whether to show time picker |
+| `presets` | `Array<{ label: string; value: Date }>` | - | Quick selection presets |
+| `disabled` | `(date: Date) => boolean` | - | Function to disable specific dates |
+| `minDate` | `Date` | - | Minimum selectable date |
+| `maxDate` | `Date` | - | Maximum selectable date |
+| `locale` | `Locale` | - | Date-fns locale for internationalization |
+| `className` | `string` | - | Additional CSS classes |
+
+## Examples
+
+### Single Date Selection
+
+```tsx
+const [date, setDate] = useState<Date>()
+
+<AnimatedCalendar
+  mode="single"
+  value={date}
+  onChange={setDate}
+  placeholder="Pick a date"
+/>
+```
+
+### Date Range Selection
+
+```tsx
+const [range, setRange] = useState<{ from?: Date; to?: Date }>()
+
+<AnimatedCalendar
+  mode="range"
+  value={range}
+  onChange={setRange}
+  placeholder="Select date range"
+/>
+```
+
+### Multiple Date Selection
+
+```tsx
+const [dates, setDates] = useState<Date[]>([])
+
+<AnimatedCalendar
+  mode="multiple"
+  value={dates}
+  onChange={setDates}
+  placeholder="Select multiple dates"
+/>
+```
+
+### With Time Picker
+
+```tsx
+const [dateTime, setDateTime] = useState<Date>()
+
+<AnimatedCalendar
+  mode="single"
+  value={dateTime}
+  onChange={setDateTime}
+  showTime
+  placeholder="Select date and time"
+/>
+```
+
+### With Presets
+
+```tsx
+const presets = [
+  { label: "Today", value: new Date() },
+  { label: "Tomorrow", value: new Date(Date.now() + 24 * 60 * 60 * 1000) },
+]
+
+<AnimatedCalendar
+  mode="single"
+  value={date}
+  onChange={setDate}
+  presets={presets}
+  placeholder="Quick select"
+/>
+```
+
+### With Constraints
+
+```tsx
+const disabledDates = (date: Date) => {
+  return date.getDay() === 0 || date.getDay() === 6 // Disable weekends
+}
+
+<AnimatedCalendar
+  mode="single"
+  value={date}
+  onChange={setDate}
+  disabled={disabledDates}
+  placeholder="Select weekday"
+/>
+```

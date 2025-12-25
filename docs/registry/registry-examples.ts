@@ -180,12 +180,57 @@ export const examples: Registry["items"] = [
     ],
   },
   {
-    name: "file-tree-demo",
+    name: "file-tree-basic-demo",
     type: "registry:example",
     registryDependencies: ["file-tree"],
     files: [
       {
-        path: "examples/file-tree-demo.tsx",
+        path: "examples/file-tree-basic-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "file-tree-expandable-demo",
+    type: "registry:example",
+    registryDependencies: ["file-tree"],
+    files: [
+      {
+        path: "examples/file-tree-expandable-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "file-tree-full-expanded-demo",
+    type: "registry:example",
+    registryDependencies: ["file-tree"],
+    files: [
+      {
+        path: "examples/file-tree-full-expanded-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "file-tree-selectable-demo",
+    type: "registry:example",
+    registryDependencies: ["file-tree"],
+    files: [
+      {
+        path: "examples/file-tree-selectable-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "file-tree-custom-icons-demo",
+    type: "registry:example",
+    registryDependencies: ["file-tree"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "examples/file-tree-custom-icons-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -373,6 +418,83 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/video-player-timestamp-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-basic-demo",
+    type: "registry:example",
+    registryDependencies: ["calender"],
+    files: [
+      {
+        path: "examples/calendar-basic-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-range-demo",
+    type: "registry:example",
+    registryDependencies: ["calender"],
+    files: [
+      {
+        path: "examples/calendar-range-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-multiple-demo",
+    type: "registry:example",
+    registryDependencies: ["calender"],
+    files: [
+      {
+        path: "examples/calendar-multiple-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-time-demo",
+    type: "registry:example",
+    registryDependencies: ["calender"],
+    files: [
+      {
+        path: "examples/calendar-time-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-presets-demo",
+    type: "registry:example",
+    registryDependencies: ["calender"],
+    files: [
+      {
+        path: "examples/calendar-presets-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-constraints-demo",
+    type: "registry:example",
+    registryDependencies: ["calender"],
+    files: [
+      {
+        path: "examples/calendar-constraints-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-full-demo",
+    type: "registry:example",
+    registryDependencies: ["calender"],
+    files: [
+      {
+        path: "examples/calendar-full-demo.tsx",
         type: "registry:example",
       },
     ],

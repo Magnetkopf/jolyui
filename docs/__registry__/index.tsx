@@ -415,17 +415,73 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
-    "file-tree-demo": {
-      name: "file-tree-demo",
+    "file-tree-basic-demo": {
+      name: "file-tree-basic-demo",
       description: "",
       type: "registry:example",
       registryDependencies: ["file-tree"],
       files: [{
-        path: "registry/default/examples/file-tree-demo.tsx",
+        path: "registry/default/examples/file-tree-basic-demo.tsx",
         type: "registry:example",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/examples/file-tree-demo.tsx")),
+      component: React.lazy(() => import("@/registry/default/examples/file-tree-basic-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "file-tree-expandable-demo": {
+      name: "file-tree-expandable-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["file-tree"],
+      files: [{
+        path: "registry/default/examples/file-tree-expandable-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/file-tree-expandable-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "file-tree-full-expanded-demo": {
+      name: "file-tree-full-expanded-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["file-tree"],
+      files: [{
+        path: "registry/default/examples/file-tree-full-expanded-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/file-tree-full-expanded-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "file-tree-selectable-demo": {
+      name: "file-tree-selectable-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["file-tree"],
+      files: [{
+        path: "registry/default/examples/file-tree-selectable-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/file-tree-selectable-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "file-tree-custom-icons-demo": {
+      name: "file-tree-custom-icons-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["file-tree"],
+      files: [{
+        path: "registry/default/examples/file-tree-custom-icons-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/file-tree-custom-icons-demo.tsx")),
       source: "",
       chunks: []
     },
@@ -664,6 +720,104 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/video-player-timestamp-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "calendar-basic-demo": {
+      name: "calendar-basic-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calender"],
+      files: [{
+        path: "registry/default/examples/calendar-basic-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/calendar-basic-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "calendar-range-demo": {
+      name: "calendar-range-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calender"],
+      files: [{
+        path: "registry/default/examples/calendar-range-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/calendar-range-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "calendar-multiple-demo": {
+      name: "calendar-multiple-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calender"],
+      files: [{
+        path: "registry/default/examples/calendar-multiple-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/calendar-multiple-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "calendar-time-demo": {
+      name: "calendar-time-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calender"],
+      files: [{
+        path: "registry/default/examples/calendar-time-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/calendar-time-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "calendar-presets-demo": {
+      name: "calendar-presets-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calender"],
+      files: [{
+        path: "registry/default/examples/calendar-presets-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/calendar-presets-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "calendar-constraints-demo": {
+      name: "calendar-constraints-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calender"],
+      files: [{
+        path: "registry/default/examples/calendar-constraints-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/calendar-constraints-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "calendar-full-demo": {
+      name: "calendar-full-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["calender"],
+      files: [{
+        path: "registry/default/examples/calendar-full-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/calendar-full-demo.tsx")),
       source: "",
       chunks: []
     },
