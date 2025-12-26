@@ -1,0 +1,56 @@
+---
+title: Typewriter Text
+description: A typewriter effect component that types and deletes words with a blinking cursor animation.
+preview: true
+links:
+ api: /docs/components/typewritter-text#api-reference
+---
+
+<ComponentTabs name="typewritter-text-demo" />
+
+## Examples
+
+### Variants
+
+<ComponentTabs name="typewritter-text-custom-demo" />
+
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/typewritter-text"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/typewritter-text.tsx```
+
+    <ComponentSource name="typewritter-text" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/typewritter-text.ts"
+  name="TypewriterTextProps"
+/>
+
+## Notes
+
+- Uses motion/react for smooth blinking cursor animation
+- Automatically cycles through words with typing and deleting effects
+- Supports custom CSS classes for styling text and cursor
+- Configurable typing speed, deleting speed, and pause duration
+- Perfect for hero sections, loading states, or dynamic content

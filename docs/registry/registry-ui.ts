@@ -116,12 +116,34 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "glitch-text",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/glitch-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "phone-card",
     type: "registry:ui",
     registryDependencies: ["lazy-video"],
     files: [
       {
         path: "ui/phone-card.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "rotate-text",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/rotate-text.tsx",
         type: "registry:ui",
       },
     ],
@@ -180,6 +202,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "character-morph",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/character-morph.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "code-block",
     type: "registry:ui",
     dependencies: ["lucide-react", "motion", "prism-react-renderer"],
@@ -191,12 +224,12 @@ export const ui: Registry["items"] = [
     ],
   },
   {
-    name: "morph-text",
+    name: "text-morphing",
     type: "registry:ui",
     dependencies: ["motion"],
     files: [
       {
-        path: "ui/morph-text.tsx",
+        path: "ui/text-morphing.tsx",
         type: "registry:ui",
       },
     ],
@@ -208,6 +241,28 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/scroll-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "typewritter-text",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/typewritter-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "velocity-morph",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/velocity-morph.tsx",
         type: "registry:ui",
       },
     ],

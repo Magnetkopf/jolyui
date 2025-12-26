@@ -1,0 +1,56 @@
+---
+title: Glitch Text
+description: A glitch text component that creates digital distortion effects by scrambling characters during word transitions.
+preview: true
+links:
+ api: /docs/components/glitch-text#api-reference
+---
+
+<ComponentTabs name="glitch-text-demo" />
+
+## Examples
+
+### Custom Timing
+
+<ComponentTabs name="glitch-text-custom-demo" />
+
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/glitch-text"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/glitch-text.tsx```
+
+    <ComponentSource name="glitch-text" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/glitch-text.ts"
+  name="GlitchTextProps"
+/>
+
+## Notes
+
+- Uses character scrambling with random glitch characters during transitions
+- Creates authentic digital distortion effects
+- Customizable glitch duration and word change intervals
+- Supports custom CSS classes for styling
+- Perfect for cyberpunk themes, tech demos, or gaming interfaces

@@ -1,0 +1,56 @@
+---
+title: Rotate Text
+description: A smooth rotating text component that cycles through words with spring animations.
+preview: true
+links:
+ api: /docs/components/rotate-text#api-reference
+---
+
+<ComponentTabs name="rotate-text-demo" />
+
+## Examples
+
+### Variants
+
+<ComponentTabs name="rotate-text-custom-demo" />
+
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/rotate-text"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/rotate-text.tsx```
+
+    <ComponentSource name="rotate-text" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/rotate-text.ts"
+  name="RotatingTextProps"
+/>
+
+## Notes
+
+- Uses motion/react for smooth spring animations
+- Automatically cycles through words at specified intervals
+- Supports custom CSS classes for styling
+- Animation includes vertical sliding and opacity transitions
+- Perfect for hero sections, testimonials, or dynamic content

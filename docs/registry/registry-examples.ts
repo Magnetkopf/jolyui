@@ -546,6 +546,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "rotate-text-demo",
+    type: "registry:example",
+    registryDependencies: ["rotate-text"],
+    files: [
+      {
+        path: "examples/rotate-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "rotate-text-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["rotate-text"],
+    files: [
+      {
+        path: "examples/rotate-text-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "vercel-tabs-demo",
     type: "registry:example",
     registryDependencies: ["vercel-tabs"],
@@ -766,6 +788,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "character-morph-demo",
+    type: "registry:example",
+    registryDependencies: ["character-morph"],
+    files: [
+      {
+        path: "examples/character-morph-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "character-morph-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["character-morph"],
+    files: [
+      {
+        path: "examples/character-morph-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "code-block-demo",
     type: "registry:example",
     registryDependencies: ["code-block"],
@@ -843,45 +887,45 @@ export const examples: Registry["items"] = [
     ],
   },
   {
-    name: "morph-text-demo",
+    name: "text-morphing-demo",
     type: "registry:example",
-    registryDependencies: ["morph-text"],
+    registryDependencies: ["text-morphing"],
     files: [
       {
-        path: "examples/morph-text-demo.tsx",
+        path: "examples/text-morphing-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "morph-text-character-demo",
+    name: "text-morphing-variants-demo",
     type: "registry:example",
-    registryDependencies: ["morph-text"],
+    registryDependencies: ["text-morphing"],
     files: [
       {
-        path: "examples/morph-text-character-demo.tsx",
+        path: "examples/text-morphing-variants-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "morph-text-scramble-demo",
+    name: "glitch-text-demo",
     type: "registry:example",
-    registryDependencies: ["morph-text"],
+    registryDependencies: ["glitch-text"],
     files: [
       {
-        path: "examples/morph-text-scramble-demo.tsx",
+        path: "examples/glitch-text-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "morph-text-velocity-demo",
+    name: "glitch-text-custom-demo",
     type: "registry:example",
-    registryDependencies: ["morph-text"],
+    registryDependencies: ["glitch-text"],
     files: [
       {
-        path: "examples/morph-text-velocity-demo.tsx",
+        path: "examples/glitch-text-custom-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -992,6 +1036,50 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/scroll-text-slide-left-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typewritter-text-demo",
+    type: "registry:example",
+    registryDependencies: ["typewritter-text"],
+    files: [
+      {
+        path: "examples/typewritter-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typewritter-text-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["typewritter-text"],
+    files: [
+      {
+        path: "examples/typewritter-text-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "velocity-morph-demo",
+    type: "registry:example",
+    registryDependencies: ["velocity-morph"],
+    files: [
+      {
+        path: "examples/velocity-morph-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "velocity-morph-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["velocity-morph"],
+    files: [
+      {
+        path: "examples/velocity-morph-custom-demo.tsx",
         type: "registry:example",
       },
     ],

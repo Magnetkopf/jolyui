@@ -1,0 +1,58 @@
+---
+title: Character Morph
+description: A character-by-character text morphing component with staggered animations.
+preview: true
+links:
+ api: /docs/components/character-morph#api-reference
+---
+
+<ComponentTabs name="character-morph-demo" />
+
+## Examples
+
+### Variants
+
+<ComponentTabs name="character-morph-custom-demo" />
+
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/character-morph"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/character-morph.tsx```
+
+    <ComponentSource name="character-morph" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/character-morph.ts"
+  name="CharacterMorphProps"
+/>
+
+## Notes
+
+- Uses motion/react for smooth character-by-character animations
+- Each character animates with opacity, vertical movement, blur, and 3D rotation
+- Staggered animation delays create a wave-like morphing effect
+- Automatically cycles through texts at specified intervals
+- Supports custom CSS classes for styling
+- Maintains consistent width by using the longest text as reference
+- Perfect for dynamic headlines, loading states, or eye-catching text effects

@@ -1,0 +1,58 @@
+---
+title: Text Morphing
+description: A smooth text morphing component that cycles through words with beautiful animations.
+preview: true
+links:
+ api: /docs/components/text-morphing#api-reference
+---
+
+<ComponentTabs name="text-morphing-demo" />
+
+## Examples
+
+### Variants
+
+<ComponentTabs name="text-morphing-variants-demo" />
+
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/text-morphing"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/text-morphing.tsx```
+
+    <ComponentSource name="text-morphing" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/text-morphing.ts"
+  name="MorphingTextProps"
+/>
+
+## Notes
+
+- Uses motion/react for smooth blur and slide animations
+- Automatically cycles through words at specified intervals
+- Supports custom CSS classes for styling
+- Animation includes opacity, vertical movement, and blur effects
+- Perfect for hero sections, testimonials, or dynamic content
+
+  path="./types/docs/text-morphing.ts"

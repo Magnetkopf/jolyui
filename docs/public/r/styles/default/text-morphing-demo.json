@@ -1,0 +1,15 @@
+{
+  "name": "text-morphing-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "text-morphing"
+  ],
+  "files": [
+    {
+      "path": "examples/text-morphing-demo.tsx",
+      "content": "\"use client\";\n\nimport { MorphingText } from \"@/registry/default/ui/text-morphing\";\n\nexport default function TextMorphingDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">\n          Build{\" \"}\n          <MorphingText\n            words={[\"beautiful\", \"amazing\", \"stunning\", \"incredible\"]}\n            className=\"text-blue-600\"\n          />{\" \"}\n          interfaces\n        </h1>\n        <p className=\"text-lg text-muted-foreground\">\n          Create{\" \"}\n          <MorphingText\n            words={[\"responsive\", \"accessible\", \"performant\", \"modern\"]}\n            interval={2000}\n            className=\"text-green-600\"\n          />{\" \"}\n          web experiences\n        </p>\n      </div>\n    </div>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

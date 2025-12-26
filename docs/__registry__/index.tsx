@@ -163,6 +163,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "glitch-text": {
+      name: "glitch-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/glitch-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/glitch-text.tsx")),
+      source: "",
+      chunks: []
+    },
     "phone-card": {
       name: "phone-card",
       description: "",
@@ -174,6 +188,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/phone-card.tsx")),
+      source: "",
+      chunks: []
+    },
+    "rotate-text": {
+      name: "rotate-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/rotate-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/rotate-text.tsx")),
       source: "",
       chunks: []
     },
@@ -247,6 +275,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "character-morph": {
+      name: "character-morph",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/character-morph.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/character-morph.tsx")),
+      source: "",
+      chunks: []
+    },
     "code-block": {
       name: "code-block",
       description: "",
@@ -261,17 +303,17 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
-    "morph-text": {
-      name: "morph-text",
+    "text-morphing": {
+      name: "text-morphing",
       description: "",
       type: "registry:ui",
       registryDependencies: undefined,
       files: [{
-        path: "registry/default/ui/morph-text.tsx",
+        path: "registry/default/ui/text-morphing.tsx",
         type: "registry:ui",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/ui/morph-text.tsx")),
+      component: React.lazy(() => import("@/registry/default/ui/text-morphing.tsx")),
       source: "",
       chunks: []
     },
@@ -286,6 +328,34 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/scroll-text.tsx")),
+      source: "",
+      chunks: []
+    },
+    "typewritter-text": {
+      name: "typewritter-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/typewritter-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/typewritter-text.tsx")),
+      source: "",
+      chunks: []
+    },
+    "velocity-morph": {
+      name: "velocity-morph",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/velocity-morph.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/velocity-morph.tsx")),
       source: "",
       chunks: []
     },
@@ -1017,6 +1087,34 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "rotate-text-demo": {
+      name: "rotate-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["rotate-text"],
+      files: [{
+        path: "registry/default/examples/rotate-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/rotate-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "rotate-text-custom-demo": {
+      name: "rotate-text-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["rotate-text"],
+      files: [{
+        path: "registry/default/examples/rotate-text-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/rotate-text-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
     "vercel-tabs-demo": {
       name: "vercel-tabs-demo",
       description: "",
@@ -1297,6 +1395,34 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "character-morph-demo": {
+      name: "character-morph-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["character-morph"],
+      files: [{
+        path: "registry/default/examples/character-morph-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/character-morph-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "character-morph-custom-demo": {
+      name: "character-morph-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["character-morph"],
+      files: [{
+        path: "registry/default/examples/character-morph-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/character-morph-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
     "code-block-demo": {
       name: "code-block-demo",
       description: "",
@@ -1395,59 +1521,59 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
-    "morph-text-demo": {
-      name: "morph-text-demo",
+    "text-morphing-demo": {
+      name: "text-morphing-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["morph-text"],
+      registryDependencies: ["text-morphing"],
       files: [{
-        path: "registry/default/examples/morph-text-demo.tsx",
+        path: "registry/default/examples/text-morphing-demo.tsx",
         type: "registry:example",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/examples/morph-text-demo.tsx")),
+      component: React.lazy(() => import("@/registry/default/examples/text-morphing-demo.tsx")),
       source: "",
       chunks: []
     },
-    "morph-text-character-demo": {
-      name: "morph-text-character-demo",
+    "text-morphing-variants-demo": {
+      name: "text-morphing-variants-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["morph-text"],
+      registryDependencies: ["text-morphing"],
       files: [{
-        path: "registry/default/examples/morph-text-character-demo.tsx",
+        path: "registry/default/examples/text-morphing-variants-demo.tsx",
         type: "registry:example",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/examples/morph-text-character-demo.tsx")),
+      component: React.lazy(() => import("@/registry/default/examples/text-morphing-variants-demo.tsx")),
       source: "",
       chunks: []
     },
-    "morph-text-scramble-demo": {
-      name: "morph-text-scramble-demo",
+    "glitch-text-demo": {
+      name: "glitch-text-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["morph-text"],
+      registryDependencies: ["glitch-text"],
       files: [{
-        path: "registry/default/examples/morph-text-scramble-demo.tsx",
+        path: "registry/default/examples/glitch-text-demo.tsx",
         type: "registry:example",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/examples/morph-text-scramble-demo.tsx")),
+      component: React.lazy(() => import("@/registry/default/examples/glitch-text-demo.tsx")),
       source: "",
       chunks: []
     },
-    "morph-text-velocity-demo": {
-      name: "morph-text-velocity-demo",
+    "glitch-text-custom-demo": {
+      name: "glitch-text-custom-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["morph-text"],
+      registryDependencies: ["glitch-text"],
       files: [{
-        path: "registry/default/examples/morph-text-velocity-demo.tsx",
+        path: "registry/default/examples/glitch-text-custom-demo.tsx",
         type: "registry:example",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/examples/morph-text-velocity-demo.tsx")),
+      component: React.lazy(() => import("@/registry/default/examples/glitch-text-custom-demo.tsx")),
       source: "",
       chunks: []
     },
@@ -1588,6 +1714,62 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/scroll-text-slide-left-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "typewritter-text-demo": {
+      name: "typewritter-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["typewritter-text"],
+      files: [{
+        path: "registry/default/examples/typewritter-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/typewritter-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "typewritter-text-custom-demo": {
+      name: "typewritter-text-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["typewritter-text"],
+      files: [{
+        path: "registry/default/examples/typewritter-text-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/typewritter-text-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "velocity-morph-demo": {
+      name: "velocity-morph-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["velocity-morph"],
+      files: [{
+        path: "registry/default/examples/velocity-morph-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/velocity-morph-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "velocity-morph-custom-demo": {
+      name: "velocity-morph-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["velocity-morph"],
+      files: [{
+        path: "registry/default/examples/velocity-morph-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/velocity-morph-custom-demo.tsx")),
       source: "",
       chunks: []
     },

@@ -1,10 +1,16 @@
 {
   "animated-table": "Animated Table",
   "calendar": "Calendar",
+  "character-morph": "Character Morph",
   "file-tree": "File Tree",
   "github-contributors": "GitHub Contributors",
+  "glitch-text": "Glitch Text",
   "magnetic": "Magnetic",
   "phone-card": "Phone Card",
+  "rotate-text": "Rotate Text",
+  "text-morphing": "Text Morphing",
+  "typewritter-text": "Typewriter Text",
+  "velocity-morph": "Velocity Morph",
   "vercel-tabs": "Vercel Tabs",
   "video-player": "Video Player"
 }

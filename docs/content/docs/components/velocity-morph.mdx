@@ -1,0 +1,56 @@
+---
+title: Velocity Morph
+description: A high-velocity text morphing component with smooth blur, scale, and slide animations.
+preview: true
+links:
+ api: /docs/components/velocity-morph#api-reference
+---
+
+<ComponentTabs name="velocity-morph-demo" />
+
+## Examples
+
+### Variants
+
+<ComponentTabs name="velocity-morph-custom-demo" />
+
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/velocity-morph"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/velocity-morph.tsx```
+
+    <ComponentSource name="velocity-morph" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/velocity-morph.ts"
+  name="VelocityMorphProps"
+/>
+
+## Notes
+
+- Uses motion/react for high-velocity animations with blur and scale effects
+- Automatically cycles through texts at specified intervals
+- Supports custom CSS classes for styling
+- Animation includes vertical movement, opacity, blur, and scale transitions
+- Perfect for hero sections, testimonials, or dynamic content with dramatic effects
