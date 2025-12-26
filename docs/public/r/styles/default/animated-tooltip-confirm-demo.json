@@ -1,0 +1,15 @@
+{
+  "name": "animated-tooltip-confirm-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "animated-tooltip"
+  ],
+  "files": [
+    {
+      "path": "examples/animated-tooltip-confirm-demo.tsx",
+      "content": "\"use client\";\n\nimport { ConfirmTooltip } from \"@/components/ui/animated-tooltip\";\nimport { Button } from \"@/components/ui/button\";\nimport { Trash2 } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport function AnimatedTooltipConfirmDemo() {\n  const [deletedItems, setDeletedItems] = useState<string[]>([]);\n\n  const handleDelete = (item: string) => {\n    setDeletedItems(prev => [...prev, item]);\n  };\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <div className=\"flex gap-2\">\n        <ConfirmTooltip\n          message=\"Are you sure you want to delete this item? This action cannot be undone.\"\n          onConfirm={() => handleDelete(\"Item 1\")}\n          confirmText=\"Delete\"\n          cancelText=\"Cancel\"\n        >\n          <Button variant=\"destructive\" size=\"sm\">\n            <Trash2 className=\"mr-2 h-4 w-4\" />\n            Delete Item 1\n          </Button>\n        </ConfirmTooltip>\n\n        <ConfirmTooltip\n          message=\"This will permanently remove the file from your system.\"\n          onConfirm={() => handleDelete(\"File\")}\n          confirmText=\"Yes, delete\"\n          cancelText=\"Keep it\"\n        >\n          <Button variant=\"destructive\" size=\"sm\">\n            <Trash2 className=\"mr-2 h-4 w-4\" />\n            Delete File\n          </Button>\n        </ConfirmTooltip>\n      </div>\n\n      {deletedItems.length > 0 && (\n        <div className=\"text-sm text-muted-foreground\">\n          Deleted: {deletedItems.join(\", \")}\n        </div>\n      )}\n    </div>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

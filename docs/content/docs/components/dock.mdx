@@ -1,0 +1,105 @@
+---
+title: Dock
+description: A macOS-style dock component with magnification effects and smooth animations.
+preview: true
+links:
+ api: /docs/components/dock#api-reference
+---
+
+## Basic Usage
+
+<ComponentTabs name="dock-demo" />
+
+## macOS Style
+
+<ComponentTabs name="dock-macos-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/dock"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion lucide-react
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/dock.tsx```
+
+    <ComponentSource name="dock" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { Dock, DockIcon, DockItem, DockLabel } from "@/components/ui/dock";
+
+function MyDock() {
+  return (
+    <Dock>
+      <DockItem>
+        <DockIcon>
+          <HomeIcon />
+        </DockIcon>
+        <DockLabel>Home</DockLabel>
+      </DockItem>
+      {/* More items... */}
+    </Dock>
+  );
+}
+```
+
+## API Reference
+
+### Dock
+
+<AutoTypeTable
+  path="./types/docs/dock.ts"
+  name="DockProps"
+/>
+
+### DockItem
+
+<AutoTypeTable
+  path="./types/docs/dock.ts"
+  name="DockItemProps"
+/>
+
+### DockIcon
+
+<AutoTypeTable
+  path="./types/docs/dock.ts"
+  name="DockIconProps"
+/>
+
+### DockLabel
+
+<AutoTypeTable
+  path="./types/docs/dock.ts"
+  name="DockLabelProps"
+/>
+
+### DockSeparator
+
+<AutoTypeTable
+  path="./types/docs/dock.ts"
+  name="DockSeparatorProps"
+/>
+
+## Notes
+
+- The dock automatically applies magnification effects when hovering near items
+- Use `DockSeparator` to group related items
+- Icons are automatically sized and centered within `DockIcon`
+- Labels appear as tooltips on hover
+- The component uses Framer Motion for smooth animations

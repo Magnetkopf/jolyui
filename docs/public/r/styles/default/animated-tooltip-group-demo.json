@@ -1,0 +1,15 @@
+{
+  "name": "animated-tooltip-group-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "animated-tooltip"
+  ],
+  "files": [
+    {
+      "path": "examples/animated-tooltip-group-demo.tsx",
+      "content": "\"use client\";\n\nimport { TooltipGroup } from \"@/components/ui/animated-tooltip\";\nimport { AlignCenter, AlignLeft, AlignRight, Bold, Italic, Underline } from \"lucide-react\";\n\nexport function AnimatedTooltipGroupDemo() {\n  const formattingItems = [\n    { icon: <Bold className=\"h-4 w-4\" />, label: \"Bold\", shortcut: \"⌘B\" },\n    { icon: <Italic className=\"h-4 w-4\" />, label: \"Italic\", shortcut: \"⌘I\" },\n    { icon: <Underline className=\"h-4 w-4\" />, label: \"Underline\", shortcut: \"⌘U\" },\n  ];\n\n  const alignmentItems = [\n    { icon: <AlignLeft className=\"h-4 w-4\" />, label: \"Align Left\", shortcut: \"⌘L\" },\n    { icon: <AlignCenter className=\"h-4 w-4\" />, label: \"Align Center\", shortcut: \"⌘E\" },\n    { icon: <AlignRight className=\"h-4 w-4\" />, label: \"Align Right\", shortcut: \"⌘R\" },\n  ];\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <TooltipGroup items={formattingItems} />\n      <TooltipGroup items={alignmentItems} />\n    </div>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

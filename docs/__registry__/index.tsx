@@ -37,6 +37,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "animated-beam": {
+      name: "animated-beam",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/animated-beam.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/animated-beam.tsx")),
+      source: "",
+      chunks: []
+    },
     "animated-table": {
       name: "animated-table",
       description: "",
@@ -62,6 +76,76 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/button.tsx")),
+      source: "",
+      chunks: []
+    },
+    "dock": {
+      name: "dock",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/dock.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/dock.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-comparison": {
+      name: "image-comparison",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/image-comparison.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/image-comparison.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-tooltip": {
+      name: "animated-tooltip",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/animated-tooltip.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/animated-tooltip.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-toast": {
+      name: "animated-toast",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/animated-toast.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/animated-toast.tsx")),
+      source: "",
+      chunks: []
+    },
+    "gradient-border": {
+      name: "gradient-border",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/gradient-border.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/gradient-border.tsx")),
       source: "",
       chunks: []
     },
@@ -328,6 +412,384 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/avatar-group-icons-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-beam-demo": {
+      name: "animated-beam-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-beam"],
+      files: [{
+        path: "registry/default/examples/animated-beam-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-beam-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-beam-curved-demo": {
+      name: "animated-beam-curved-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-beam"],
+      files: [{
+        path: "registry/default/examples/animated-beam-curved-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-beam-curved-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-beam-multiple-demo": {
+      name: "animated-beam-multiple-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-beam"],
+      files: [{
+        path: "registry/default/examples/animated-beam-multiple-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-beam-multiple-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-beam-bidirectional-demo": {
+      name: "animated-beam-bidirectional-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-beam"],
+      files: [{
+        path: "registry/default/examples/animated-beam-bidirectional-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-beam-bidirectional-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "dock-demo": {
+      name: "dock-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["dock"],
+      files: [{
+        path: "registry/default/examples/dock-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/dock-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "dock-macos-demo": {
+      name: "dock-macos-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["dock"],
+      files: [{
+        path: "registry/default/examples/dock-macos-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/dock-macos-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-comparison-demo": {
+      name: "image-comparison-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-comparison"],
+      files: [{
+        path: "registry/default/examples/image-comparison-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-comparison-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-comparison-hover-demo": {
+      name: "image-comparison-hover-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-comparison"],
+      files: [{
+        path: "registry/default/examples/image-comparison-hover-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-comparison-hover-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-comparison-fade-demo": {
+      name: "image-comparison-fade-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-comparison"],
+      files: [{
+        path: "registry/default/examples/image-comparison-fade-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-comparison-fade-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-comparison-split-demo": {
+      name: "image-comparison-split-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-comparison"],
+      files: [{
+        path: "registry/default/examples/image-comparison-split-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-comparison-split-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-comparison-lens-demo": {
+      name: "image-comparison-lens-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-comparison"],
+      files: [{
+        path: "registry/default/examples/image-comparison-lens-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-comparison-lens-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-comparison-vertical-demo": {
+      name: "image-comparison-vertical-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-comparison"],
+      files: [{
+        path: "registry/default/examples/image-comparison-vertical-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-comparison-vertical-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-tooltip-demo": {
+      name: "animated-tooltip-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-tooltip"],
+      files: [{
+        path: "registry/default/examples/animated-tooltip-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-tooltip-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-tooltip-animation-demo": {
+      name: "animated-tooltip-animation-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-tooltip"],
+      files: [{
+        path: "registry/default/examples/animated-tooltip-animation-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-tooltip-animation-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-tooltip-icon-demo": {
+      name: "animated-tooltip-icon-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-tooltip"],
+      files: [{
+        path: "registry/default/examples/animated-tooltip-icon-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-tooltip-icon-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-tooltip-status-demo": {
+      name: "animated-tooltip-status-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-tooltip"],
+      files: [{
+        path: "registry/default/examples/animated-tooltip-status-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-tooltip-status-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-tooltip-rich-demo": {
+      name: "animated-tooltip-rich-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-tooltip"],
+      files: [{
+        path: "registry/default/examples/animated-tooltip-rich-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-tooltip-rich-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "gradient-border-card-demo": {
+      name: "gradient-border-card-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["gradient-border"],
+      files: [{
+        path: "registry/default/examples/gradient-border-card-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/gradient-border-card-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "gradient-border-button-demo": {
+      name: "gradient-border-button-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["gradient-border"],
+      files: [{
+        path: "registry/default/examples/gradient-border-button-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/gradient-border-button-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "gradient-border-shimmer-demo": {
+      name: "gradient-border-shimmer-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["gradient-border"],
+      files: [{
+        path: "registry/default/examples/gradient-border-shimmer-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/gradient-border-shimmer-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "gradient-border-pulse-demo": {
+      name: "gradient-border-pulse-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["gradient-border"],
+      files: [{
+        path: "registry/default/examples/gradient-border-pulse-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/gradient-border-pulse-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-toast-demo": {
+      name: "animated-toast-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-toast"],
+      files: [{
+        path: "registry/default/examples/animated-toast-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-toast-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-toast-minimal-demo": {
+      name: "animated-toast-minimal-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-toast"],
+      files: [{
+        path: "registry/default/examples/animated-toast-minimal-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-toast-minimal-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-toast-undo-demo": {
+      name: "animated-toast-undo-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-toast"],
+      files: [{
+        path: "registry/default/examples/animated-toast-undo-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-toast-undo-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-toast-notification-demo": {
+      name: "animated-toast-notification-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-toast"],
+      files: [{
+        path: "registry/default/examples/animated-toast-notification-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-toast-notification-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-toast-stacked-demo": {
+      name: "animated-toast-stacked-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-toast"],
+      files: [{
+        path: "registry/default/examples/animated-toast-stacked-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-toast-stacked-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-toast-promise-demo": {
+      name: "animated-toast-promise-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-toast"],
+      files: [{
+        path: "registry/default/examples/animated-toast-promise-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-toast-promise-demo.tsx")),
       source: "",
       chunks: []
     },

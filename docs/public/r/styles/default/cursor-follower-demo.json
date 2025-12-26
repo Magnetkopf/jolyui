@@ -1,0 +1,15 @@
+{
+  "name": "cursor-follower-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "cursor-follower"
+  ],
+  "files": [
+    {
+      "path": "examples/cursor-follower-demo.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { CursorFollower } from \"@/registry/default/ui/cursor-follower\";\n\nexport default function CursorFollowerDemo() {\n  const [isActive, setIsActive] = useState(false);\n\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"text-center\">\n        <h3 className=\"text-lg font-semibold mb-2\">Basic Cursor Follower</h3>\n        <p className=\"text-sm text-muted-foreground mb-4\">\n          Click the area below to activate the cursor follower.\n        </p>\n      </div>\n\n      <div\n        className=\"h-96 bg-muted/30 rounded-lg flex items-center justify-center cursor-pointer\"\n        onClick={() => setIsActive(!isActive)}\n      >\n        <div className=\"text-center\">\n          <p className=\"text-muted-foreground mb-2\">\n            {isActive ? \"● Active! Move your cursor\" : \"Click to activate cursor follower\"}\n          </p>\n          <button className=\"px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors\">\n            {isActive ? \"Deactivate\" : \"Activate\"} Cursor Follower\n          </button>\n        </div>\n      </div>\n\n      {isActive && <CursorFollower size={24} color=\"hsl(var(--primary))\" smoothness={0.1} />}\n    </div>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

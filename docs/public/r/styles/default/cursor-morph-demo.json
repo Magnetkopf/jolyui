@@ -1,0 +1,15 @@
+{
+  "name": "cursor-morph-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "cursor-follower"
+  ],
+  "files": [
+    {
+      "path": "examples/cursor-morph-demo.tsx",
+      "content": "\"use client\";\n\nimport { CursorMorph } from \"@/registry/default/ui/cursor-follower\";\n\nexport default function CursorMorphDemo() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"text-center\">\n        <h3 className=\"text-lg font-semibold mb-2\">Cursor Morph</h3>\n        <p className=\"text-sm text-muted-foreground mb-4\">\n          Hover over the elements below to see the cursor morph to their shape.\n        </p>\n      </div>\n\n      <div className=\"h-96 bg-muted/30 rounded-lg flex flex-wrap items-center justify-center gap-6 p-8\">\n        <button\n          data-cursor-morph\n          className=\"px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors\"\n        >\n          Button\n        </button>\n        <div\n          data-cursor-morph\n          className=\"w-20 h-20 bg-secondary rounded-full flex items-center justify-center hover:bg-secondary/80 transition-colors\"\n        >\n          Circle\n        </div>\n        <div\n          data-cursor-morph\n          className=\"w-24 h-16 bg-accent rounded-md flex items-center justify-center hover:bg-accent/80 transition-colors\"\n        >\n          Rect\n        </div>\n        <div\n          data-cursor-morph\n          className=\"w-16 h-16 bg-destructive rounded-sm flex items-center justify-center hover:bg-destructive/80 transition-colors\"\n        >\n          Square\n        </div>\n      </div>\n\n      <CursorMorph defaultSize={20} hoverSize={80} />\n    </div>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

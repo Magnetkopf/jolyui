@@ -47,6 +47,317 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "animated-beam-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-beam"],
+    files: [
+      {
+        path: "examples/animated-beam-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-beam-curved-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-beam"],
+    files: [
+      {
+        path: "examples/animated-beam-curved-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-beam-multiple-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-beam"],
+    files: [
+      {
+        path: "examples/animated-beam-multiple-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-beam-bidirectional-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-beam"],
+    files: [
+      {
+        path: "examples/animated-beam-bidirectional-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "dock-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["dock"],
+    files: [
+      {
+        path: "examples/dock-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "dock-macos-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["dock"],
+    files: [
+      {
+        path: "examples/dock-macos-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-comparison-demo",
+    type: "registry:example",
+    registryDependencies: ["image-comparison"],
+    files: [
+      {
+        path: "examples/image-comparison-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-comparison-hover-demo",
+    type: "registry:example",
+    registryDependencies: ["image-comparison"],
+    files: [
+      {
+        path: "examples/image-comparison-hover-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-comparison-fade-demo",
+    type: "registry:example",
+    registryDependencies: ["image-comparison"],
+    files: [
+      {
+        path: "examples/image-comparison-fade-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-comparison-split-demo",
+    type: "registry:example",
+    registryDependencies: ["image-comparison"],
+    files: [
+      {
+        path: "examples/image-comparison-split-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-comparison-lens-demo",
+    type: "registry:example",
+    registryDependencies: ["image-comparison"],
+    files: [
+      {
+        path: "examples/image-comparison-lens-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-comparison-vertical-demo",
+    type: "registry:example",
+    registryDependencies: ["image-comparison"],
+    files: [
+      {
+        path: "examples/image-comparison-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-tooltip-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-tooltip"],
+    files: [
+      {
+        path: "examples/animated-tooltip-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-tooltip-animation-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-tooltip"],
+    files: [
+      {
+        path: "examples/animated-tooltip-animation-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-tooltip-icon-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-tooltip"],
+    files: [
+      {
+        path: "examples/animated-tooltip-icon-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-tooltip-status-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-tooltip"],
+    files: [
+      {
+        path: "examples/animated-tooltip-status-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-tooltip-rich-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-tooltip"],
+    files: [
+      {
+        path: "examples/animated-tooltip-rich-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "gradient-border-card-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["gradient-border"],
+    files: [
+      {
+        path: "examples/gradient-border-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "gradient-border-button-demo",
+    type: "registry:example",
+    registryDependencies: ["gradient-border"],
+    files: [
+      {
+        path: "examples/gradient-border-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "gradient-border-shimmer-demo",
+    type: "registry:example",
+    registryDependencies: ["gradient-border"],
+    files: [
+      {
+        path: "examples/gradient-border-shimmer-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "gradient-border-pulse-demo",
+    type: "registry:example",
+    registryDependencies: ["gradient-border"],
+    files: [
+      {
+        path: "examples/gradient-border-pulse-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-toast-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-toast"],
+    files: [
+      {
+        path: "examples/animated-toast-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-toast-minimal-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-toast"],
+    files: [
+      {
+        path: "examples/animated-toast-minimal-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-toast-undo-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-toast"],
+    files: [
+      {
+        path: "examples/animated-toast-undo-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-toast-notification-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-toast"],
+    files: [
+      {
+        path: "examples/animated-toast-notification-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-toast-stacked-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-toast"],
+    files: [
+      {
+        path: "examples/animated-toast-stacked-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-toast-promise-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["animated-toast"],
+    files: [
+      {
+        path: "examples/animated-toast-promise-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "animated-table-basic-demo",
     type: "registry:example",
     registryDependencies: ["animated-table"],

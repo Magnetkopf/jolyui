@@ -1,0 +1,118 @@
+---
+title: Animated Toast
+description: Interactive toast notifications with smooth animations, multiple types, and various display modes.
+preview: true
+links:
+ api: /docs/components/animated-toast#api-reference
+---
+
+## Basic Toast
+
+<ComponentTabs name="animated-toast-demo" />
+
+## Minimal Toast
+
+<ComponentTabs name="animated-toast-minimal-demo" />
+
+## Undo Toast
+
+<ComponentTabs name="animated-toast-undo-demo" />
+
+## Notification Toast
+
+<ComponentTabs name="animated-toast-notification-demo" />
+
+## Stacked Notifications
+
+<ComponentTabs name="animated-toast-stacked-demo" />
+
+## Promise Toast
+
+<ComponentTabs name="animated-toast-promise-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/animated-toast"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     lucide-react
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/animated-toast.tsx```
+
+    <ComponentSource name="animated-toast" />
+  </Step>
+</Steps>
+
+## API Reference
+
+### AnimatedToastProvider
+
+<AutoTypeTable
+  path="./types/docs/animated-toast.ts"
+  name="AnimatedToastProviderProps"
+/>
+
+### Toast Types
+
+<AutoTypeTable
+  path="./types/docs/animated-toast.ts"
+  name="Toast"
+/>
+
+### MinimalToast
+
+<AutoTypeTable
+  path="./types/docs/animated-toast.ts"
+  name="MinimalToastProps"
+/>
+
+### UndoToast
+
+<AutoTypeTable
+  path="./types/docs/animated-toast.ts"
+  name="UndoToastProps"
+/>
+
+### NotificationToast
+
+<AutoTypeTable
+  path="./types/docs/animated-toast.ts"
+  name="NotificationToastProps"
+/>
+
+### StackedNotifications
+
+<AutoTypeTable
+  path="./types/docs/animated-toast.ts"
+  name="StackedNotificationsProps"
+/>
+
+### PromiseToast
+
+<AutoTypeTable
+  path="./types/docs/animated-toast.ts"
+  name="PromiseToastProps"
+/>
+
+## Notes
+
+- All toast components support different types: success, error, warning, info, and default
+- Toast positions can be customized (top-right, top-left, bottom-right, etc.)
+- Toasts automatically dismiss after a configurable duration
+- The provider manages toast state and stacking
+- Promise toasts provide automatic loading/success/error feedback
+- Stacked notifications show multiple toasts with a maximum visible limit
+- All animations use Framer Motion for smooth transitions

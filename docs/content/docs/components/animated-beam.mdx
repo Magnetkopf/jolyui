@@ -1,0 +1,132 @@
+---
+title: Animated Beam
+description: A smooth, animated beam component that connects elements with customizable curves and effects.
+preview: true
+links:
+ api: /docs/components/animated-beam#api-reference
+---
+
+## Basic Usage
+
+<ComponentTabs name="animated-beam-demo" />
+
+## Curved Beam
+
+<ComponentTabs name="animated-beam-curved-demo" />
+
+## Multiple Beams
+
+<ComponentTabs name="animated-beam-multiple-demo" />
+
+## Bidirectional
+
+<ComponentTabs name="animated-beam-bidirectional-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/animated-beam"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/animated-beam.tsx```
+
+    <ComponentSource name="animated-beam" />
+  </Step>
+    <Step>
+    Copy and paste the following code into your project. ```globals.css```
+
+    ```css
+    @layer utilities {
+  @keyframes beam-dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: -1000;
+    }
+  }
+
+  @keyframes beam-flow {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(300%);
+    }
+  }
+
+  .animated-beam-path {
+    will-change: stroke-dashoffset;
+  }
+}
+      ```
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { AnimatedBeam, BeamContainer, BeamNode } from "@/components/ui/animated-beam";
+
+function MyComponent() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const fromRef = useRef<HTMLDivElement>(null);
+  const toRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <BeamContainer ref={containerRef}>
+      <BeamNode ref={fromRef}>Start</BeamNode>
+      <BeamNode ref={toRef}>End</BeamNode>
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={fromRef}
+        toRef={toRef}
+      />
+    </BeamContainer>
+  );
+}
+```
+
+## API Reference
+
+### AnimatedBeam
+
+<AutoTypeTable
+  path="./types/docs/animated-beam.ts"
+  name="AnimatedBeamProps"
+/>
+
+### BeamContainer
+
+<AutoTypeTable
+  path="./types/docs/animated-beam.ts"
+  name="BeamContainerProps"
+/>
+
+### BeamNode
+
+<AutoTypeTable
+  path="./types/docs/animated-beam.ts"
+  name="BeamNodeProps"
+/>
+
+## Notes
+
+- The `containerRef` must be attached to the parent container that holds both the start and end elements
+- Use `BeamContainer` as the wrapper for proper positioning
+- Use `BeamNode` for the elements you want to connect
+- Curvature values range from -1 to 1, where 0 is straight
+- The animation uses SVG paths and CSS animations for smooth performance

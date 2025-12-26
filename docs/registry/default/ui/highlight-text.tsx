@@ -11,10 +11,10 @@ const highlightVariants = cva("relative inline-block", {
       marker: "",
     },
     color: {
-      primary: "[--highlight-color:var(--primary)]",
-      secondary: "[--highlight-color:var(--secondary)]",
-      accent: "[--highlight-color:var(--accent)]",
-      destructive: "[--highlight-color:var(--destructive)]",
+      primary: "[--highlight-color:hsl(var(--highlight-primary))] [&_path]:[stroke:var(--highlight-color)]",
+      secondary: "[--highlight-color:hsl(var(--highlight-secondary))] [&_path]:[stroke:var(--highlight-color)]",
+      accent: "[--highlight-color:hsl(var(--highlight-accent))] [&_path]:[stroke:var(--highlight-color)]",
+      destructive: "[--highlight-color:hsl(var(--highlight-destructive))] [&_path]:[stroke:var(--highlight-color)]",
     },
   },
   defaultVariants: {

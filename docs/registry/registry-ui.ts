@@ -13,6 +13,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "animated-beam",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "ui/animated-beam.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "animated-table",
     type: "registry:ui",
     dependencies: ["lucide-react", "motion"],
@@ -30,6 +41,61 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/button.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "dock",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "motion"],
+    files: [
+      {
+        path: "ui/dock.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "image-comparison",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/image-comparison.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "animated-tooltip",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/animated-tooltip.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "animated-toast",
+    type: "registry:ui",
+    dependencies: ["motion", "lucide-react"],
+    files: [
+      {
+        path: "ui/animated-toast.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "gradient-border",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/gradient-border.tsx",
         type: "registry:ui",
       },
     ],

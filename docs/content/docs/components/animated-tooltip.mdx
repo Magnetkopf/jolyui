@@ -1,0 +1,121 @@
+---
+title: Animated Tooltip
+description: Interactive tooltips with smooth animations, multiple placements, and various content types.
+preview: true
+links:
+ api: /docs/components/animated-tooltip#api-reference
+---
+
+## Placement Options
+
+<ComponentTabs name="animated-tooltip-demo" />
+
+## Animation Types
+
+<ComponentTabs name="animated-tooltip-animation-demo" />
+
+## Icon Tooltips with Shortcuts
+
+<ComponentTabs name="animated-tooltip-icon-demo" />
+
+## Status Tooltips
+
+<ComponentTabs name="animated-tooltip-status-demo" />
+
+## Rich Tooltip with Image
+
+<ComponentTabs name="animated-tooltip-rich-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/animated-tooltip"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/animated-tooltip.tsx```
+
+    <ComponentSource name="animated-tooltip" />
+  </Step>
+</Steps>
+
+
+## API Reference
+
+### AnimatedTooltip
+
+<AutoTypeTable
+  path="./types/docs/animated-tooltip.ts"
+  name="AnimatedTooltipProps"
+/>
+
+### RichTooltip
+
+<AutoTypeTable
+  path="./types/docs/animated-tooltip.ts"
+  name="RichTooltipProps"
+/>
+
+### IconTooltip
+
+<AutoTypeTable
+  path="./types/docs/animated-tooltip.ts"
+  name="IconTooltipProps"
+/>
+
+### HoverCardTooltip
+
+<AutoTypeTable
+  path="./types/docs/animated-tooltip.ts"
+  name="HoverCardTooltipProps"
+/>
+
+### ConfirmTooltip
+
+<AutoTypeTable
+  path="./types/docs/animated-tooltip.ts"
+  name="ConfirmTooltipProps"
+/>
+
+### TooltipGroup
+
+<AutoTypeTable
+  path="./types/docs/animated-tooltip.ts"
+  name="TooltipGroupProps"
+/>
+
+### FloatingLabel
+
+<AutoTypeTable
+  path="./types/docs/animated-tooltip.ts"
+  name="FloatingLabelProps"
+/>
+
+### StatusTooltip
+
+<AutoTypeTable
+  path="./types/docs/animated-tooltip.ts"
+  name="StatusTooltipProps"
+/>
+
+## Notes
+
+- Tooltips automatically position themselves to stay within viewport bounds
+- All tooltips support keyboard navigation and accessibility features
+- Animation types include fade, scale, slide, and spring transitions
+- Rich tooltips support images, titles, and descriptions
+- Icon tooltips can display keyboard shortcuts
+- Status tooltips show online/offline/away/busy indicators
+- Tooltip groups are perfect for toolbar-style interfaces

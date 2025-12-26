@@ -1,0 +1,18 @@
+{
+  "name": "animated-beam-bidirectional-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "animated-beam"
+  ],
+  "files": [
+    {
+      "path": "examples/animated-beam-bidirectional-demo.tsx",
+      "content": "import { AnimatedBeam, BeamContainer, BeamNode } from \"@/registry/default/ui/animated-beam\";\nimport { Circle, Square } from \"lucide-react\";\nimport React from \"react\";\n\nexport default function AnimatedBeamBidirectionalDemo() {\n  const containerRef = React.useRef<HTMLDivElement>(null);\n  const fromRef = React.useRef<HTMLDivElement>(null);\n  const toRef = React.useRef<HTMLDivElement>(null);\n\n  return (\n    <BeamContainer\n      ref={containerRef}\n      className=\"mx-auto w-full min-h-screen flex items-center justify-between rounded-xl border p-8\"\n    >\n      <BeamNode ref={fromRef} className=\"h-14 w-14\">\n        <Circle className=\"h-6 w-6 text-muted-foreground\" />\n      </BeamNode>\n\n      <BeamNode ref={toRef} className=\"h-14 w-14\">\n        <Square className=\"h-6 w-6 text-muted-foreground\" />\n      </BeamNode>\n\n      <AnimatedBeam\n        containerRef={containerRef}\n        fromRef={fromRef}\n        toRef={toRef}\n        curvature={0.5}\n        gradientStartColor=\"#3b82f6\"\n        gradientStopColor=\"#1d4ed8\"\n      />\n      <AnimatedBeam\n        containerRef={containerRef}\n        fromRef={toRef}\n        toRef={fromRef}\n        curvature={0.5}\n        reverse={true}\n        delay={1}\n        gradientStartColor=\"#f59e0b\"\n        gradientStopColor=\"#d97706\"\n      />\n    </BeamContainer>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

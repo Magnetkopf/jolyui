@@ -1,0 +1,15 @@
+{
+  "name": "animated-tooltip-hover-card-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "animated-tooltip"
+  ],
+  "files": [
+    {
+      "path": "examples/animated-tooltip-hover-card-demo.tsx",
+      "content": "\"use client\";\n\nimport { HoverCardTooltip } from \"@/components/ui/animated-tooltip\";\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function AnimatedTooltipHoverCardDemo() {\n  return (\n    <div className=\"flex items-center justify-center gap-4\">\n      <HoverCardTooltip\n        placement=\"bottom\"\n        content={\n          <div className=\"flex flex-col gap-3 p-4\">\n            <div className=\"flex items-center gap-3\">\n              <Avatar className=\"h-12 w-12\">\n                <AvatarImage src=\"https://github.com/shadcn.png\" />\n                <AvatarFallback>SC</AvatarFallback>\n              </Avatar>\n              <div>\n                <p className=\"font-semibold\">shadcn</p>\n                <p className=\"text-sm text-muted-foreground\">@shadcn</p>\n              </div>\n            </div>\n            <p className=\"text-sm\">\n              Building the next generation of UI components with React and TypeScript.\n            </p>\n            <div className=\"flex gap-2\">\n              <Button size=\"sm\">Follow</Button>\n              <Button size=\"sm\" variant=\"outline\">\n                View Profile\n              </Button>\n            </div>\n          </div>\n        }\n      >\n        <Button variant=\"outline\">@shadcn</Button>\n      </HoverCardTooltip>\n\n      <HoverCardTooltip\n        placement=\"right\"\n        content={\n          <div className=\"p-4\">\n            <h4 className=\"font-semibold\">Product Information</h4>\n            <p className=\"mt-2 text-sm text-muted-foreground\">\n              This is a detailed product description that appears when you hover over the trigger.\n              It can contain multiple lines of text and other interactive elements.\n            </p>\n            <div className=\"mt-3 flex gap-2\">\n              <Button size=\"sm\">Learn More</Button>\n              <Button size=\"sm\" variant=\"outline\">\n                Buy Now\n              </Button>\n            </div>\n          </div>\n        }\n      >\n        <Button variant=\"outline\">Product Info</Button>\n      </HoverCardTooltip>\n    </div>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
