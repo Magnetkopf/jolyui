@@ -73,7 +73,6 @@ export default function AnimatedTableSelectDemo() {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="font-medium text-sm">Selectable Animated Table</h3>
       <AnimatedTable
         data={data}
         columns={columns}

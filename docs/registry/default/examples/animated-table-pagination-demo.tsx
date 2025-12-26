@@ -93,7 +93,6 @@ export default function AnimatedTablePaginationDemo() {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="font-medium text-sm">Paginated Animated Table</h3>
       <AnimatedTable
         data={paginatedData}
         columns={columns}

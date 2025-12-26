@@ -13,7 +13,6 @@ export default function AnimatedToastMinimalDemo() {
 
   return (
     <div className="p-8">
-      <h3 className="text-lg font-semibold mb-4">Minimal Toast Demo:</h3>
       <div className="flex flex-wrap gap-4">
         <button
           onClick={() => triggerToast("success")}

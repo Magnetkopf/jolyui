@@ -72,7 +72,6 @@ export default function AnimatedToastDemo() {
   return (
     <AnimatedToastProvider position="top-right" maxToasts={3}>
       <div className="p-8">
-        <h3 className="text-lg font-semibold mb-4">Click buttons to show toasts:</h3>
         <ToastDemoContent />
       </div>
     </AnimatedToastProvider>

@@ -86,7 +86,6 @@ export default function AnimatedTableSearchDemo() {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="font-medium text-sm">Searchable Animated Table</h3>
       <AnimatedTable
         data={filteredData}
         columns={columns}

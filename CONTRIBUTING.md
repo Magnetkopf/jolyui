@@ -7,7 +7,6 @@ Thank you for your interest in contributing to Joly UI! This guide will help you
 Joly UI is organized into multiple packages and documentation:
 
 - `/packages/*` - Component packages (publishable to npm)
-  - `@jolyui/avatar-group` - Avatar Group component
   - _More components coming soon..._
 - `/docs/*` - Documentation website
   - `/app/*` - Next.js App Router pages
@@ -74,10 +73,10 @@ Joly UI is organized into multiple packages and documentation:
 ### Package Structure Example
 
 ```text
-packages/avatar-group/
+packages/your-component/
 ├── src/
 │   ├── index.ts              # Main export
-│   └── avatar-group.tsx      # Component implementation
+│   └── your-component.tsx    # Component implementation
 ├── package.json
 ├── README.md
 ├── tsconfig.json

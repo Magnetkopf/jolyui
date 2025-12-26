@@ -61,7 +61,7 @@ export function Header() {
                   {/* Desktop Navigation Links */}
                   <div className="hidden sm:flex items-center gap-4">
                     <ViewTransitionsLink
-                      href="/docs/components/avatar-group"
+                      href="/docs/components/animated-beam"
                       className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                     >
                       Components
@@ -116,7 +116,7 @@ export function Header() {
                 {/* Mobile Navigation remains unchanged */}
                 <div className="flex sm:hidden items-center gap-4">
                   <ViewTransitionsLink
-                    href="/docs/components/avatar-group"
+                    href="/docs/components/animated-beam"
                     className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                   >
                     Components

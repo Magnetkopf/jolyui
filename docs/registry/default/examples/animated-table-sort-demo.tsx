@@ -95,7 +95,6 @@ export default function AnimatedTableSortDemo() {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="font-medium text-sm">Sortable Animated Table</h3>
       <AnimatedTable
         data={sortedData}
         columns={columns}

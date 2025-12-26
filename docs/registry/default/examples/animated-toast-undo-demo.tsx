@@ -19,7 +19,6 @@ export default function AnimatedToastUndoDemo() {
 
   return (
     <div className="p-8">
-      <h3 className="text-lg font-semibold mb-4">Undo Toast Demo:</h3>
       <p className="mb-4 text-muted-foreground">{message}</p>
 
       <button

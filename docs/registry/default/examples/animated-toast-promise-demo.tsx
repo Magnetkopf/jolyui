@@ -49,7 +49,6 @@ function PromiseToastDemoContent() {
 
   return (
     <div className="p-8">
-      <h3 className="text-lg font-semibold mb-4">Promise Toast Demo:</h3>
       <p className="mb-4 text-muted-foreground">
         Click buttons to simulate async operations with toast feedback.
       </p>

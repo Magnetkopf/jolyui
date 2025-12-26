@@ -22,7 +22,6 @@ export default function AnimatedToastStackedDemo() {
 
   return (
     <div className="p-8">
-      <h3 className="text-lg font-semibold mb-4">Stacked Notifications Demo:</h3>
       <div className="flex flex-wrap gap-4 mb-8">
         <button
           onClick={() => addToast("success")}

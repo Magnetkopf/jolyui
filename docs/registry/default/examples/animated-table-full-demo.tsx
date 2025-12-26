@@ -188,7 +188,6 @@ export default function AnimatedTableFullDemo() {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="font-medium text-sm">Full Featured Animated Table</h3>
       <AnimatedTable
         data={paginatedData}
         columns={columns}

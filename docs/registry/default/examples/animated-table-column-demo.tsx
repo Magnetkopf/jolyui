@@ -81,7 +81,6 @@ export default function AnimatedTableColumnDemo() {
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="font-medium text-sm">Column Visibility Animated Table</h3>
       <AnimatedTable
         data={data}
         columns={columns}

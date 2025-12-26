@@ -23,20 +23,6 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
-    "avatar-group": {
-      name: "avatar-group",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [{
-        path: "registry/default/ui/avatar-group.tsx",
-        type: "registry:ui",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/ui/avatar-group.tsx")),
-      source: "",
-      chunks: []
-    },
     "animated-beam": {
       name: "animated-beam",
       description: "",
@@ -356,62 +342,6 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/hooks/use-mobile.ts")),
-      source: "",
-      chunks: []
-    },
-    "avatar-group-demo": {
-      name: "avatar-group-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["avatar-group"],
-      files: [{
-        path: "registry/default/examples/avatar-group-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/examples/avatar-group-demo.tsx")),
-      source: "",
-      chunks: []
-    },
-    "avatar-group-truncation-demo": {
-      name: "avatar-group-truncation-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["avatar-group"],
-      files: [{
-        path: "registry/default/examples/avatar-group-truncation-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/examples/avatar-group-truncation-demo.tsx")),
-      source: "",
-      chunks: []
-    },
-    "avatar-group-rtl-demo": {
-      name: "avatar-group-rtl-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["avatar-group"],
-      files: [{
-        path: "registry/default/examples/avatar-group-rtl-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/examples/avatar-group-rtl-demo.tsx")),
-      source: "",
-      chunks: []
-    },
-    "avatar-group-icons-demo": {
-      name: "avatar-group-icons-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["avatar-group"],
-      files: [{
-        path: "registry/default/examples/avatar-group-icons-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/examples/avatar-group-icons-demo.tsx")),
       source: "",
       chunks: []
     },

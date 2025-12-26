@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
       {
         hostname: 'images.pexels.com',
       },
+      {
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
   async redirects() {
