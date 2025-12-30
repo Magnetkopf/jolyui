@@ -1,132 +1,149 @@
-import { Database, Lock, Server, Smartphone } from "lucide-react";
-import React from "react";
 import {
-  AnimatedBeam,
-  BeamContainer,
-  BeamNode,
+    AnimatedBeam,
+    BeamContainer,
+    BeamNode,
 } from "@/registry/default/ui/animated-beam";
+import { Database, Layout, Lock, Package, Server, Smartphone } from "lucide-react";
+import React from "react";
 
 export default function AnimatedBeamMultipleDemo() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const clientRef = React.useRef<HTMLDivElement>(null);
   const gatewayRef = React.useRef<HTMLDivElement>(null);
   const authRef = React.useRef<HTMLDivElement>(null);
+  const ordersRef = React.useRef<HTMLDivElement>(null);
+  const inventoryRef = React.useRef<HTMLDivElement>(null);
   const dbRef = React.useRef<HTMLDivElement>(null);
 
   return (
     <BeamContainer
       ref={containerRef}
-      className="mx-auto flex w-full items-center justify-center gap-16 rounded-xl border p-8"
+      className="mx-auto flex w-full items-center justify-center gap-12 rounded-xl border bg-background p-10 shadow-sm"
     >
-      {/* Client */}
-      <div className="flex flex-col items-center gap-4">
-        <BeamNode ref={clientRef} className="h-16 w-16">
-          <Smartphone className="h-8 w-8 text-blue-500" />
+      {/* Client Layer */}
+      <div className="flex flex-col items-center gap-2">
+        <BeamNode ref={clientRef} className="h-14 w-14 border-2 border-blue-500/20 bg-blue-500/10">
+          <Smartphone className="h-6 w-6 text-blue-600" />
         </BeamNode>
-        <span className="font-medium text-muted-foreground text-sm">
-          Client
-        </span>
+        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Client</span>
       </div>
 
-      {/* API Gateway */}
-      <div className="flex flex-col items-center gap-4">
+      {/* Gateway Layer */}
+      <div className="flex flex-col items-center gap-2">
         <BeamNode
           ref={gatewayRef}
-          className="h-20 w-20 bg-gradient-to-br from-purple-500 to-purple-600"
+          className="h-16 w-16 border-2 border-purple-500/20 bg-purple-500/10"
         >
-          <Server className="h-10 w-10 text-white" />
+          <Server className="h-8 w-8 text-purple-600" />
         </BeamNode>
-        <span className="font-medium text-muted-foreground text-sm">
-          API Gateway
-        </span>
+        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Gateway</span>
       </div>
 
-      {/* Backend Services */}
+      {/* Services Layer */}
       <div className="flex flex-col gap-6">
-        <div className="flex items-center gap-4">
-          <BeamNode ref={authRef} className="h-16 w-16">
-            <Lock className="h-8 w-8 text-green-500" />
+        <div className="flex items-center gap-3">
+          <BeamNode ref={authRef} className="h-12 w-12 border-2 border-emerald-500/20 bg-emerald-500/10">
+            <Lock className="h-5 w-5 text-emerald-600" />
           </BeamNode>
-          <span className="font-medium text-muted-foreground text-sm">
-            Auth Service
-          </span>
+          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Auth</span>
         </div>
 
-        <div className="flex items-center gap-4">
-          <BeamNode ref={dbRef} className="h-16 w-16">
-            <Database className="h-8 w-8 text-orange-500" />
+        <div className="flex items-center gap-3">
+          <BeamNode ref={ordersRef} className="h-12 w-12 border-2 border-amber-500/20 bg-amber-500/10">
+            <Package className="h-5 w-5 text-amber-600" />
           </BeamNode>
-          <span className="font-medium text-muted-foreground text-sm">
-            Database
-          </span>
+          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Orders</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <BeamNode ref={inventoryRef} className="h-12 w-12 border-2 border-rose-500/20 bg-rose-500/10">
+            <Layout className="h-5 w-5 text-rose-600" />
+          </BeamNode>
+          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Stock</span>
         </div>
       </div>
 
-      {/* Request Flow: Client -> Gateway */}
+      {/* Database Layer */}
+      <div className="flex flex-col items-center gap-2">
+        <BeamNode ref={dbRef} className="h-14 w-14 border-2 border-slate-500/20 bg-slate-500/10">
+          <Database className="h-6 w-6 text-slate-600" />
+        </BeamNode>
+        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">DB</span>
+      </div>
+
+      {/* Connections */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={clientRef}
         toRef={gatewayRef}
+        duration={3}
         curvature={0.2}
         gradientStartColor="#3b82f6"
-        gradientStopColor="#1d4ed8"
+        gradientStopColor="#8b5cf6"
       />
 
-      {/* Gateway -> Auth Service */}
+      {/* Gateway to Services */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={gatewayRef}
         toRef={authRef}
+        duration={3}
+        delay={0.2}
         curvature={-0.3}
-        delay={0.5}
         gradientStartColor="#8b5cf6"
-        gradientStopColor="#7c3aed"
+        gradientStopColor="#10b981"
       />
-
-      {/* Gateway -> Database */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={gatewayRef}
-        toRef={dbRef}
+        toRef={ordersRef}
+        duration={3}
+        delay={0.4}
+        curvature={0.1}
+        gradientStartColor="#8b5cf6"
+        gradientStopColor="#f59e0b"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={gatewayRef}
+        toRef={inventoryRef}
+        duration={3}
+        delay={0.6}
         curvature={0.3}
-        delay={0.5}
-        gradientStartColor="#f59e0b"
-        gradientStopColor="#d97706"
+        gradientStartColor="#8b5cf6"
+        gradientStopColor="#f43f5e"
       />
 
-      {/* Response Flow: Services -> Gateway */}
+      {/* Services to DB */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={authRef}
-        toRef={gatewayRef}
+        toRef={dbRef}
+        duration={3}
+        delay={1}
         curvature={0.3}
-        delay={3}
-        reverse={true}
         gradientStartColor="#10b981"
-        gradientStopColor="#059669"
+        gradientStopColor="#64748b"
       />
-
       <AnimatedBeam
         containerRef={containerRef}
-        fromRef={dbRef}
-        toRef={gatewayRef}
+        fromRef={ordersRef}
+        toRef={dbRef}
+        duration={3}
+        delay={1.2}
+        curvature={0.1}
+        gradientStartColor="#f59e0b"
+        gradientStopColor="#64748b"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={inventoryRef}
+        toRef={dbRef}
+        duration={3}
+        delay={1.4}
         curvature={-0.3}
-        delay={4}
-        reverse={true}
-        gradientStartColor="#ef4444"
-        gradientStopColor="#dc2626"
-      />
-
-      {/* Gateway -> Client (Response) */}
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={gatewayRef}
-        toRef={clientRef}
-        curvature={-0.2}
-        delay={5}
-        reverse={true}
-        gradientStartColor="#06b6d4"
-        gradientStopColor="#0891b2"
+        gradientStartColor="#f43f5e"
+        gradientStopColor="#64748b"
       />
     </BeamContainer>
   );
