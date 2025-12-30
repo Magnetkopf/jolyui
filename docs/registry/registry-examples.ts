@@ -757,6 +757,17 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "github-star-demo",
+    type: "registry:example",
+    registryDependencies: ["github-star"],
+    files: [
+      {
+        path: "examples/github-star-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "calendar-basic-demo",
     type: "registry:example",
     registryDependencies: ["calender"],

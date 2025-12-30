@@ -321,4 +321,15 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "github-star",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/github-star.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

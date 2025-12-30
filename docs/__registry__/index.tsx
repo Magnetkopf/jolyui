@@ -429,6 +429,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "github-star": {
+      name: "github-star",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/github-star.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/github-star.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -1392,6 +1406,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/command-palette-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "github-star-demo": {
+      name: "github-star-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["github-star"],
+      files: [{
+        path: "registry/default/examples/github-star-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/github-star-demo.tsx")),
       source: "",
       chunks: []
     },

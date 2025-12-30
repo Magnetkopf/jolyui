@@ -1,14 +1,13 @@
-import { ArrowUpRight, PartyPopper } from "lucide-react";
-import Link from "next/link";
-import { Link as ViewTransitionsLink } from "next-view-transitions";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/lib/theme-toggle";
+import { Link as ViewTransitionsLink } from "next-view-transitions";
+import Link from "next/link";
 
 export function Header() {
   return (
     <>
       {/* Mobile Pro Banner completely separate from sticky header */}
-      <div className="w-full bg-white p-2.5 sm:hidden dark:bg-black/5">
+      {/* <div className="w-full bg-white p-2.5 sm:hidden dark:bg-black/5">
         <Link
           href="#"
           target="_blank"
@@ -29,7 +28,7 @@ export function Header() {
             </div>
           </div>
         </Link>
-      </div>
+      </div> */}
 
       <div className="sticky top-0 right-0 left-0 z-50">
         <div className="w-full bg-white dark:bg-black/5">
@@ -102,18 +101,18 @@ export function Header() {
 
                 {/* Mobile Navigation remains unchanged */}
                 <div className="flex items-center gap-4 sm:hidden">
-                  <ViewTransitionsLink
+                  {/* <ViewTransitionsLink
                     href="/docs/components/animated-beam"
                     className="text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
                   >
                     Components
-                  </ViewTransitionsLink>
-                  <ViewTransitionsLink
+                  </ViewTransitionsLink> */}
+                  {/* <ViewTransitionsLink
                     href="/pricing"
                     className="text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
                   >
                     Pricing
-                  </ViewTransitionsLink>
+                  </ViewTransitionsLink> */}
                   <ThemeToggle />
                 </div>
               </div>

@@ -1,0 +1,69 @@
+---
+title: GitHub Star Button
+description: A premium GitHub star button with real-time data, rolling number animations, and interactive particle effects.
+preview: true
+links:
+  api: /docs/components/github-star#api-reference
+---
+
+## Basic Usage
+
+The GitHub Star Button provides a sleek way to showcase your repository's popularity. It fetches real-time data from the GitHub API and features smooth animations.
+
+<ComponentTabs name="github-star-demo" />
+
+## Features
+
+- **Real-time Data**: Fetches stargazers count directly from GitHub API.
+- **Rolling Number Animation**: Premium vertical rolling animation for digits.
+- **Particle Effects**: Interactive star particles on click.
+- **Interactive Hover**: Smooth scaling, rotation, and shimmer effects.
+- **Responsive**: Works great on all screen sizes.
+- **Theme Aware**: Automatically adjusts for light and dark modes.
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/github-star"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Install the following dependencies:
+
+    ```package-install
+    motion
+    ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/github-star.tsx```
+
+    <ComponentSource name="github-star" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/github-star.ts"
+  name="GitHubStarButtonProps"
+/>
+
+## Customization
+
+You can easily customize the button by passing a `className` prop to adjust its size, colors, or spacing. The component uses Tailwind CSS for all its styling.
+
+### Colors
+
+The component uses a custom `star` and `star-glow` color. You can add these to your `globals.css` or Tailwind theme:
+
+```css
+@theme {
+  --color-star: #eab308;
+  --color-star-glow: #facc15;
+}
+```
