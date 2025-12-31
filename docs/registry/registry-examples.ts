@@ -196,46 +196,12 @@ export const examples: Registry["items"] = [
     ],
   },
   {
-    name: "gradient-border-card-demo",
+    name: "rainbow-button-demo",
     type: "registry:example",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["gradient-border"],
+    registryDependencies: ["rainbow-button"],
     files: [
       {
-        path: "examples/gradient-border-card-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "gradient-border-button-demo",
-    type: "registry:example",
-    registryDependencies: ["gradient-border"],
-    files: [
-      {
-        path: "examples/gradient-border-button-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "gradient-border-shimmer-demo",
-    type: "registry:example",
-    registryDependencies: ["gradient-border"],
-    files: [
-      {
-        path: "examples/gradient-border-shimmer-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "gradient-border-pulse-demo",
-    type: "registry:example",
-    registryDependencies: ["gradient-border"],
-    files: [
-      {
-        path: "examples/gradient-border-pulse-demo.tsx",
+        path: "examples/rainbow-button-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -1137,17 +1103,6 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/segmented-button-controlled-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
-    name: "segmented-button-custom-demo",
-    type: "registry:example",
-    registryDependencies: ["segmented-button"],
-    files: [
-      {
-        path: "examples/segmented-button-custom-demo.tsx",
         type: "registry:example",
       },
     ],

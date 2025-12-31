@@ -1,0 +1,64 @@
+---
+title: Rainbow Button
+description: A premium button with an animated rainbow gradient border.
+preview: true
+links:
+ api: /docs/components/rainbow-button#api-reference
+---
+
+## Rainbow Button
+
+<ComponentTabs name="rainbow-button-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/rainbow-button"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/rainbow-button.tsx```
+
+    <ComponentSource name="rainbow-button" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { RainbowButton } from "@/components/ui/rainbow-button";
+
+function MyComponent() {
+  return (
+    <RainbowButton>
+      Get Started
+    </RainbowButton>
+  );
+}
+```
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/rainbow-button.ts"
+  name="RainbowButtonProps"
+/>
+
+## Notes
+
+- The button features a rotating rainbow gradient border.
+- You can customize the colors, duration, and border width.
+- The button includes smooth hover and active state animations.
+- Fully accessible and supports all standard button attributes.

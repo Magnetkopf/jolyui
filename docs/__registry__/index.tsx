@@ -135,17 +135,17 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
-    "gradient-border": {
-      name: "gradient-border",
+    "rainbow-button": {
+      name: "rainbow-button",
       description: "",
       type: "registry:ui",
       registryDependencies: undefined,
       files: [{
-        path: "registry/default/ui/gradient-border.tsx",
+        path: "registry/default/ui/rainbow-button.tsx",
         type: "registry:ui",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/ui/gradient-border.tsx")),
+      component: React.lazy(() => import("@/registry/default/ui/rainbow-button.tsx")),
       source: "",
       chunks: []
     },
@@ -709,59 +709,17 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
-    "gradient-border-card-demo": {
-      name: "gradient-border-card-demo",
+    "rainbow-button-demo": {
+      name: "rainbow-button-demo",
       description: "",
       type: "registry:example",
-      registryDependencies: ["gradient-border"],
+      registryDependencies: ["rainbow-button"],
       files: [{
-        path: "registry/default/examples/gradient-border-card-demo.tsx",
+        path: "registry/default/examples/rainbow-button-demo.tsx",
         type: "registry:example",
         target: ""
       }],
-      component: React.lazy(() => import("@/registry/default/examples/gradient-border-card-demo.tsx")),
-      source: "",
-      chunks: []
-    },
-    "gradient-border-button-demo": {
-      name: "gradient-border-button-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["gradient-border"],
-      files: [{
-        path: "registry/default/examples/gradient-border-button-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/examples/gradient-border-button-demo.tsx")),
-      source: "",
-      chunks: []
-    },
-    "gradient-border-shimmer-demo": {
-      name: "gradient-border-shimmer-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["gradient-border"],
-      files: [{
-        path: "registry/default/examples/gradient-border-shimmer-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/examples/gradient-border-shimmer-demo.tsx")),
-      source: "",
-      chunks: []
-    },
-    "gradient-border-pulse-demo": {
-      name: "gradient-border-pulse-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["gradient-border"],
-      files: [{
-        path: "registry/default/examples/gradient-border-pulse-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/examples/gradient-border-pulse-demo.tsx")),
+      component: React.lazy(() => import("@/registry/default/examples/rainbow-button-demo.tsx")),
       source: "",
       chunks: []
     },

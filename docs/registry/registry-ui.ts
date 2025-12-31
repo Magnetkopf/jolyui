@@ -93,12 +93,12 @@ export const ui: Registry["items"] = [
     ],
   },
   {
-    name: "gradient-border",
+    name: "rainbow-button",
     type: "registry:ui",
     dependencies: ["motion"],
     files: [
       {
-        path: "ui/gradient-border.tsx",
+        path: "ui/rainbow-button.tsx",
         type: "registry:ui",
       },
     ],
