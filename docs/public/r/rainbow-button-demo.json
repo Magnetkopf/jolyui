@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/rainbow-button-demo.tsx",
-      "content": "\"use client\";\n\nimport { RainbowButton } from \"@/registry/default/ui/rainbow-button\";\nimport { ArrowRight } from \"lucide-react\";\n\nexport default function RainbowButtonDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <RainbowButton className=\"group\">\n        Get Started\n        <ArrowRight className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\" />\n      </RainbowButton>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { ArrowRight } from \"lucide-react\";\nimport { RainbowButton } from \"@/registry/default/ui/rainbow-button\";\n\nexport default function RainbowButtonDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <RainbowButton className=\"group\">\n        Get Started\n        <ArrowRight className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\" />\n      </RainbowButton>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

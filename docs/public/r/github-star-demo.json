@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/github-star-demo.tsx",
-      "content": "import { GitHubStarButton } from \"@/registry/default/ui/github-star\";\n\nexport default function GitHubStarDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 p-8\">\n      <div className=\"flex flex-wrap items-center justify-center gap-6\">\n        <GitHubStarButton owner=\"johuniq\" repo=\"jolyui\" stars={120} />\n        <GitHubStarButton owner=\"facebook\" repo=\"react\" />\n        <GitHubStarButton owner=\"vercel\" repo=\"next.js\" />\n      </div>\n      \n      <div className=\"text-center space-y-2\">\n        <p className=\"text-sm text-muted-foreground\">\n          Real-time GitHub stars with premium rolling animations and particle effects.\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { GitHubStarButton } from \"@/registry/default/ui/github-star\";\n\nexport default function GitHubStarDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 p-8\">\n      <div className=\"flex flex-wrap items-center justify-center gap-6\">\n        <GitHubStarButton owner=\"johuniq\" repo=\"jolyui\" stars={120} />\n        <GitHubStarButton owner=\"facebook\" repo=\"react\" />\n        <GitHubStarButton owner=\"vercel\" repo=\"next.js\" />\n      </div>\n\n      <div className=\"space-y-2 text-center\">\n        <p className=\"text-muted-foreground text-sm\">\n          Real-time GitHub stars with premium rolling animations and particle\n          effects.\n        </p>\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }
