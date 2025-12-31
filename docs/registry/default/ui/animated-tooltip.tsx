@@ -1,8 +1,8 @@
 "use client";
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 type Placement =
   | "top"
@@ -277,7 +277,11 @@ export function RichTooltip({
           {image && (
             <div className="h-32 w-full overflow-hidden">
               {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
-              <img src={image} alt={title} className="h-full w-full object-cover" />
+              <img
+                src={image}
+                alt={title}
+                className="h-full w-full object-cover"
+              />
             </div>
           )}
           <div className="p-3">
@@ -563,15 +567,14 @@ export function StatusTooltip({
 }
 
 export type {
-    AnimatedTooltipProps,
-    Animation,
-    ConfirmTooltipProps,
-    FloatingLabelProps,
-    HoverCardTooltipProps,
-    IconTooltipProps,
-    Placement,
-    RichTooltipProps,
-    StatusTooltipProps,
-    TooltipGroupProps
+  AnimatedTooltipProps,
+  Animation,
+  ConfirmTooltipProps,
+  FloatingLabelProps,
+  HoverCardTooltipProps,
+  IconTooltipProps,
+  Placement,
+  RichTooltipProps,
+  StatusTooltipProps,
+  TooltipGroupProps,
 };
-

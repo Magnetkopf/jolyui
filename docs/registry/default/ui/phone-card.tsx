@@ -34,7 +34,6 @@ export function PhoneCard({
             aria-label={`${title} - ${sub}`}
           />
         ) : (
-          // biome-ignore lint/a11y/useAltText: alt provided inline
           // biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx
           <img
             src={imageSrc}

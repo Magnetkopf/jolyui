@@ -100,6 +100,7 @@ export function ImageComparison({
       )}
     >
       {/* After Image (Background) */}
+      {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
       <img
         src={afterImage}
         alt={afterLabel}
@@ -117,6 +118,7 @@ export function ImageComparison({
               : `inset(0 0 ${100 - position}% 0)`,
         }}
       >
+        {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
         <img
           src={beforeImage}
           alt={beforeLabel}
@@ -239,6 +241,7 @@ export function ImageComparisonHover({
       tabIndex={0}
     >
       {/* After Image */}
+      {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
       <img
         src={afterImage}
         alt={afterLabel}
@@ -252,6 +255,7 @@ export function ImageComparisonHover({
         animate={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         transition={{ type: "tween", duration: 0.1 }}
       >
+        {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
         <img
           src={beforeImage}
           alt={beforeLabel}
@@ -307,6 +311,7 @@ export function ImageComparisonSplit({
       style={{ gap }}
     >
       <div className="relative flex-1 overflow-hidden">
+        {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
         <img
           src={beforeImage}
           alt={beforeLabel}
@@ -318,6 +323,7 @@ export function ImageComparisonSplit({
         </div>
       </div>
       <div className="relative flex-1 overflow-hidden">
+        {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
         <img
           src={afterImage}
           alt={afterLabel}
@@ -363,6 +369,7 @@ export function ImageComparisonFade({
       tabIndex={0}
     >
       {/* After Image */}
+      {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
       <img
         src={afterImage}
         alt={afterLabel}
@@ -376,6 +383,7 @@ export function ImageComparisonFade({
         animate={{ opacity: showBefore ? 1 : 0 }}
         transition={{ duration: 0.5 }}
       >
+        {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
         <img
           src={beforeImage}
           alt={beforeLabel}
@@ -451,6 +459,7 @@ export function ImageComparisonSwipe({
       )}
     >
       {/* After Image */}
+      {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
       <img
         src={afterImage}
         alt={afterLabel}
@@ -463,6 +472,7 @@ export function ImageComparisonSwipe({
         className="absolute inset-0 overflow-hidden"
         style={{ clipPath: displayClipPath }}
       >
+        {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
         <img
           src={beforeImage}
           alt={beforeLabel}
@@ -548,6 +558,7 @@ export function ImageComparisonLens({
       tabIndex={0}
     >
       {/* Before Image (Background) */}
+      {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
       <img
         src={beforeImage}
         alt="Before"
