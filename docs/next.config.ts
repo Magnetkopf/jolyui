@@ -34,47 +34,27 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
+  async rewrites() {
     return [
       {
         source: "/docs",
         destination: "/docs/introduction",
-        permanent: false,
       },
-      {
-        source: "/r/:component(data-table.*|data-grid.*)",
-        destination: "https://tablecn.com/r/:component.json",
-        permanent: true,
-      },
-      /**
-       * @see https://github.com/magicuidesign/magicui/blob/main/next.config.mjs
-       */
       {
         source: "/r/index",
         destination: "/r/index.json",
-        permanent: true,
       },
       {
         source: "/r/registry",
         destination: "/r/registry.json",
-        permanent: true,
       },
       {
-        source: "/r/:name((?!index\\.json|registry\\.json|styles/).*)",
-        destination: "/r/styles/default/:name.json",
-        permanent: true,
-        missing: [
-          {
-            type: "query",
-            key: "_redirected",
-            value: undefined,
-          },
-        ],
+        source: "/r/:name((?!index|registry|styles/).*).json",
+        destination: "/r/:name.json",
       },
       {
         source: "/docs/:path*.mdx",
         destination: "/llms.mdx/:path*",
-        permanent: true,
       },
     ];
   },
