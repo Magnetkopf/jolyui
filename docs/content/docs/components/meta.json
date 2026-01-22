@@ -1,6 +1,7 @@
 {
   "title": "Components",
   "pages": [
+    "ai-prompt-box",
     "button",
     "rainbow-button",
     "animated-beam",
@@ -38,3 +39,4 @@
     "video-player"
   ]
 }
+

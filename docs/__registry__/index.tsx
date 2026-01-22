@@ -527,6 +527,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "ai-prompt-box": {
+      name: "ai-prompt-box",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/ai-prompt-box.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/ai-prompt-box.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -2372,6 +2386,34 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/hover-preview-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "ai-prompt-box-demo": {
+      name: "ai-prompt-box-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["ai-prompt-box"],
+      files: [{
+        path: "registry/default/examples/ai-prompt-box-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/ai-prompt-box-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "ai-prompt-box-loading-demo": {
+      name: "ai-prompt-box-loading-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["ai-prompt-box"],
+      files: [{
+        path: "registry/default/examples/ai-prompt-box-loading-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/ai-prompt-box-loading-demo.tsx")),
       source: "",
       chunks: []
     },

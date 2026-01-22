@@ -497,6 +497,22 @@
       ]
     },
     {
+      "name": "ai-prompt-box",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-tooltip",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "ui/ai-prompt-box.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "dependencies": [
@@ -2467,6 +2483,32 @@
       "files": [
         {
           "path": "examples/hover-preview-custom-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ai-prompt-box-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "ai-prompt-box"
+      ],
+      "files": [
+        {
+          "path": "examples/ai-prompt-box-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "ai-prompt-box-loading-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "ai-prompt-box"
+      ],
+      "files": [
+        {
+          "path": "examples/ai-prompt-box-loading-demo.tsx",
           "type": "registry:example"
         }
       ]

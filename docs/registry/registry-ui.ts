@@ -397,4 +397,20 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "ai-prompt-box",
+    type: "registry:ui",
+    dependencies: [
+      "motion",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-tooltip",
+      "lucide-react",
+    ],
+    files: [
+      {
+        path: "ui/ai-prompt-box.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

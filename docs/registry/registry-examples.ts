@@ -1460,4 +1460,26 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "ai-prompt-box-demo",
+    type: "registry:example",
+    registryDependencies: ["ai-prompt-box"],
+    files: [
+      {
+        path: "examples/ai-prompt-box-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "ai-prompt-box-loading-demo",
+    type: "registry:example",
+    registryDependencies: ["ai-prompt-box"],
+    files: [
+      {
+        path: "examples/ai-prompt-box-loading-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

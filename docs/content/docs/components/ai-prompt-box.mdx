@@ -1,0 +1,91 @@
+---
+title: AI Prompt Box
+description: A versatile AI prompt input component with support for text, file uploads, voice recording, and specialized modes like search, think, and canvas.
+preview: true
+links:
+ api: /docs/components/ai-prompt-box#api-reference
+---
+
+<ComponentTabs name="ai-prompt-box-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/ai-prompt-box"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+        motion @radix-ui/react-dialog @radix-ui/react-tooltip lucide-react
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="ai-prompt-box" />
+  </Step>
+</Steps>
+
+## Features
+
+The AI Prompt Box component includes several features:
+
+- **Text Input**: Auto-resizing textarea with keyboard shortcuts (Enter to send, Shift+Enter for new line)
+- **File Upload**: Drag & drop or click to upload images with preview
+- **Voice Recording**: Built-in voice recording with visualizer
+- **Search Mode**: Toggle to search the web
+- **Think Mode**: Toggle for deep thinking prompts
+- **Canvas Mode**: Toggle for creative canvas interactions
+- **Clipboard Paste**: Paste images directly from clipboard
+
+## Loading State
+
+Use the `isLoading` prop to show a loading state when processing messages.
+
+<ComponentTabs name="ai-prompt-box-loading-demo" />
+
+## API Reference
+
+### PromptInputBox
+
+The main component that wraps all functionality.
+
+<AutoTypeTable
+  path="./types/docs/ai-prompt-box.ts"
+  name="PromptInputBoxProps"
+/>
+
+### PromptInput
+
+The container component for custom implementations.
+
+<AutoTypeTable
+  path="./types/docs/ai-prompt-box.ts"
+  name="PromptInputProps"
+/>
+
+### PromptInputTextarea
+
+The textarea component with auto-resize functionality.
+
+<AutoTypeTable
+  path="./types/docs/ai-prompt-box.ts"
+  name="PromptInputTextareaProps"
+/>
+
+### PromptInputAction
+
+Wrapper for action buttons with tooltips.
+
+<AutoTypeTable
+  path="./types/docs/ai-prompt-box.ts"
+  name="PromptInputActionProps"
+/>
