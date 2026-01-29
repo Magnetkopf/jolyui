@@ -424,5 +424,16 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "liquid-metal-button",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "@paper-design/shaders"],
+    files: [
+      {
+        path: "ui/liquid-metal-button.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];
 

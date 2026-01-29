@@ -555,6 +555,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "liquid-metal-button": {
+      name: "liquid-metal-button",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/liquid-metal-button.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/liquid-metal-button.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -2470,6 +2484,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/date-wheel-picker-locale-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "liquid-metal-button-demo": {
+      name: "liquid-metal-button-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["liquid-metal-button"],
+      files: [{
+        path: "registry/default/examples/liquid-metal-button-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/liquid-metal-button-demo.tsx")),
       source: "",
       chunks: []
     },

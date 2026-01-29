@@ -1515,5 +1515,16 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "liquid-metal-button-demo",
+    type: "registry:example",
+    registryDependencies: ["liquid-metal-button"],
+    files: [
+      {
+        path: "examples/liquid-metal-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];
 

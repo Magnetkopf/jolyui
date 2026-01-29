@@ -87,6 +87,9 @@ importers:
       '@number-flow/react':
         specifier: ^0.5.10
         version: 0.5.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@paper-design/shaders':
+        specifier: ^0.0.71
+        version: 0.0.71
       '@paper-design/shaders-react':
         specifier: ^0.0.63
         version: 0.0.63(@types/react@19.2.5)(react@19.2.0)
@@ -1770,6 +1773,9 @@ packages:
 
   '@paper-design/shaders@0.0.63':
     resolution: {integrity: sha512-e7HF0x7D/vilCqoM/Ed2vYyL51Aj1Y5S5z1OSlMWvhchpeveRziiLJFK5NHk48UDVQJoqvVf/vBNjO6/Ah60Bg==}
+
+  '@paper-design/shaders@0.0.71':
+    resolution: {integrity: sha512-brCt05YxxyjBrhnE3l1wJJHcFXsM8aE4lmpd9TMQp+p0dMU3F+OWkJZL9m/RC1Tt7om5xr0Wg7d0HYm+b9NYZA==}
 
   '@pivanov/utils@0.0.2':
     resolution: {integrity: sha512-q9CN0bFWxWgMY5hVVYyBgez1jGiLBa6I+LkG37ycylPhFvEGOOeaADGtUSu46CaZasPnlY8fCdVJZmrgKb1EPA==}
@@ -7309,6 +7315,8 @@ snapshots:
       '@types/react': 19.2.5
 
   '@paper-design/shaders@0.0.63': {}
+
+  '@paper-design/shaders@0.0.71': {}
 
   '@pivanov/utils@0.0.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:

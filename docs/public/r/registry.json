@@ -526,6 +526,20 @@
       ]
     },
     {
+      "name": "liquid-metal-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "@paper-design/shaders"
+      ],
+      "files": [
+        {
+          "path": "ui/liquid-metal-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "dependencies": [
@@ -2561,6 +2575,19 @@
       "files": [
         {
           "path": "examples/date-wheel-picker-locale-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "liquid-metal-button-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "liquid-metal-button"
+      ],
+      "files": [
+        {
+          "path": "examples/liquid-metal-button-demo.tsx",
           "type": "registry:example"
         }
       ]
