@@ -1,0 +1,15 @@
+{
+  "title": "Text Animations",
+  "pages": [
+    "character-morph",
+    "glitch-text",
+    "gooey-text-morphing",
+    "highlight-text",
+    "number-counter",
+    "rotate-text",
+    "scroll-text",
+    "text-morphing",
+    "typewritter-text",
+    "velocity-morph"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Inputs",
+  "pages": [
+    "ai-prompt-box",
+    "animated-theme-toggle",
+    "calendar",
+    "command-palette",
+    "date-wheel-picker",
+    "feedback-widget",
+    "segmented-button"
+  ]
+}
