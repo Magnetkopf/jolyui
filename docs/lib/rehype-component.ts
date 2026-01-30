@@ -16,7 +16,6 @@ const registry = JSON.parse(fs.readFileSync(registryPath, "utf8"));
 const Index: Record<string, any> = {};
 for (const style of styles) {
   Index[style.name] = {};
-  // @ts-expect-error
   for (const item of registry.items) {
     const files =
       item.files?.map((file: any) => {
