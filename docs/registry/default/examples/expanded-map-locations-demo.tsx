@@ -1,4 +1,4 @@
-import { LocationMap } from "@/registry/default/ui/expanded-map"
+import { LocationMap } from "@/registry/default/ui/expanded-map";
 
 export default function ExpandedMapLocationsDemo() {
   return (
@@ -19,5 +19,5 @@ export default function ExpandedMapLocationsDemo() {
         longitude={139.6503}
       />
     </div>
-  )
+  );
 }

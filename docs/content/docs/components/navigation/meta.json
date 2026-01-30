@@ -1,8 +1,4 @@
 {
   "title": "Navigation",
-  "pages": [
-    "dock",
-    "file-tree",
-    "vercel-tabs"
-  ]
+  "pages": ["dock", "file-tree", "vercel-tabs"]
 }

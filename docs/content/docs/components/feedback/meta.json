@@ -1,7 +1,4 @@
 {
   "title": "Feedback",
-  "pages": [
-    "animated-toast",
-    "animated-tooltip"
-  ]
+  "pages": ["animated-toast", "animated-tooltip"]
 }

@@ -1,17 +1,17 @@
 import {
-    Dock,
-    DockIcon,
-    DockItem,
-    DockLabel,
-} from "@/registry/default/ui/dock";
-import {
-    Facebook,
-    Github,
-    Instagram,
-    Linkedin,
-    Twitter,
-    Youtube,
+  Facebook,
+  Github,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Youtube,
 } from "lucide-react";
+import {
+  Dock,
+  DockIcon,
+  DockItem,
+  DockLabel,
+} from "@/registry/default/ui/dock";
 
 export default function DockSocialDemo() {
   return (
@@ -19,7 +19,7 @@ export default function DockSocialDemo() {
       <Dock
         magnification={60}
         distance={100}
-        className="bg-transparent border-none shadow-none"
+        className="border-none bg-transparent shadow-none"
       >
         <DockItem className="bg-black/5 dark:bg-white/10">
           <DockIcon>

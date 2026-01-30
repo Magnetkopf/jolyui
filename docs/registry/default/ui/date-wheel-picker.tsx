@@ -1,7 +1,14 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { animate, motion, MotionValue, PanInfo, useMotionValue, useTransform } from "framer-motion";
+import {
+    animate,
+    motion,
+    type MotionValue,
+    type PanInfo,
+    useMotionValue,
+    useTransform,
+} from "framer-motion";
 import * as React from "react";
 
 export interface DateWheelPickerProps
@@ -22,7 +29,7 @@ const PERSPECTIVE_ORIGIN = ITEM_HEIGHT * 2;
 function getMonthNames(locale?: string): string[] {
   const formatter = new Intl.DateTimeFormat(locale, { month: "long" });
   return Array.from({ length: 12 }, (_, i) =>
-    formatter.format(new Date(2000, i, 1))
+    formatter.format(new Date(2000, i, 1)),
   );
 }
 
@@ -70,35 +77,38 @@ function WheelItem({
   disabled,
   onClick,
 }: WheelItemProps) {
-  const itemY = useTransform(
-    y,
-    (latest) => {
-      const offset = index * itemHeight + latest + centerOffset;
-      return offset;
-    }
-  );
+  const itemY = useTransform(y, (latest) => {
+    const offset = index * itemHeight + latest + centerOffset;
+    return offset;
+  });
 
   const rotateX = useTransform(
     itemY,
     [0, centerOffset, itemHeight * visibleItems],
-    [45, 0, -45]
+    [45, 0, -45],
   );
 
   const scale = useTransform(
     itemY,
     [0, centerOffset, itemHeight * visibleItems],
-    [0.8, 1, 0.8]
+    [0.8, 1, 0.8],
   );
 
   const opacity = useTransform(
     itemY,
-    [0, centerOffset * 0.5, centerOffset, centerOffset * 1.5, itemHeight * visibleItems],
-    [0.3, 0.6, 1, 0.6, 0.3]
+    [
+      0,
+      centerOffset * 0.5,
+      centerOffset,
+      centerOffset * 1.5,
+      itemHeight * visibleItems,
+    ],
+    [0.3, 0.6, 1, 0.6, 0.3],
   );
 
   return (
     <motion.div
-      className="flex items-center justify-center select-none"
+      className="flex select-none items-center justify-center"
       style={{
         height: itemHeight,
         rotateX,
@@ -109,10 +119,12 @@ function WheelItem({
       }}
       onClick={() => !disabled && onClick()}
     >
-      <span className={cn(
-        "font-medium transition-colors",
-        isSelected ? "text-foreground" : "text-muted-foreground"
-      )}>
+      <span
+        className={cn(
+          "font-medium transition-colors",
+          isSelected ? "text-foreground" : "text-muted-foreground",
+        )}
+      >
         {item}
       </span>
     </motion.div>
@@ -162,7 +174,10 @@ function WheelColumn({
     });
   }, [value, itemHeight, y]);
 
-  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  const handleDragEnd = (
+    _: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+  ) => {
     if (disabled) return;
 
     const currentY = y.get();
@@ -186,7 +201,10 @@ function WheelColumn({
       const direction = e.deltaY > 0 ? 1 : -1;
       const currentValue = valueRef.current;
       const maxIndex = itemsLengthRef.current - 1;
-      const newIndex = Math.max(0, Math.min(maxIndex, currentValue + direction));
+      const newIndex = Math.max(
+        0,
+        Math.min(maxIndex, currentValue + direction),
+      );
 
       if (newIndex !== currentValue) {
         onChangeRef.current(newIndex);
@@ -240,18 +258,21 @@ function WheelColumn({
     }
   };
 
-  const dragConstraints = React.useMemo(() => ({
-    top: -(items.length - 1) * itemHeight,
-    bottom: 0,
-  }), [items.length, itemHeight]);
+  const dragConstraints = React.useMemo(
+    () => ({
+      top: -(items.length - 1) * itemHeight,
+      bottom: 0,
+    }),
+    [items.length, itemHeight],
+  );
 
   return (
     <div
       ref={containerRef}
       className={cn(
         "relative overflow-hidden",
-        disabled && "opacity-50 pointer-events-none",
-        className
+        disabled && "pointer-events-none opacity-50",
+        className,
       )}
       style={{ height: itemHeight * visibleItems }}
       tabIndex={disabled ? -1 : 0}
@@ -265,24 +286,26 @@ function WheelColumn({
       aria-disabled={disabled}
     >
       <div
-        className="absolute inset-x-0 top-0 z-10 pointer-events-none"
+        className="pointer-events-none absolute inset-x-0 top-0 z-10"
         style={{
           height: centerOffset,
-          background: "linear-gradient(to bottom, var(--background) 0%, transparent 100%)",
+          background:
+            "linear-gradient(to bottom, var(--background) 0%, transparent 100%)",
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute inset-x-0 bottom-0 z-10 pointer-events-none"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10"
         style={{
           height: centerOffset,
-          background: "linear-gradient(to top, var(--background) 0%, transparent 100%)",
+          background:
+            "linear-gradient(to top, var(--background) 0%, transparent 100%)",
         }}
         aria-hidden="true"
       />
 
       <div
-        className="absolute inset-x-0 z-5 pointer-events-none border-y border-border bg-muted/30"
+        className="pointer-events-none absolute inset-x-0 z-5 border-border border-y bg-muted/30"
         style={{
           top: centerOffset,
           height: itemHeight,
@@ -338,7 +361,7 @@ const DateWheelPicker = React.forwardRef<HTMLDivElement, DateWheelPickerProps>(
       className,
       ...props
     },
-    ref
+    ref,
   ) => {
     const config = sizeConfig[size];
 
@@ -370,31 +393,38 @@ const DateWheelPicker = React.forwardRef<HTMLDivElement, DateWheelPickerProps>(
 
     const handleDayChange = React.useCallback((dayIndex: number) => {
       isInternalChange.current = true;
-      setDateState(prev => ({ ...prev, day: dayIndex + 1 }));
+      setDateState((prev) => ({ ...prev, day: dayIndex + 1 }));
     }, []);
 
     const handleMonthChange = React.useCallback((monthIndex: number) => {
       isInternalChange.current = true;
-      setDateState(prev => {
+      setDateState((prev) => {
         const daysInNewMonth = getDaysInMonth(prev.year, monthIndex);
         const adjustedDay = Math.min(prev.day, daysInNewMonth);
         return { ...prev, month: monthIndex, day: adjustedDay };
       });
     }, []);
 
-    const handleYearChange = React.useCallback((yearIndex: number) => {
-      isInternalChange.current = true;
-      setDateState(prev => {
-        const newYear = years[yearIndex];
-        const daysInNewMonth = getDaysInMonth(newYear, prev.month);
-        const adjustedDay = Math.min(prev.day, daysInNewMonth);
-        return { ...prev, year: newYear, day: adjustedDay };
-      });
-    }, [years]);
+    const handleYearChange = React.useCallback(
+      (yearIndex: number) => {
+        isInternalChange.current = true;
+        setDateState((prev) => {
+          const newYear = years[yearIndex] ?? prev.year;
+          const daysInNewMonth = getDaysInMonth(newYear, prev.month);
+          const adjustedDay = Math.min(prev.day, daysInNewMonth);
+          return { ...prev, year: newYear, day: adjustedDay };
+        });
+      },
+      [years],
+    );
 
     React.useEffect(() => {
       if (isInternalChange.current) {
-        const newDate = new Date(dateState.year, dateState.month, dateState.day);
+        const newDate = new Date(
+          dateState.year,
+          dateState.month,
+          dateState.day,
+        );
         onChange(newDate);
         isInternalChange.current = false;
       }
@@ -429,8 +459,8 @@ const DateWheelPicker = React.forwardRef<HTMLDivElement, DateWheelPickerProps>(
           "flex items-center justify-center",
           config.gap,
           config.fontSize,
-          disabled && "opacity-50 pointer-events-none",
-          className
+          disabled && "pointer-events-none opacity-50",
+          className,
         )}
         style={{ perspective: "1000px" }}
         role="group"
@@ -471,7 +501,7 @@ const DateWheelPicker = React.forwardRef<HTMLDivElement, DateWheelPickerProps>(
         />
       </div>
     );
-  }
+  },
 );
 
 DateWheelPicker.displayName = "DateWheelPicker";

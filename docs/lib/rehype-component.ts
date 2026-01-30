@@ -8,8 +8,30 @@ import type { UnistNode, UnistTree } from "types/unist";
 import { u } from "unist-builder";
 import { visit } from "unist-util-visit";
 
-import { Index } from "@/__registry__";
 import { styles } from "@/registry/registry-styles";
+
+const registryPath = path.join(process.cwd(), "public/r/registry.json");
+const registry = JSON.parse(fs.readFileSync(registryPath, "utf8"));
+
+const Index: Record<string, any> = {};
+for (const style of styles) {
+  Index[style.name] = {};
+  // @ts-ignore
+  for (const item of registry.items) {
+    const files = item.files?.map((file: any) => {
+        const filePath = typeof file === "string" ? file : file.path;
+        return {
+           ...(typeof file === "string" ? { path: file, type: "registry:ui" } : file),
+           path: `registry/${style.name}/${filePath}`
+        };
+     }) || [];
+     
+     Index[style.name][item.name] = {
+        ...item,
+        files
+     };
+  }
+}
 
 export function rehypeComponent() {
   return async (tree: UnistTree) => {

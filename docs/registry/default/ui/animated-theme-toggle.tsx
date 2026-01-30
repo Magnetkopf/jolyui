@@ -1,17 +1,13 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useTransform } from "motion/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 import { Button } from "./button";
 
-export const AnimatedThemeToggle = ({
-  className,
-}: {
-  className?: string;
-}) => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+export const AnimatedThemeToggle = ({ className }: { className?: string }) => {
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Avoid hydration mismatch

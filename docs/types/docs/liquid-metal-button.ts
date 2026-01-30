@@ -3,16 +3,16 @@ export interface LiquidMetalButtonProps {
    * The text to display on the button.
    * @default "Get Started"
    */
-  label?: string
+  label?: string;
 
   /**
    * Callback function triggered when the button is clicked.
    */
-  onClick?: () => void
+  onClick?: () => void;
 
   /**
    * The view mode of the button.
    * @default "text"
    */
-  viewMode?: "text" | "icon"
+  viewMode?: "text" | "icon";
 }

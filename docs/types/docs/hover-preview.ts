@@ -5,15 +5,15 @@ export interface PreviewData {
   /**
    * Image URL for the preview card
    */
-  image: string
+  image: string;
   /**
    * Title displayed in the preview card
    */
-  title: string
+  title: string;
   /**
    * Subtitle or description displayed below the title
    */
-  subtitle?: string
+  subtitle?: string;
 }
 
 /**
@@ -23,15 +23,15 @@ export interface HoverPreviewLinkProps {
   /**
    * Unique key to identify which preview data to show
    */
-  previewKey: string
+  previewKey: string;
   /**
    * Content to render as the hoverable link
    */
-  children: React.ReactNode
+  children: React.ReactNode;
   /**
    * Additional CSS classes for the link
    */
-  className?: string
+  className?: string;
 }
 
 /**
@@ -42,16 +42,16 @@ export interface HoverPreviewCardProps {
    * Width of the preview card in pixels
    * @default 300
    */
-  width?: number
+  width?: number;
   /**
    * Border radius of the card in pixels
    * @default 16
    */
-  borderRadius?: number
+  borderRadius?: number;
   /**
    * Additional CSS classes for the card
    */
-  className?: string
+  className?: string;
 }
 
 /**
@@ -61,27 +61,27 @@ export interface HoverPreviewProviderProps {
   /**
    * Preview data object with keys matching the previewKey in HoverPreviewLink
    */
-  data: Record<string, PreviewData>
+  data: Record<string, PreviewData>;
   /**
    * Children components (should include HoverPreviewLink components)
    */
-  children: React.ReactNode
+  children: React.ReactNode;
   /**
    * Card configuration options
    */
-  cardProps?: HoverPreviewCardProps
+  cardProps?: HoverPreviewCardProps;
   /**
    * Offset distance from cursor in pixels
    * @default 20
    */
-  cursorOffset?: number
+  cursorOffset?: number;
   /**
    * Whether to preload all images on mount
    * @default true
    */
-  preloadImages?: boolean
+  preloadImages?: boolean;
   /**
    * Additional CSS classes for the container
    */
-  className?: string
+  className?: string;
 }

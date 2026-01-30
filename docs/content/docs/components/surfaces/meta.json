@@ -1,9 +1,4 @@
 {
   "title": "Surfaces",
-  "pages": [
-    "animated-table",
-    "bento-grid",
-    "code-block",
-    "phone-card"
-  ]
+  "pages": ["animated-table", "bento-grid", "code-block", "phone-card"]
 }

@@ -1,7 +1,7 @@
 "use client";
 
-import { PromptInputBox } from "@/registry/default/ui/ai-prompt-box";
 import { useState } from "react";
+import { PromptInputBox } from "@/registry/default/ui/ai-prompt-box";
 
 export default function AiPromptBoxLoadingDemo() {
   const [isLoading, setIsLoading] = useState(false);

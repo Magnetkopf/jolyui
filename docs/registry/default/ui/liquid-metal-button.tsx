@@ -1,23 +1,30 @@
-"use client"
+"use client";
 
-import { Sparkles } from "lucide-react"
-import type React from "react"
-import { useEffect, useMemo, useRef, useState } from "react"
+import { Sparkles } from "lucide-react";
+import type React from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 interface LiquidMetalButtonProps {
-  label?: string
-  onClick?: () => void
-  viewMode?: "text" | "icon"
+  label?: string;
+  onClick?: () => void;
+  viewMode?: "text" | "icon";
 }
 
-export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "text" }: LiquidMetalButtonProps) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [isPressed, setIsPressed] = useState(false)
-  const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([])
-  const shaderRef = useRef<HTMLDivElement>(null)
-  const shaderMount = useRef<any>(null)
-  const buttonRef = useRef<HTMLButtonElement>(null)
-  const rippleId = useRef(0)
+export function LiquidMetalButton({
+  label = "Get Started",
+  onClick,
+  viewMode = "text",
+}: LiquidMetalButtonProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
+  const [ripples, setRipples] = useState<
+    Array<{ x: number; y: number; id: number }>
+  >([]);
+  const shaderRef = useRef<HTMLDivElement>(null);
+  // biome-ignore lint/suspicious/noExplicitAny: External library without types
+  const shaderMount = useRef<any>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const rippleId = useRef(0);
 
   const dimensions = useMemo(() => {
     if (viewMode === "icon") {
@@ -28,7 +35,7 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
         innerHeight: 42,
         shaderWidth: 46,
         shaderHeight: 46,
-      }
+      };
     } else {
       return {
         width: 142,
@@ -37,15 +44,15 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
         innerHeight: 42,
         shaderWidth: 142,
         shaderHeight: 46,
-      }
+      };
     }
-  }, [viewMode])
+  }, [viewMode]);
 
   useEffect(() => {
-    const styleId = "shader-canvas-style-exploded"
+    const styleId = "shader-canvas-style-exploded";
     if (!document.getElementById(styleId)) {
-      const style = document.createElement("style")
-      style.id = styleId
+      const style = document.createElement("style");
+      style.id = styleId;
       style.textContent = `
         .shader-container-exploded canvas {
           width: 100% !important;
@@ -66,17 +73,19 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
             opacity: 0;
           }
         }
-      `
-      document.head.appendChild(style)
+      `;
+      document.head.appendChild(style);
     }
 
     const loadShader = async () => {
       try {
-        const { liquidMetalFragmentShader, ShaderMount } = await import("@paper-design/shaders")
+        const { liquidMetalFragmentShader, ShaderMount } = await import(
+          "@paper-design/shaders"
+        );
 
         if (shaderRef.current) {
           if (shaderMount.current?.destroy) {
-            shaderMount.current.destroy()
+            shaderMount.current.destroy();
           }
 
           shaderMount.current = new ShaderMount(
@@ -97,60 +106,60 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
             },
             undefined,
             0.6,
-          )
+          );
         }
       } catch (error) {
-        console.error("[v0] Failed to load shader:", error)
+        console.error("[v0] Failed to load shader:", error);
       }
-    }
+    };
 
-    loadShader()
+    loadShader();
 
     return () => {
       if (shaderMount.current?.destroy) {
-        shaderMount.current.destroy()
-        shaderMount.current = null
+        shaderMount.current.destroy();
+        shaderMount.current = null;
       }
-    }
-  }, [dimensions.width, dimensions.height])
+    };
+  }, []);
 
   const handleMouseEnter = () => {
-    setIsHovered(true)
-    shaderMount.current?.setSpeed?.(1)
-  }
+    setIsHovered(true);
+    shaderMount.current?.setSpeed?.(1);
+  };
 
   const handleMouseLeave = () => {
-    setIsHovered(false)
-    setIsPressed(false)
-    shaderMount.current?.setSpeed?.(0.6)
-  }
+    setIsHovered(false);
+    setIsPressed(false);
+    shaderMount.current?.setSpeed?.(0.6);
+  };
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (shaderMount.current?.setSpeed) {
-      shaderMount.current.setSpeed(2.4)
+      shaderMount.current.setSpeed(2.4);
       setTimeout(() => {
         if (isHovered) {
-          shaderMount.current?.setSpeed?.(1)
+          shaderMount.current?.setSpeed?.(1);
         } else {
-          shaderMount.current?.setSpeed?.(0.6)
+          shaderMount.current?.setSpeed?.(0.6);
         }
-      }, 300)
+      }, 300);
     }
 
     if (buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect()
-      const x = e.clientX - rect.left
-      const y = e.clientY - rect.top
-      const ripple = { x, y, id: rippleId.current++ }
+      const rect = buttonRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const ripple = { x, y, id: rippleId.current++ };
 
-      setRipples((prev) => [...prev, ripple])
+      setRipples((prev) => [...prev, ripple]);
       setTimeout(() => {
-        setRipples((prev) => prev.filter((r) => r.id !== ripple.id))
-      }, 600)
+        setRipples((prev) => prev.filter((r) => r.id !== ripple.id));
+      }, 600);
     }
 
-    onClick?.()
-  }
+    onClick?.();
+  };
 
   return (
     <div className="relative inline-block">
@@ -166,7 +175,8 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
             width: `${dimensions.width}px`,
             height: `${dimensions.height}px`,
             transformStyle: "preserve-3d",
-            transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
+            transition:
+              "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
             transform: "none",
           }}
         >
@@ -225,7 +235,8 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
               width: `${dimensions.width}px`,
               height: `${dimensions.height}px`,
               transformStyle: "preserve-3d",
-              transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
+              transition:
+                "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
               transform: `translateZ(10px) ${isPressed ? "translateY(1px) scale(0.98)" : "translateY(0) scale(1)"}`,
               zIndex: 20,
             }}
@@ -254,7 +265,8 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
               width: `${dimensions.width}px`,
               height: `${dimensions.height}px`,
               transformStyle: "preserve-3d",
-              transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
+              transition:
+                "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
               transform: `translateZ(0px) ${isPressed ? "translateY(1px) scale(0.98)" : "translateY(0) scale(1)"}`,
               zIndex: 10,
             }}
@@ -310,7 +322,8 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
               zIndex: 40,
               transformStyle: "preserve-3d",
               transform: "translateZ(25px)",
-              transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
+              transition:
+                "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease",
               overflow: "hidden",
               borderRadius: "100px",
             }}
@@ -326,7 +339,8 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
                   width: "20px",
                   height: "20px",
                   borderRadius: "50%",
-                  background: "radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%)",
+                  background:
+                    "radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%)",
                   pointerEvents: "none",
                   animation: "ripple-animation 0.6s ease-out",
                 }}
@@ -336,5 +350,5 @@ export function LiquidMetalButton({ label = "Get Started", onClick, viewMode = "
         </div>
       </div>
     </div>
-  )
+  );
 }

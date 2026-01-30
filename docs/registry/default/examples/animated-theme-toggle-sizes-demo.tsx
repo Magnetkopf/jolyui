@@ -1,4 +1,4 @@
-import { AnimatedThemeToggle } from "@/registry/default/ui/animated-theme-toggle"
+import { AnimatedThemeToggle } from "@/registry/default/ui/animated-theme-toggle";
 
 export default function AnimatedThemeToggleSizesDemo() {
   return (
@@ -7,5 +7,5 @@ export default function AnimatedThemeToggleSizesDemo() {
       <AnimatedThemeToggle className="h-10 w-10" />
       <AnimatedThemeToggle className="h-12 w-12" />
     </div>
-  )
+  );
 }

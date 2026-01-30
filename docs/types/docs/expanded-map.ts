@@ -6,29 +6,29 @@ export interface LocationMapProps {
    * Location name to display
    * @default "San Francisco, CA"
    */
-  location?: string
+  location?: string;
   /**
    * Latitude coordinate
    * @default 37.7749
    */
-  latitude?: number
+  latitude?: number;
   /**
    * Longitude coordinate
    * @default -122.4194
    */
-  longitude?: number
+  longitude?: number;
   /**
    * Zoom level for the map (1-18, higher = more zoomed in)
    * @default 14
    */
-  zoom?: number
+  zoom?: number;
   /**
    * Additional CSS classes
    */
-  className?: string
+  className?: string;
   /**
    * Map tile provider for different map styles
    * @default "carto-light"
    */
-  tileProvider?: "openstreetmap" | "carto-light" | "carto-dark"
+  tileProvider?: "openstreetmap" | "carto-light" | "carto-dark";
 }

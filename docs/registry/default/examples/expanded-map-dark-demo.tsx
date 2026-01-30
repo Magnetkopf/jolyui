@@ -1,4 +1,4 @@
-import { LocationMap } from "@/registry/default/ui/expanded-map"
+import { LocationMap } from "@/registry/default/ui/expanded-map";
 
 export default function ExpandedMapDarkDemo() {
   return (
@@ -10,5 +10,5 @@ export default function ExpandedMapDarkDemo() {
         tileProvider="carto-dark"
       />
     </div>
-  )
+  );
 }

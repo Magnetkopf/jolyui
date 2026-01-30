@@ -35,14 +35,14 @@ export const Hero = () => {
         >
           <div className="mb-8 flex items-center gap-2 rounded-full bg-accent py-1 pr-3 pl-1 text-sm">
             <Link
-              href="/docs/components/github-contributors"
+              href="/docs/components/buttons/liquid-metal-button"
               className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400"
             >
               <span className="flex h-6 items-center justify-center gap-1 rounded-full bg-primary px-2 text-primary-foreground text-xs">
                 New
                 <PartyPopper className="size-4" />
               </span>{" "}
-              <span>Github Contributors</span>
+              <span>Liquid Metal Button</span>
             </Link>
           </div>
         </MotionEffect>
@@ -129,7 +129,7 @@ export const Hero = () => {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" className="w-full" asChild>
-                <Link href="/docs/components/animated-beam">
+                <Link href="/docs/components/creative/animated-beam">
                   Browse Components
                 </Link>
               </Button>

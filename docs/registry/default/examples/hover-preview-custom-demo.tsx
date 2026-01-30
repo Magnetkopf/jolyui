@@ -1,25 +1,28 @@
 import {
   HoverPreviewLink,
   HoverPreviewProvider,
-} from "@/registry/default/ui/hover-preview"
+} from "@/registry/default/ui/hover-preview";
 
 const teamData = {
   alex: {
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=560&h=320&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=560&h=320&fit=crop",
     title: "Alex Johnson",
     subtitle: "CEO & Founder",
   },
   sarah: {
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=560&h=320&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=560&h=320&fit=crop",
     title: "Sarah Miller",
     subtitle: "Head of Design",
   },
   michael: {
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=560&h=320&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=560&h=320&fit=crop",
     title: "Michael Chen",
     subtitle: "Lead Engineer",
   },
-}
+};
 
 export default function HoverPreviewCustomDemo() {
   return (
@@ -34,23 +37,32 @@ export default function HoverPreviewCustomDemo() {
       className="p-8"
     >
       <div className="max-w-2xl space-y-4">
-        <h2 className="text-2xl font-bold text-foreground">Meet Our Team</h2>
-        <p className="text-lg leading-relaxed text-muted-foreground">
+        <h2 className="font-bold text-2xl text-foreground">Meet Our Team</h2>
+        <p className="text-lg text-muted-foreground leading-relaxed">
           Our leadership team includes{" "}
-          <HoverPreviewLink previewKey="alex" className="text-blue-500 hover:text-blue-400">
+          <HoverPreviewLink
+            previewKey="alex"
+            className="text-blue-500 hover:text-blue-400"
+          >
             Alex Johnson
           </HoverPreviewLink>
           ,{" "}
-          <HoverPreviewLink previewKey="sarah" className="text-purple-500 hover:text-purple-400">
+          <HoverPreviewLink
+            previewKey="sarah"
+            className="text-purple-500 hover:text-purple-400"
+          >
             Sarah Miller
           </HoverPreviewLink>
           , and{" "}
-          <HoverPreviewLink previewKey="michael" className="text-green-500 hover:text-green-400">
+          <HoverPreviewLink
+            previewKey="michael"
+            className="text-green-500 hover:text-green-400"
+          >
             Michael Chen
           </HoverPreviewLink>
           .
         </p>
       </div>
     </HoverPreviewProvider>
-  )
+  );
 }

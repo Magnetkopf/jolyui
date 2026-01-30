@@ -1,8 +1,4 @@
 {
   "title": "Buttons",
-  "pages": [
-    "button",
-    "liquid-metal-button",
-    "rainbow-button"
-  ]
+  "pages": ["button", "liquid-metal-button", "rainbow-button"]
 }

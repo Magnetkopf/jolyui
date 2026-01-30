@@ -1,10 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
 import ReactMarkdown from "react-markdown";
+import { cn } from "@/lib/utils";
 
 const EMOJIS = [
   {
@@ -281,7 +281,7 @@ export function FeedbackWidget({
                           initial={{ opacity: 0, y: 5 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -5 }}
-                          className="prose prose-sm scrollbar-none h-[140px] w-full max-w-none overflow-y-auto rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-[14px] text-zinc-700 leading-relaxed dark:prose-invert dark:border-white/5 dark:bg-zinc-900/50 dark:text-zinc-300"
+                          className="prose prose-sm scrollbar-none dark:prose-invert h-[140px] w-full max-w-none overflow-y-auto rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-[14px] text-zinc-700 leading-relaxed dark:border-white/5 dark:bg-zinc-900/50 dark:text-zinc-300"
                         >
                           <ReactMarkdown>
                             {feedback || "*Nothing to preview...*"}
@@ -297,7 +297,7 @@ export function FeedbackWidget({
                           placeholder={placeholder}
                           value={feedback}
                           onChange={(e) => setFeedback(e.target.value)}
-                          className="scrollbar-none h-[140px] w-full resize-none rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-[14px] text-zinc-800 leading-relaxed transition-all placeholder:text-zinc-400 focus:border-zinc-300 focus:outline-none dark:border-white/5 dark:bg-zinc-900/50 dark:text-zinc-200 dark:placeholder:text-zinc-600 dark:focus:border-white/20"
+                          className="scrollbar-none h-[140px] w-full resize-none rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-[14px] text-zinc-800 leading-relaxed transition-all placeholder:text-zinc-400 focus:border-zinc-300 focus:outline-none dark:border-white/5 dark:bg-zinc-900/50 dark:text-zinc-200 dark:focus:border-white/20 dark:placeholder:text-zinc-600"
                         />
                       )}
                     </AnimatePresence>

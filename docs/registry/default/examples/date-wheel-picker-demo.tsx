@@ -1,7 +1,7 @@
 "use client";
 
-import { DateWheelPicker } from "@/registry/default/ui/date-wheel-picker";
 import { useState } from "react";
+import { DateWheelPicker } from "@/registry/default/ui/date-wheel-picker";
 
 export default function DateWheelPickerDemo() {
   const [date, setDate] = useState<Date>(new Date());
@@ -9,7 +9,7 @@ export default function DateWheelPickerDemo() {
   return (
     <div className="relative flex h-[300px] w-full flex-col items-center justify-center gap-4">
       <DateWheelPicker value={date} onChange={setDate} />
-      <p className="text-sm text-muted-foreground">
+      <p className="text-muted-foreground text-sm">
         Selected: {date.toLocaleDateString()}
       </p>
     </div>

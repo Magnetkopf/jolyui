@@ -5,7 +5,7 @@ export interface AnimatedThemeToggleProps {
   /**
    * Additional CSS classes for the button
    */
-  className?: string
+  className?: string;
 }
 
 /**
@@ -15,5 +15,5 @@ export interface SolarSwitchProps {
   /**
    * Whether the dark theme is currently active
    */
-  isDark: boolean
+  isDark: boolean;
 }

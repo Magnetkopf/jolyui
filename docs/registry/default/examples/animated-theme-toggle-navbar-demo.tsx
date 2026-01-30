@@ -1,4 +1,4 @@
-import { AnimatedThemeToggle } from "@/registry/default/ui/animated-theme-toggle"
+import { AnimatedThemeToggle } from "@/registry/default/ui/animated-theme-toggle";
 
 export default function AnimatedThemeToggleNavbarDemo() {
   return (
@@ -8,20 +8,32 @@ export default function AnimatedThemeToggleNavbarDemo() {
         <span className="font-semibold text-foreground">MyApp</span>
       </div>
       <nav className="hidden items-center gap-6 md:flex">
-        <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
+        <a
+          href="/"
+          className="text-muted-foreground text-sm hover:text-foreground"
+        >
           Home
         </a>
-        <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
+        <a
+          href="/"
+          className="text-muted-foreground text-sm hover:text-foreground"
+        >
           Features
         </a>
-        <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
+        <a
+          href="/"
+          className="text-muted-foreground text-sm hover:text-foreground"
+        >
           Pricing
         </a>
-        <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
+        <a
+          href="/"
+          className="text-muted-foreground text-sm hover:text-foreground"
+        >
           About
         </a>
       </nav>
       <AnimatedThemeToggle />
     </div>
-  )
+  );
 }

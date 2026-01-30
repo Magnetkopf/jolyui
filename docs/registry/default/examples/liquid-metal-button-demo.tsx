@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { LiquidMetalButton } from "@/registry/default/ui/liquid-metal-button"
+import { LiquidMetalButton } from "@/registry/default/ui/liquid-metal-button";
 
 export default function LiquidMetalButtonDemo() {
   return (
@@ -10,5 +10,5 @@ export default function LiquidMetalButtonDemo() {
         <LiquidMetalButton viewMode="icon" />
       </div>
     </div>
-  )
+  );
 }

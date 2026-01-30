@@ -1,52 +1,60 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "motion/react"
-import { useEffect, useMemo, useRef, useState } from "react"
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "motion/react";
+import NextImage from "next/image";
+import type React from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 interface LocationMapProps {
   /** Location name to display */
-  location?: string
+  location?: string;
   /** Latitude coordinate */
-  latitude?: number
+  latitude?: number;
   /** Longitude coordinate */
-  longitude?: number
+  longitude?: number;
   /** Zoom level for the map (1-18) */
-  zoom?: number
+  zoom?: number;
   /** Additional CSS classes */
-  className?: string
+  className?: string;
   /** Map tile provider */
-  tileProvider?: "openstreetmap" | "carto-light" | "carto-dark"
+  tileProvider?: "openstreetmap" | "carto-light" | "carto-dark";
 }
 
 // Convert lat/lng to tile coordinates
 function latLngToTile(lat: number, lng: number, zoom: number) {
-  const n = Math.pow(2, zoom)
-  const x = Math.floor(((lng + 180) / 360) * n)
-  const latRad = (lat * Math.PI) / 180
-  const y = Math.floor(((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2) * n)
-  return { x, y }
+  const n = 2 ** zoom;
+  const x = Math.floor(((lng + 180) / 360) * n);
+  const latRad = (lat * Math.PI) / 180;
+  const y = Math.floor(
+    ((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2) * n,
+  );
+  return { x, y };
 }
 
 // Get tile URL based on provider
 function getTileUrl(provider: string, x: number, y: number, z: number) {
   switch (provider) {
     case "carto-light":
-      return `https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/${z}/${x}/${y}.png`
+      return `https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/${z}/${x}/${y}.png`;
     case "carto-dark":
-      return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${z}/${x}/${y}.png`
+      return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${z}/${x}/${y}.png`;
     case "openstreetmap":
     default:
-      return `https://tile.openstreetmap.org/${z}/${x}/${y}.png`
+      return `https://tile.openstreetmap.org/${z}/${x}/${y}.png`;
   }
 }
 
 // Format coordinates for display
 function formatCoordinates(lat: number, lng: number) {
-  const latDir = lat >= 0 ? "N" : "S"
-  const lngDir = lng >= 0 ? "E" : "W"
-  return `${Math.abs(lat).toFixed(4)}° ${latDir}, ${Math.abs(lng).toFixed(4)}° ${lngDir}`
+  const latDir = lat >= 0 ? "N" : "S";
+  const lngDir = lng >= 0 ? "E" : "W";
+  return `${Math.abs(lat).toFixed(4)}° ${latDir}, ${Math.abs(lng).toFixed(4)}° ${lngDir}`;
 }
 
 export function LocationMap({
@@ -57,82 +65,90 @@ export function LocationMap({
   className,
   tileProvider = "carto-light",
 }: LocationMapProps) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [tilesLoaded, setTilesLoaded] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [isHovered, setIsHovered] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [tilesLoaded, setTilesLoaded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-  const rotateX = useTransform(mouseY, [-50, 50], [8, -8])
-  const rotateY = useTransform(mouseX, [-50, 50], [-8, 8])
+  const rotateX = useTransform(mouseY, [-50, 50], [8, -8]);
+  const rotateY = useTransform(mouseX, [-50, 50], [-8, 8]);
 
-  const springRotateX = useSpring(rotateX, { stiffness: 300, damping: 30 })
-  const springRotateY = useSpring(rotateY, { stiffness: 300, damping: 30 })
+  const springRotateX = useSpring(rotateX, { stiffness: 300, damping: 30 });
+  const springRotateY = useSpring(rotateY, { stiffness: 300, damping: 30 });
 
-  const coordinates = useMemo(() => formatCoordinates(latitude, longitude), [latitude, longitude])
+  const coordinates = useMemo(
+    () => formatCoordinates(latitude, longitude),
+    [latitude, longitude],
+  );
 
   // Generate tile URLs for a 3x3 grid around the center tile
   const tiles = useMemo(() => {
-    const centerTile = latLngToTile(latitude, longitude, zoom)
-    const tileUrls: { url: string; offsetX: number; offsetY: number }[] = []
+    const centerTile = latLngToTile(latitude, longitude, zoom);
+    const tileUrls: { url: string; offsetX: number; offsetY: number }[] = [];
 
     for (let dy = -1; dy <= 1; dy++) {
       for (let dx = -1; dx <= 1; dx++) {
         tileUrls.push({
-          url: getTileUrl(tileProvider, centerTile.x + dx, centerTile.y + dy, zoom),
+          url: getTileUrl(
+            tileProvider,
+            centerTile.x + dx,
+            centerTile.y + dy,
+            zoom,
+          ),
           offsetX: dx,
           offsetY: dy,
-        })
+        });
       }
     }
 
-    return tileUrls
-  }, [latitude, longitude, zoom, tileProvider])
+    return tileUrls;
+  }, [latitude, longitude, zoom, tileProvider]);
 
   // Preload tiles
   useEffect(() => {
-    let loadedCount = 0
-    const totalTiles = tiles.length
+    let loadedCount = 0;
+    const totalTiles = tiles.length;
 
     tiles.forEach((tile) => {
-      const img = new Image()
-      img.crossOrigin = "anonymous"
+      const img = new Image();
+      img.crossOrigin = "anonymous";
       img.onload = () => {
-        loadedCount++
+        loadedCount++;
         if (loadedCount === totalTiles) {
-          setTilesLoaded(true)
+          setTilesLoaded(true);
         }
-      }
+      };
       img.onerror = () => {
-        loadedCount++
+        loadedCount++;
         if (loadedCount === totalTiles) {
-          setTilesLoaded(true)
+          setTilesLoaded(true);
         }
-      }
-      img.src = tile.url
-    })
-  }, [tiles])
+      };
+      img.src = tile.url;
+    });
+  }, [tiles]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current) return
-    const rect = containerRef.current.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
-    mouseX.set(e.clientX - centerX)
-    mouseY.set(e.clientY - centerY)
-  }
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    mouseX.set(e.clientX - centerX);
+    mouseY.set(e.clientY - centerY);
+  };
 
   const handleMouseLeave = () => {
-    mouseX.set(0)
-    mouseY.set(0)
-    setIsHovered(false)
-  }
+    mouseX.set(0);
+    mouseY.set(0);
+    setIsHovered(false);
+  };
 
   const handleClick = () => {
-    setIsExpanded(!isExpanded)
-  }
+    setIsExpanded(!isExpanded);
+  };
 
   return (
     <motion.div
@@ -147,7 +163,7 @@ export function LocationMap({
       onClick={handleClick}
     >
       <motion.div
-        className="relative overflow-hidden rounded-2xl bg-background border border-border"
+        className="relative overflow-hidden rounded-2xl border border-border bg-background"
         style={{
           rotateX: springRotateX,
           rotateY: springRotateY,
@@ -164,12 +180,12 @@ export function LocationMap({
         }}
       >
         {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-transparent to-muted/40 z-20 pointer-events-none" />
+        <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-br from-muted/20 via-transparent to-muted/40" />
 
         <AnimatePresence>
           {isExpanded && (
             <motion.div
-              className="absolute inset-0 pointer-events-none"
+              className="pointer-events-none absolute inset-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -188,11 +204,8 @@ export function LocationMap({
                   }}
                 >
                   {tiles.map((tile, index) => (
-                    <motion.img
+                    <motion.div
                       key={index}
-                      src={tile.url}
-                      alt=""
-                      crossOrigin="anonymous"
                       className="absolute"
                       style={{
                         width: "256px",
@@ -203,22 +216,37 @@ export function LocationMap({
                       initial={{ opacity: 0 }}
                       animate={{ opacity: tilesLoaded ? 1 : 0 }}
                       transition={{ duration: 0.3, delay: index * 0.05 }}
-                    />
+                    >
+                      <NextImage
+                        src={tile.url}
+                        alt=""
+                        width={256}
+                        height={256}
+                        unoptimized
+                        crossOrigin="anonymous"
+                        className="h-full w-full"
+                      />
+                    </motion.div>
                   ))}
                 </div>
               </div>
 
               {/* Map loading placeholder */}
               {!tilesLoaded && (
-                <div className="absolute inset-0 bg-muted animate-pulse" />
+                <div className="absolute inset-0 animate-pulse bg-muted" />
               )}
 
               {/* Location marker */}
               <motion.div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+                className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 z-10"
                 initial={{ scale: 0, y: -20 }}
                 animate={{ scale: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20, delay: 0.3 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 20,
+                  delay: 0.3,
+                }}
               >
                 <svg
                   width="32"
@@ -226,16 +254,21 @@ export function LocationMap({
                   viewBox="0 0 24 24"
                   fill="none"
                   className="drop-shadow-lg"
-                  style={{ filter: "drop-shadow(0 0 10px rgba(52, 211, 153, 0.5))" }}
+                  style={{
+                    filter: "drop-shadow(0 0 10px rgba(52, 211, 153, 0.5))",
+                  }}
                 >
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#34D399" />
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                    fill="#34D399"
+                  />
                   <circle cx="12" cy="9" r="2.5" className="fill-background" />
                 </svg>
               </motion.div>
 
               {/* Gradient overlays for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-70 z-10" />
-              <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-transparent z-10" />
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent opacity-70" />
+              <div className="absolute inset-0 z-10 bg-gradient-to-b from-background/50 via-transparent to-transparent" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -248,8 +281,18 @@ export function LocationMap({
         >
           <svg width="100%" height="100%" className="absolute inset-0">
             <defs>
-              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M 20 0 L 0 0 0 20" fill="none" className="stroke-foreground" strokeWidth="0.5" />
+              <pattern
+                id="grid"
+                width="20"
+                height="20"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 20 0 L 0 0 0 20"
+                  fill="none"
+                  className="stroke-foreground"
+                  strokeWidth="0.5"
+                />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
@@ -257,7 +300,7 @@ export function LocationMap({
         </motion.div>
 
         {/* Content */}
-        <div className="relative z-20 h-full flex flex-col justify-between p-5">
+        <div className="relative z-20 flex h-full flex-col justify-between p-5">
           {/* Top section */}
           <div className="flex items-start justify-between">
             <div className="relative">
@@ -292,13 +335,12 @@ export function LocationMap({
                 </motion.svg>
               </motion.div>
             </div>
-
           </div>
 
           {/* Bottom section */}
           <div className="space-y-1">
             <motion.h3
-              className="text-foreground font-medium text-sm tracking-tight"
+              className="font-medium text-foreground text-sm tracking-tight"
               animate={{
                 x: isHovered ? 4 : 0,
               }}
@@ -310,7 +352,7 @@ export function LocationMap({
             <AnimatePresence>
               {isExpanded && (
                 <motion.p
-                  className="text-muted-foreground text-xs font-mono"
+                  className="font-mono text-muted-foreground text-xs"
                   initial={{ opacity: 0, y: -10, height: 0 }}
                   animate={{ opacity: 1, y: 0, height: "auto" }}
                   exit={{ opacity: 0, y: -10, height: 0 }}
@@ -332,8 +374,7 @@ export function LocationMap({
             />
           </div>
         </div>
-
       </motion.div>
     </motion.div>
-  )
+  );
 }

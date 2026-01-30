@@ -1527,4 +1527,3 @@ export const examples: Registry["items"] = [
     ],
   },
 ];
-
