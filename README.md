@@ -18,12 +18,12 @@ Built for [shadcn/ui](https://ui.shadcn.com) and compatible with Next.js.
 
 ## ✨ Features
 
-- 🎨 **Beautifully Designed**: Crafted with attention to detail and aesthetics.
-- 🚀 **Performance First**: Built on top of `framer-motion` for buttery smooth 60fps animations.
-- ♿ **Accessible**: Follows WAI-ARIA patterns for inclusivity.
-- 🛠️ **Customizable**: Built with Tailwind CSS, giving you full control over styling.
-- 📦 **Copy Paste**: The "Registry" pattern allows you to own your code.
-- 🔒 **Type Safe**: Written in TypeScript with comprehensive type definitions.
+- **Beautifully Designed**: Crafted with attention to detail and aesthetics.
+- **Performance First**: Built on top of `framer-motion` for buttery smooth 60fps animations.
+- **Accessible**: Follows WAI-ARIA patterns for inclusivity.
+- **Customizable**: Built with Tailwind CSS, giving you full control over styling.
+- **Copy Paste**: The "Registry" pattern allows you to own your code.
+- **Type Safe**: Written in TypeScript with comprehensive type definitions.
 
 ## 🚀 Getting Started
 
