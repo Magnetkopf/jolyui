@@ -1,6 +1,3 @@
-import { ArrowRightIcon, PartyPopper } from "lucide-react";
-import { motion } from "motion/react";
-import Link from "next/link";
 import MotionIcon from "@/components/icons/motion";
 import NextJsIcon from "@/components/icons/nextjs";
 import ReactIcon from "@/components/icons/react";
@@ -8,6 +5,9 @@ import ShadcnIcon from "@/components/icons/shadcn";
 import TailwindIcon from "@/components/icons/tailwindcss";
 import TSIcon from "@/components/icons/typescript";
 import { Button } from "@/components/ui/button";
+import { ArrowRightIcon, PartyPopper } from "lucide-react";
+import { motion } from "motion/react";
+import Link from "next/link";
 import { MotionEffect } from "./motion-effect";
 import { SplittingText } from "./splitting";
 
@@ -89,10 +89,8 @@ export const Hero = () => {
           delay={0.3}
         >
           <p className="mt-3 block text-balance text-center font-normal text-muted-foreground text-sm sm:max-w-[450px] sm:text-base md:max-w-[660px] md:text-lg">
-            JolyUI is a modern React component library built with TypeScript and
-            Tailwind CSS. It offers a wide range of customizable and accessible
-            UI components to help you build stunning web applications quickly
-            and efficiently.
+            50+ free, open-source React components built on shadcn/ui & Radix.
+            Copy-paste ready for Next.js, TypeScript & Tailwind CSS. No npm install needed.
           </p>
         </MotionEffect>
 

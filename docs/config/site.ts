@@ -3,10 +3,11 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "Joly UI",
   shortName: "Joly UI",
+  tagline: "Copy. Paste. Ship.",
   description:
-    "Beautiful, accessible React components built on shadcn/ui. Free and open source component library.",
+    "50+ free, open-source React components built on shadcn/ui & Radix. Copy-paste ready for Next.js, TypeScript & Tailwind CSS.",
   longDescription:
-    "Joly UI is a comprehensive collection of beautifully designed, accessible React components built on top of shadcn/ui and Radix UI. Copy, paste, and customize high-quality UI components for your next React or Next.js project. Fully typed with TypeScript, themeable with Tailwind CSS, and keyboard accessible.",
+    "Joly UI is an open-source library of 50+ beautifully crafted React components extending shadcn/ui. Build stunning interfaces faster with accessible, fully typed components. Just copy, paste, and customize. Works seamlessly with Next.js 14+, React 19, TypeScript, and Tailwind CSS v4.",
   url: "https://jolyui.dev",
   ogImage: "https://jolyui.dev/opengraph-image.png",
   keywords: [

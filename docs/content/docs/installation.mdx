@@ -1,41 +1,42 @@
 ---
 title: Installation
-description: How to install dependencies and structure your app.
+description: Get started with Joly UI in under 2 minutes. Add 50+ React components to your Next.js or React project with a single command.
 ---
 
 <Callout>
-  **Note:** We use installation process as
-  [shadcn/ui](https://ui.shadcn.com/docs/installation).
+  **Prerequisites:** You need a project with [shadcn/ui](https://ui.shadcn.com/docs/installation) already configured.
 </Callout>
 
 <Steps>
 <Step>
 
-### Initialize shadcn/ui
+### Initialize shadcn/ui (if not already done)
 
-Run the `init` command to create a new project with shadcn/ui or setup an existing one.
+Run the `init` command to set up shadcn/ui in your project:
 
 ```package-install
-npx shadcn@latest init"
+npx shadcn@latest init
 ```
 
 </Step>
 <Step>
 
-### Add Components
+### Add Joly UI Components
 
-Run the `add` command to add a component to your project.
+Use the shadcn CLI to add any Joly UI component directly from our registry:
 
 ```package-install
 npx shadcn@latest add "https://jolyui.dev/r/vercel-tabs"
 ```
 
+The component will be added to your `components/ui` folder, ready to customize.
+
 </Step>
 <Step>
 
-### Import Components
+### Use the Component
 
-Import the component to your project.
+Import and use the component anywhere in your project:
 
 ```tsx
 import { Button } from '@/components/ui/button';
@@ -43,7 +44,7 @@ import { Button } from '@/components/ui/button';
 export default function Home() {
   return (
     <div>
-      <Button />
+      <Button>Click me</Button>
     </div>
   );
 }

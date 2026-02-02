@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
 import { Spotlight } from "@/components/landing/spotlight";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 const CONTENT_VARIANTS = {
   hidden: {
@@ -35,33 +35,33 @@ export default function HomePage() {
     <main className={cn("relative h-dvh", !isLoaded && "overflow-y-hidden")}>
       {/* SEO-friendly content for search engine crawlers - visually hidden but accessible */}
       <div className="sr-only">
-        <h1>Joly UI - Beautiful React Components Library</h1>
+        <h1>Joly UI - 50+ Free shadcn/ui Components for React & Next.js</h1>
         <p>
-          Joly UI is a free, open-source collection of beautifully designed,
-          accessible React components built on top of shadcn/ui and Radix UI.
-          Copy, paste, and customize high-quality UI components for your next
-          React or Next.js project.
+          Joly UI is an open-source library of 50+ beautifully crafted React
+          components extending shadcn/ui. Build stunning interfaces faster with
+          accessible, fully typed components. Just copy, paste, and customize.
+          Works seamlessly with Next.js 14+, React 19, TypeScript, and Tailwind CSS v4.
         </p>
-        <h2>Key Features</h2>
+        <h2>Why Choose Joly UI?</h2>
         <ul>
+          <li>50+ production-ready components</li>
           <li>Built on shadcn/ui and Radix UI primitives</li>
-          <li>Fully accessible with WCAG compliance</li>
-          <li>TypeScript support out of the box</li>
-          <li>Tailwind CSS styling</li>
-          <li>Copy-paste ready components</li>
-          <li>Dark mode support</li>
-          <li>Keyboard navigation</li>
-          <li>Free and open source</li>
+          <li>WCAG 2.1 AA compliant accessibility</li>
+          <li>Full TypeScript support with strict types</li>
+          <li>Tailwind CSS v4 ready</li>
+          <li>Copy-paste installation - no npm packages needed</li>
+          <li>Dark mode and theming out of the box</li>
+          <li>MIT licensed - free for commercial use</li>
         </ul>
-        <h2>Available Components</h2>
+        <h2>Component Categories</h2>
         <p>
-          Explore our collection of buttons, inputs, navigation components,
-          feedback elements, text animations, and creative UI components.
+          Explore buttons, form inputs, navigation menus, modals, dialogs,
+          dropdowns, text animations, creative effects, and more.
         </p>
         <nav aria-label="Quick links">
-          <a href="/docs/introduction">Get Started</a>
-          <a href="/docs/components">Browse Components</a>
-          <a href="https://github.com/johuniq/jolyui">GitHub Repository</a>
+          <a href="/docs/introduction">Get Started in 2 Minutes</a>
+          <a href="/docs/components">Browse All 50+ Components</a>
+          <a href="https://github.com/johuniq/jolyui">Star on GitHub</a>
         </nav>
       </div>
 

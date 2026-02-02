@@ -16,8 +16,8 @@ import type * as React from "react";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} - Beautiful React Components | Free UI Library`,
-    template: `%s | ${siteConfig.name}`,
+    default: `${siteConfig.name} - 50+ Free shadcn/ui Components for React & Next.js`,
+    template: `%s - ${siteConfig.name} | React Components`,
   },
   category: "technology",
   description: siteConfig.description,
@@ -192,7 +192,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           name: "What is Joly UI?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Joly UI is a free, open-source collection of beautifully designed React components built on shadcn/ui and Radix UI. It provides accessible, customizable UI components for React and Next.js projects.",
+            text: "Joly UI is a free, open-source library of 50+ React components that extend shadcn/ui. Built with TypeScript, Tailwind CSS v4, and Radix UI primitives. Just copy, paste, and customize - no npm packages to install.",
           },
         },
         {
@@ -200,7 +200,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           name: "Is Joly UI free to use?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, Joly UI is completely free and open source. You can use it in personal and commercial projects without any cost.",
+            text: "Yes, Joly UI is 100% free and MIT licensed. Use it in personal, commercial, and client projects without any cost or attribution requirements.",
           },
         },
         {
@@ -208,7 +208,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           name: "How do I install Joly UI components?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You can install Joly UI components using the CLI or by copying the component code directly into your project. Simply run the CLI command or copy-paste the component code from the documentation.",
+            text: "Run 'npx shadcn@latest add https://jolyui.dev/r/[component-name]' to add any component. It copies the code directly into your project - no external dependencies needed.",
           },
         },
         {
@@ -216,7 +216,23 @@ export default function RootLayout({ children }: RootLayoutProps) {
           name: "Does Joly UI work with Next.js?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, Joly UI is fully compatible with Next.js, including the latest versions. All components are designed to work seamlessly with both React and Next.js applications.",
+            text: "Yes, Joly UI is fully compatible with Next.js 14+ including App Router, Server Components, and the latest React 19 features.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What's the difference between Joly UI and shadcn/ui?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Joly UI extends shadcn/ui with 50+ additional components not available in the original library. Same copy-paste workflow, same quality, more options including text animations, creative effects, and advanced inputs.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is Joly UI accessible?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, all Joly UI components are WCAG 2.1 AA compliant with proper ARIA attributes, keyboard navigation, and screen reader support built-in.",
           },
         },
       ],
