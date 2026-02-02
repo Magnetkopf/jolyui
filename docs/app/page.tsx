@@ -1,12 +1,12 @@
 "use client";
 
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
 import { Spotlight } from "@/components/landing/spotlight";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
 
 const CONTENT_VARIANTS = {
   hidden: {
@@ -40,7 +40,8 @@ export default function HomePage() {
           Joly UI is an open-source library of 50+ beautifully crafted React
           components extending shadcn/ui. Build stunning interfaces faster with
           accessible, fully typed components. Just copy, paste, and customize.
-          Works seamlessly with Next.js 14+, React 19, TypeScript, and Tailwind CSS v4.
+          Works seamlessly with Next.js 14+, React 19, TypeScript, and Tailwind
+          CSS v4.
         </p>
         <h2>Why Choose Joly UI?</h2>
         <ul>

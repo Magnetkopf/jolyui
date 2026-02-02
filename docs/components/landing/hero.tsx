@@ -1,3 +1,6 @@
+import { ArrowRightIcon, PartyPopper } from "lucide-react";
+import { motion } from "motion/react";
+import Link from "next/link";
 import MotionIcon from "@/components/icons/motion";
 import NextJsIcon from "@/components/icons/nextjs";
 import ReactIcon from "@/components/icons/react";
@@ -5,9 +8,6 @@ import ShadcnIcon from "@/components/icons/shadcn";
 import TailwindIcon from "@/components/icons/tailwindcss";
 import TSIcon from "@/components/icons/typescript";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, PartyPopper } from "lucide-react";
-import { motion } from "motion/react";
-import Link from "next/link";
 import { MotionEffect } from "./motion-effect";
 import { SplittingText } from "./splitting";
 
@@ -90,7 +90,8 @@ export const Hero = () => {
         >
           <p className="mt-3 block text-balance text-center font-normal text-muted-foreground text-sm sm:max-w-[450px] sm:text-base md:max-w-[660px] md:text-lg">
             50+ free, open-source React components built on shadcn/ui & Radix.
-            Copy-paste ready for Next.js, TypeScript & Tailwind CSS. No npm install needed.
+            Copy-paste ready for Next.js, TypeScript & Tailwind CSS. No npm
+            install needed.
           </p>
         </MotionEffect>
 
