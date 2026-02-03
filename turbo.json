@@ -10,7 +10,7 @@
       "outputs": ["dist/**", ".next/**", ".nuxt/**", ".source/**"]
     },
     "docs#build": {
-      "dependsOn": ["^build", "docs#build:registry"],
+      "dependsOn": ["^build", "docs#build:registry", "docs#generate:content"],
       "outputs": [".next/**", ".source/**"]
     },
     "build:registry": {
