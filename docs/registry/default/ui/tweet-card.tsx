@@ -75,7 +75,7 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
                 height={48}
                 className="rounded-full object-cover ring-2 ring-tweet-border transition-all duration-300 group-hover:ring-tweet-accent/50"
               />
-              <div className="-bottom-1 -right-1 absolute h-4 w-4 rounded-full bg-tweet-success opacity-0 ring-2 ring-tweet transition-all duration-300 group-hover:opacity-100" />
+              <div className="absolute -right-1 -bottom-1 h-4 w-4 rounded-full bg-tweet-success opacity-0 ring-2 ring-tweet transition-all duration-300 group-hover:opacity-100" />
             </div>
 
             <div className="min-w-0 flex-1">

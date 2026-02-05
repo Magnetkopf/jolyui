@@ -108,7 +108,7 @@ export const Features = () => {
                   <p
                     className={cn(
                       dancing.className,
-                      "-translate-x-1/2 absolute top-3 xs:top-2 left-1/2 font-black text-[22px] text-muted-foreground",
+                      "absolute top-3 xs:top-2 left-1/2 -translate-x-1/2 font-black text-[22px] text-muted-foreground",
                     )}
                   >
                     {component.name}

@@ -370,7 +370,7 @@ export default function IconaClient() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
       <Spotlight
-        className="-top-40 md:-top-20 left-0 md:left-60"
+        className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
       />
       <Header />
@@ -501,14 +501,14 @@ export default function IconaClient() {
         <div className="mb-10 space-y-6">
           <div className="flex flex-col gap-4 md:flex-row">
             <div className="relative flex-1">
-              <Search className="-translate-y-1/2 absolute top-1/2 left-4 h-5 w-5 text-muted-foreground" />
+              <Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder="Type to search across 200+ icon collections..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className="h-12 rounded-xl border-2 pr-32 pl-12 text-base transition-all focus-visible:ring-2"
               />
-              <div className="-translate-y-1/2 absolute top-1/2 right-4 flex items-center gap-2">
+              <div className="absolute top-1/2 right-4 flex -translate-y-1/2 items-center gap-2">
                 {searchQuery && (
                   <Button
                     variant="ghost"

@@ -406,7 +406,7 @@ const PromptInputTextarea: React.FC<
       typeof maxHeight === "number"
         ? `${Math.min(textareaRef.current.scrollHeight, maxHeight)}px`
         : `min(${textareaRef.current.scrollHeight}px, ${maxHeight})`;
-  }, [value, maxHeight, disableAutosize]);
+  }, [maxHeight, disableAutosize]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -555,13 +555,16 @@ export const PromptInputBox = React.forwardRef(
       e.stopPropagation();
     }, []);
 
-    const handleDrop = React.useCallback((e: React.DragEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const files = Array.from(e.dataTransfer.files);
-      const imageFiles = files.filter((file) => isImageFile(file));
-      if (imageFiles.length > 0 && imageFiles[0]) processFile(imageFiles[0]);
-    }, []);
+    const handleDrop = React.useCallback(
+      (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const files = Array.from(e.dataTransfer.files);
+        const imageFiles = files.filter((file) => isImageFile(file));
+        if (imageFiles.length > 0 && imageFiles[0]) processFile(imageFiles[0]);
+      },
+      [isImageFile, processFile],
+    );
 
     const handleRemoveFile = (index: number) => {
       const fileToRemove = files[index];

@@ -516,7 +516,7 @@ export function FloatingLabel({
       <AnimatePresence>
         {isFocused && (
           <motion.div
-            className="-top-6 absolute left-0 font-medium text-primary text-xs"
+            className="absolute -top-6 left-0 font-medium text-primary text-xs"
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 5 }}

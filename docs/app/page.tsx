@@ -67,7 +67,7 @@ export default function HomePage() {
       </div>
 
       <Spotlight
-        className="-top-40 md:-top-20 left-0 md:left-60"
+        className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
       />
       <Header />

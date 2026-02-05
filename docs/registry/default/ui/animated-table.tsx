@@ -79,7 +79,7 @@ const TableSearch = ({
   placeholder?: string;
 }) => (
   <div className="relative">
-    <Search className="-translate-y-1/2 absolute top-1/2 left-3 h-4 w-4 text-muted-foreground" />
+    <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
     <input
       type="text"
       value={value}
@@ -94,7 +94,7 @@ const TableSearch = ({
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={() => onChange("")}
-          className="-translate-y-1/2 absolute top-1/2 right-2 rounded p-0.5 text-muted-foreground hover:bg-muted hover:text-foreground"
+          className="absolute top-1/2 right-2 -translate-y-1/2 rounded p-0.5 text-muted-foreground hover:bg-muted hover:text-foreground"
         >
           <X className="h-3.5 w-3.5" />
         </motion.button>

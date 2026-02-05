@@ -265,7 +265,7 @@ export function MinimalToast({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           className={cn(
-            "-translate-x-1/2 fixed bottom-8 left-1/2 z-50 rounded-full px-6 py-3 font-medium text-background text-black text-sm shadow-lg dark:text-white",
+            "fixed bottom-8 left-1/2 z-50 -translate-x-1/2 rounded-full px-6 py-3 font-medium text-background text-black text-sm shadow-lg dark:text-white",
             bgColors[type],
           )}
         >
@@ -318,7 +318,7 @@ export function UndoToast({
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 50, scale: 0.9 }}
-          className="-translate-x-1/2 fixed bottom-8 left-1/2 z-50 overflow-hidden rounded-lg bg-foreground text-background shadow-xl"
+          className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2 overflow-hidden rounded-lg bg-foreground text-background shadow-xl"
         >
           <div className="flex items-center gap-4 px-4 py-3">
             <span className="text-sm">{message}</span>

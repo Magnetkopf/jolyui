@@ -140,7 +140,7 @@ export function GitHubContributors({
                 >
                   {/* top badge */}
                   {isTop && (
-                    <div className="-top-1 -right-1 absolute z-10">
+                    <div className="absolute -top-1 -right-1 z-10">
                       <div className="flex h-4 w-4 items-center justify-center rounded-full border border-white bg-yellow-400/90 font-semibold text-[10px] text-white shadow-sm">
                         <span>★</span>
                       </div>

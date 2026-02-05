@@ -136,7 +136,7 @@ export function HoverPreviewProvider({
 
       setPosition({ x, y });
     },
-    [cardWidth, cardHeight, cursorOffset],
+    [cardWidth, cursorOffset],
   );
 
   const handleHoverStart = useCallback(

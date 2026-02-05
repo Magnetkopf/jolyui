@@ -435,4 +435,14 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "morphing-cursor",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/morphing-cursor.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

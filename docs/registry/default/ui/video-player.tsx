@@ -92,7 +92,7 @@ const Tooltip = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.2 }}
-        className="-translate-x-1/2 pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 whitespace-nowrap rounded bg-black/90 px-2 py-1 text-white text-xs"
+        className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-black/90 px-2 py-1 text-white text-xs"
       >
         {label}
       </motion.div>
@@ -699,7 +699,7 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
 
                   {/* Scrubber */}
                   <motion.div
-                    className="-translate-y-1/2 -translate-x-1/2 absolute top-1/2 z-20 h-4 w-4 rounded-full bg-white opacity-0 shadow-lg transition-opacity group-hover/progress:opacity-100"
+                    className="absolute top-1/2 z-20 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-0 shadow-lg transition-opacity group-hover/progress:opacity-100"
                     style={{ left: `${(currentTime / duration) * 100}%` }}
                   />
 
@@ -710,7 +710,7 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
                         initial={{ opacity: 0, y: 10, scale: 0.8 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.8 }}
-                        className="-translate-x-1/2 pointer-events-none absolute bottom-full z-50 mb-4 flex flex-col items-center gap-0.5 whitespace-nowrap rounded-lg border border-white/10 bg-black/90 px-2 py-1 text-white text-xs"
+                        className="pointer-events-none absolute bottom-full z-50 mb-4 flex -translate-x-1/2 flex-col items-center gap-0.5 whitespace-nowrap rounded-lg border border-white/10 bg-black/90 px-2 py-1 text-white text-xs"
                         style={{ left: `${hoverPosition}%` }}
                       >
                         {chapters.length > 0 && (

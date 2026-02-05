@@ -132,8 +132,8 @@ export function ImageComparison({
         className={cn(
           "absolute z-10",
           orientation === "horizontal"
-            ? "-translate-x-1/2 top-0 h-full w-0.5"
-            : "-translate-y-1/2 left-0 h-0.5 w-full",
+            ? "top-0 h-full w-0.5 -translate-x-1/2"
+            : "left-0 h-0.5 w-full -translate-y-1/2",
         )}
         style={{
           [orientation === "horizontal" ? "left" : "top"]: `${position}%`,
@@ -147,8 +147,8 @@ export function ImageComparison({
         className={cn(
           "absolute z-20 flex cursor-grab items-center justify-center rounded-full border-2 bg-background shadow-lg active:cursor-grabbing",
           orientation === "horizontal"
-            ? "-translate-x-1/2 -translate-y-1/2 h-10 w-10"
-            : "-translate-x-1/2 -translate-y-1/2 h-10 w-10",
+            ? "h-10 w-10 -translate-x-1/2 -translate-y-1/2"
+            : "h-10 w-10 -translate-x-1/2 -translate-y-1/2",
         )}
         style={{
           [orientation === "horizontal" ? "left" : "left"]:
@@ -395,7 +395,7 @@ export function ImageComparisonFade({
       {/* Label */}
       {showLabels && (
         <motion.div
-          className="-translate-x-1/2 absolute top-3 left-1/2 rounded-md bg-background/80 px-3 py-1.5 font-medium text-sm backdrop-blur-sm"
+          className="absolute top-3 left-1/2 -translate-x-1/2 rounded-md bg-background/80 px-3 py-1.5 font-medium text-sm backdrop-blur-sm"
           key={showBefore ? "before" : "after"}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -406,7 +406,7 @@ export function ImageComparisonFade({
       )}
 
       {/* Click hint */}
-      <div className="-translate-x-1/2 absolute bottom-3 left-1/2 rounded-md bg-background/80 px-2 py-1 text-muted-foreground text-xs opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-md bg-background/80 px-2 py-1 text-muted-foreground text-xs opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
         Click to toggle
       </div>
     </div>
@@ -493,7 +493,7 @@ export function ImageComparisonSwipe({
 
       {/* Draggable Handle */}
       <motion.div
-        className="-translate-y-1/2 absolute top-1/2 left-1/2 z-20 flex h-12 w-12 cursor-grab items-center justify-center rounded-full border-2 border-background bg-background shadow-lg active:cursor-grabbing"
+        className="absolute top-1/2 left-1/2 z-20 flex h-12 w-12 -translate-y-1/2 cursor-grab items-center justify-center rounded-full border-2 border-background bg-background shadow-lg active:cursor-grabbing"
         drag="x"
         dragConstraints={{
           left: -containerWidth / 2 + 20,

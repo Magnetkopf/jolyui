@@ -26,7 +26,7 @@ export default function BentoGridPortfolioDemo() {
           </div>
 
           <div className="mt-8 flex items-center gap-6">
-            <div className="-space-x-3 flex">
+            <div className="flex -space-x-3">
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
@@ -41,7 +41,7 @@ export default function BentoGridPortfolioDemo() {
           </div>
         </CardContent>
         {/* Decorative background element */}
-        <div className="-bottom-12 -right-12 absolute h-64 w-64 rounded-full bg-primary/5 blur-3xl transition-all group-hover:bg-primary/10" />
+        <div className="absolute -right-12 -bottom-12 h-64 w-64 rounded-full bg-primary/5 blur-3xl transition-all group-hover:bg-primary/10" />
       </Card>
 
       {/* Lightning Fast */}

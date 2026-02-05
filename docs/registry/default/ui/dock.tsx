@@ -147,13 +147,13 @@ const DockLabel = React.forwardRef<HTMLDivElement, DockLabelProps>(
       <div
         ref={ref}
         className={cn(
-          "dock-label -top-9 -translate-x-1/2 pointer-events-none absolute left-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-background text-xs opacity-0 transition-opacity group-hover:opacity-100",
+          "dock-label pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-background text-xs opacity-0 transition-opacity group-hover:opacity-100",
           className,
         )}
       >
         {children}
         {/* Tooltip arrow */}
-        <div className="-bottom-1 -translate-x-1/2 absolute left-1/2 h-2 w-2 rotate-45 bg-foreground" />
+        <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-foreground" />
       </div>
     );
   },

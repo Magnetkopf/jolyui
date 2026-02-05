@@ -1260,7 +1260,7 @@ const CalendarContent = React.memo(
 
             {/* Today indicator */}
             {isTodayDate && !isSelected && (
-              <span className="-translate-x-1/2 absolute bottom-0.5 left-1/2 h-1 w-1 rounded-full bg-primary" />
+              <span className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-primary" />
             )}
 
             {/* Event highlight */}

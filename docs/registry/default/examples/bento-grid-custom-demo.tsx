@@ -18,7 +18,7 @@ export default function BentoGridCustomDemo() {
     <BentoGrid className="mx-auto max-w-7xl gap-4 p-4">
       {/* Main AI Intelligence Card */}
       <Card className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-background md:col-span-2 lg:row-span-2">
-        <div className="-right-20 -top-20 absolute h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
         <CardHeader className="relative z-10 pb-2">
           <div className="flex items-center justify-between">
             <Badge

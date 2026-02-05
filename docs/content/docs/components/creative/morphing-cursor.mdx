@@ -1,0 +1,61 @@
+---
+title: Morphing Cursor
+description: A magnetic text effect component with a morphing cursor that reveals alternate text on hover. Creates an engaging interactive experience with smooth animations.
+preview: true
+links:
+ api: /docs/components/morphing-cursor#api-reference
+---
+
+<ComponentTabs name="morphing-cursor-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/morphing-cursor"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="morphing-cursor" />
+  </Step>
+</Steps>
+
+## Layout
+
+```tsx
+import { MagneticText } from "@/components/ui/morphing-cursor";
+
+<MagneticText text="CREATIVE" hoverText="EXPLORE" />
+```
+
+## Examples
+
+### Custom Text
+
+Use different text combinations to create unique interactive experiences.
+
+<ComponentTabs name="morphing-cursor-custom-demo" />
+
+### With Container Styling
+
+Add custom styling to the container using the `className` prop.
+
+<ComponentTabs name="morphing-cursor-styled-demo" />
+
+## API Reference
+
+### MagneticText
+
+The main component that creates a magnetic cursor effect revealing alternate text on hover.
+
+<AutoTypeTable
+  path="./types/docs/morphing-cursor.ts"
+  name="MagneticTextProps"
+/>

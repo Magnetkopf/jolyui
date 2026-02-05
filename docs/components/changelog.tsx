@@ -45,12 +45,12 @@ export const ChangelogItem = ({
             )}
           >
             {major && (
-              <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 size-4.5 shrink-0 rounded-full border border-primary" />
+              <div className="absolute top-1/2 left-1/2 size-4.5 shrink-0 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary" />
             )}
           </div>
           <div
             className={cn(
-              "-translate-x-1/2 -bottom-[2px] absolute top-[18px] left-1/2 w-px rounded-full",
+              "absolute top-[18px] -bottom-[2px] left-1/2 w-px -translate-x-1/2 rounded-full",
               major ? "bg-primary" : "bg-neutral-300 dark:bg-neutral-700",
             )}
           />

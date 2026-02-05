@@ -44,7 +44,6 @@ function getTileUrl(provider: string, x: number, y: number, z: number) {
       return `https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/${z}/${x}/${y}.png`;
     case "carto-dark":
       return `https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/${z}/${x}/${y}.png`;
-    case "openstreetmap":
     default:
       return `https://tile.openstreetmap.org/${z}/${x}/${y}.png`;
   }
@@ -238,7 +237,7 @@ export function LocationMap({
 
               {/* Location marker */}
               <motion.div
-                className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 z-10"
+                className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2"
                 initial={{ scale: 0, y: -20 }}
                 animate={{ scale: 1, y: 0 }}
                 transition={{

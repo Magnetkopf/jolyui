@@ -625,7 +625,7 @@ const StickyScrollText = React.forwardRef<
       <motion.div
         ref={ref}
         className={cn(
-          "-translate-y-1/2 sticky top-1/2 will-change-transform",
+          "sticky top-1/2 -translate-y-1/2 will-change-transform",
           className,
         )}
         style={effectStyles[effect]}

@@ -300,7 +300,7 @@ export function CommandPalette({
           <div
             role="dialog"
             aria-modal="true"
-            className="-translate-x-1/2 fixed top-[20%] left-1/2 z-50 w-full max-w-xl"
+            className="fixed top-[20%] left-1/2 z-50 w-full max-w-xl -translate-x-1/2"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
@@ -424,7 +424,7 @@ export function CommandPalette({
                           {isSelected && (
                             <motion.div
                               layoutId="active-pill"
-                              className="-z-10 absolute inset-0 rounded-lg bg-accent"
+                              className="absolute inset-0 -z-10 rounded-lg bg-accent"
                               transition={{
                                 type: "spring",
                                 bounce: 0.2,

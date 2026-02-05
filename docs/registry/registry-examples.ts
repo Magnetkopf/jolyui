@@ -1526,4 +1526,37 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "morphing-cursor-demo",
+    type: "registry:example",
+    registryDependencies: ["morphing-cursor"],
+    files: [
+      {
+        path: "examples/morphing-cursor-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "morphing-cursor-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["morphing-cursor"],
+    files: [
+      {
+        path: "examples/morphing-cursor-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "morphing-cursor-styled-demo",
+    type: "registry:example",
+    registryDependencies: ["morphing-cursor"],
+    files: [
+      {
+        path: "examples/morphing-cursor-styled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

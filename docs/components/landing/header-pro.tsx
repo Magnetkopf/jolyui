@@ -72,7 +72,7 @@ export function HeaderPro() {
               <span className="text-white tracking-tighter group-hover:text-white dark:text-zinc-900 dark:group-hover:text-zinc-900">
                 {content.productName}
               </span>
-              <ArrowUpRight className="group-hover:-translate-y-[1px] h-3.5 w-3.5 text-white/90 transition-transform group-hover:translate-x-[1px] group-hover:text-white dark:text-zinc-900/90 dark:group-hover:text-zinc-900" />
+              <ArrowUpRight className="h-3.5 w-3.5 text-white/90 transition-transform group-hover:translate-x-[1px] group-hover:-translate-y-[1px] group-hover:text-white dark:text-zinc-900/90 dark:group-hover:text-zinc-900" />
             </div>
           </div>
         </Link>
