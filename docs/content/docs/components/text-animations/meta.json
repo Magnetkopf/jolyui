@@ -2,6 +2,7 @@
   "title": "Text Animations",
   "pages": [
     "character-morph",
+    "falling-text",
     "glitch-text",
     "gooey-text-morphing",
     "highlight-text",

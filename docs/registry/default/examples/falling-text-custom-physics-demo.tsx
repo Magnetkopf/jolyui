@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/registry/default/ui/button";
 import FallingText from "@/registry/default/ui/falling-text";
+import { useState } from "react";
 
 export default function FallingTextCustomPhysicsDemo() {
   const [resetKey, setResetKey] = useState(0);
